@@ -23,9 +23,9 @@ Doran sempre preferiu o som dos mecanismos de disparo ao choque de espadas. Enge
 ---
 
 ## 🪄 4. Habilidades Recomendadas (Build de 3 Skills)
-1. **[Tiro Perfurante](docs/idea/04_skills/arqueiro/besteiro/tiro_perfurante.md):** Virote pesado que ignora 30% da armadura do alvo e atravessa em linha reta.
-2. **[Recarga Tática](docs/idea/04_skills/arqueiro/besteiro/recarga_tatica.md):** Reduz o tempo entre disparos pesados em 40% por 6 segundos.
-3. **[Foco Fatal](docs/idea/04_skills/arqueiro/besteiro/foco_fatal.md):** Aumenta o dano crítico em $+50\%$ contra monstros Elites e Chefes.
+1. **[Tiro Perfurante](../../../04_skills/arqueiro/besteiro/tiro_perfurante.md):** Virote pesado que ignora 30% da armadura do alvo e atravessa em linha reta.
+2. **[Recarga Tática](../../../04_skills/arqueiro/besteiro/recarga_tatica.md):** Reduz o tempo entre disparos pesados em 40% por 6 segundos.
+3. **[Foco Fatal](../../../04_skills/arqueiro/besteiro/foco_fatal.md):** Aumenta o dano crítico em $+50\%$ contra monstros Elites e Chefes.
 
 ---
 

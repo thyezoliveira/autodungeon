@@ -23,9 +23,9 @@ Elysia é uma guardiã das florestas prateadas de Silvaluna. Treinada desde a in
 ---
 
 ## 🪄 4. Habilidades Recomendadas (Build de 3 Skills)
-1. **[Tiro Certeiro](docs/idea/04_skills/arqueiro/tiro_certeiro.md):** Disparo rápido de alta perfuração que causa 130% de dano físico à distância.
-2. **[Chuva de Flechas](docs/idea/04_skills/arqueiro/chuva_de_flechas.md):** Lança uma saraivada em área circular, atingindo múltiplos monstros simultaneamente.
-3. **[Invocar Companheiro](docs/idea/04_skills/arqueiro/cacador/invocar_companheiro.md):** Invoca um Lobo Espiritual que distrai os monstros e ataca os flancos.
+1. **[Tiro Certeiro](../../../04_skills/arqueiro/tiro_certeiro.md):** Disparo rápido de alta perfuração que causa 130% de dano físico à distância.
+2. **[Chuva de Flechas](../../../04_skills/arqueiro/chuva_de_flechas.md):** Lança uma saraivada em área circular, atingindo múltiplos monstros simultaneamente.
+3. **[Invocar Companheiro](../../../04_skills/arqueiro/cacador/invocar_companheiro.md):** Invoca um Lobo Espiritual que distrai os monstros e ataca os flancos.
 
 ---
 

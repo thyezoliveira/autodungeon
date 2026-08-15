@@ -21,9 +21,9 @@ Com seu alaúde de mogno e um sorriso travesso, Milo transformou as tabernas mai
 ---
 
 ## 🪄 4. Habilidades Recomendadas (Build de 3 Skills)
-1. **[Canção da Celeridade](docs/idea/04_skills/ladino/bardo/cancao_da_celeridade.md):** Aumenta a velocidade de ataque e conjuração de todos os 3 heróis em $+20\%$ enquanto a música ecoar.
-2. **[Acordes Curativos](docs/idea/04_skills/ladino/bardo/acordes_curativos.md):** Ondas sonoras suaves que curam periodicamente o herói mais debilitado.
-3. **[Dissonância](docs/idea/04_skills/ladino/bardo/dissonancia.md):** Emite uma nota caótica que desorienta os monstros em área, reduzindo o dano deles em 20%.
+1. **[Canção da Celeridade](../../../04_skills/ladino/bardo/cancao_da_celeridade.md):** Aumenta a velocidade de ataque e conjuração de todos os 3 heróis em $+20\%$ enquanto a música ecoar.
+2. **[Acordes Curativos](../../../04_skills/ladino/bardo/acordes_curativos.md):** Ondas sonoras suaves que curam periodicamente o herói mais debilitado.
+3. **[Dissonância](../../../04_skills/ladino/bardo/dissonancia.md):** Emite uma nota caótica que desorienta os monstros em área, reduzindo o dano deles em 20%.
 
 ---
 

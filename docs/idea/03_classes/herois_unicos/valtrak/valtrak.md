@@ -23,9 +23,9 @@ Descendente direto da linhagem dos Dragões de Magma de Gor-Thar, Valtrak nasceu
 ---
 
 ## 🪄 4. Habilidades Recomendadas (Build de 3 Skills)
-1. **[Bola de Fogo](docs/idea/04_skills/mago/bola_de_fogo.md):** Projétil que explode no impacto, causando dano massivo em raio circular de 2 tiles.
-2. **[Pilar de Fogo](docs/idea/04_skills/mago/elementalista/pilar_de_fogo.md):** Erupção ígnea sob os pés do maior grupo de monstros, causando 220% de dano mágico.
-3. **[Chuva de Meteoros](docs/idea/04_skills/mago/chuva_de_meteoros.md):** Invoca múltiplos meteoros que devastam toda a arena do combate.
+1. **[Bola de Fogo](../../../04_skills/mago/bola_de_fogo.md):** Projétil que explode no impacto, causando dano massivo em raio circular de 2 tiles.
+2. **[Pilar de Fogo](../../../04_skills/mago/elementalista/pilar_de_fogo.md):** Erupção ígnea sob os pés do maior grupo de monstros, causando 220% de dano mágico.
+3. **[Chuva de Meteoros](../../../04_skills/mago/chuva_de_meteoros.md):** Invoca múltiplos meteoros que devastam toda a arena do combate.
 
 ---
 

@@ -23,9 +23,9 @@ Grommash é um veterano das Guerras dos Ermos Escarlates. Tendo sobrevivido a de
 ---
 
 ## 🪄 4. Habilidades Recomendadas (Build de 3 Skills)
-1. **[Corte Brutal](docs/idea/04_skills/guerreiro/berserker/corte_brutal.md):** Golpe violento de alto impacto que causa dano baseado na quantidade de vida que o próprio Grommash perdeu.
-2. **[Fúria Cega](docs/idea/04_skills/guerreiro/berserker/furia_cega.md):** Aumenta o dano de ataque em 30%, mas reduz a própria defesa temporariamente.
-3. **[Grito de Sangue](docs/idea/04_skills/guerreiro/berserker/grito_de_sangue.md):** Provoca todos os monstros em área, puxando o foco para si e restaurando uma porcentagem de HP a cada monstro provocado.
+1. **[Corte Brutal](../../../04_skills/guerreiro/berserker/corte_brutal.md):** Golpe violento de alto impacto que causa dano baseado na quantidade de vida que o próprio Grommash perdeu.
+2. **[Fúria Cega](../../../04_skills/guerreiro/berserker/furia_cega.md):** Aumenta o dano de ataque em 30%, mas reduz a própria defesa temporariamente.
+3. **[Grito de Sangue](../../../04_skills/guerreiro/berserker/grito_de_sangue.md):** Provoca todos os monstros em área, puxando o foco para si e restaurando uma porcentagem de HP a cada monstro provocado.
 
 ---
 

@@ -21,9 +21,9 @@ Zephyr é um eremita das Torres de Vento de Aeloria. Tendo passado décadas deci
 ---
 
 ## 🪄 4. Habilidades Recomendadas (Build de 3 Skills)
-1. **[Míssil Mágico](docs/idea/04_skills/mago/missil_magico.md):** Dispara 3 projéteis teleguiados de energia que nunca erram o alvo.
-2. **[Selo Explosivo](docs/idea/04_skills/mago/runico/selo_explosivo.md):** Grava um selo no chão que detona causando 180% de dano de choque e paralisando por 1s.
-3. **[Sobrecarga Arcana](docs/idea/04_skills/mago/runico/sobrecarga_arcana.md):** Dobra a velocidade de lançamento de todos os feitiços por 5 segundos.
+1. **[Míssil Mágico](../../../04_skills/mago/missil_magico.md):** Dispara 3 projéteis teleguiados de energia que nunca erram o alvo.
+2. **[Selo Explosivo](../../../04_skills/mago/runico/selo_explosivo.md):** Grava um selo no chão que detona causando 180% de dano de choque e paralisando por 1s.
+3. **[Sobrecarga Arcana](../../../04_skills/mago/runico/sobrecarga_arcana.md):** Dobra a velocidade de lançamento de todos os feitiços por 5 segundos.
 
 ---
 

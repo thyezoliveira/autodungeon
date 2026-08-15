@@ -23,9 +23,9 @@ Serva devota da Catedral da Alvorada Eterna, Beatrice dedicou sua vida aos enfer
 ---
 
 ## 🪄 4. Habilidades Recomendadas (Build de 3 Skills)
-1. **[Cura Rápida](docs/idea/04_skills/sacerdote/cura_rapida.md):** Cura instantânea focada no aliado com menor porcentagem de vida (priorizando o Tanque).
-2. **[Cura Maior](docs/idea/04_skills/sacerdote/clerigo/cura_maior.md):** Grande restauração de HP acompanhada por remoção de venenos e sangramentos.
-3. **[Escudo de Fé](docs/idea/04_skills/sacerdote/clerigo/escudo_de_fe.md):** Projeta uma cúpula luminosa no herói ferido que absorve dano massivo por 6 segundos.
+1. **[Cura Rápida](../../../04_skills/sacerdote/cura_rapida.md):** Cura instantânea focada no aliado com menor porcentagem de vida (priorizando o Tanque).
+2. **[Cura Maior](../../../04_skills/sacerdote/clerigo/cura_maior.md):** Grande restauração de HP acompanhada por remoção de venenos e sangramentos.
+3. **[Escudo de Fé](../../../04_skills/sacerdote/clerigo/escudo_de_fe.md):** Projeta uma cúpula luminosa no herói ferido que absorve dano massivo por 6 segundos.
 
 ---
 

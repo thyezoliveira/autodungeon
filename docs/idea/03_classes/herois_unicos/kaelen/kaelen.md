@@ -23,9 +23,9 @@ Crescido nas vielas mais escuras da Cidade Baixa, Kaelen aprendeu a matar antes 
 ---
 
 ## 🪄 4. Habilidades Recomendadas (Build de 3 Skills)
-1. **[Passo das Sombras](docs/idea/04_skills/ladino/passo_das_sombras.md):** Fica invisível e se teleporta para trás do monstro mais distante (curandeiros e atiradores inimigos).
-2. **[Veneno Letal](docs/idea/04_skills/ladino/assassino/veneno_letal.md):** Imbui as adagas com veneno mortal que causa dano ao longo do tempo (DoT) cumulativo.
-3. **[Degolar](docs/idea/04_skills/ladino/assassino/degolar.md):** Ataque devastador pelas costas que causa 300% de dano crítico se lançado saindo da furtividade.
+1. **[Passo das Sombras](../../../04_skills/ladino/passo_das_sombras.md):** Fica invisível e se teleporta para trás do monstro mais distante (curandeiros e atiradores inimigos).
+2. **[Veneno Letal](../../../04_skills/ladino/assassino/veneno_letal.md):** Imbui as adagas com veneno mortal que causa dano ao longo do tempo (DoT) cumulativo.
+3. **[Degolar](../../../04_skills/ladino/assassino/degolar.md):** Ataque devastador pelas costas que causa 300% de dano crítico se lançado saindo da furtividade.
 
 ---
 

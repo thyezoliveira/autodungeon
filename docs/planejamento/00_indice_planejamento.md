@@ -56,6 +56,6 @@ graph TD
 ---
 
 ## 🔗 Referências Cruzadas
-* [Documento de Escopo & Pitch do MVP](../../01_Pitch_MVP.md)
+* [Documento de Escopo & Pitch do MVP](../01_Pitch_MVP.md)
 * [Índice Geral da Arquitetura Técnica](../projeto/00_indice_arquitetura.md)
 * [Índice Geral do Game Design (GDD)](../00_indice.md)

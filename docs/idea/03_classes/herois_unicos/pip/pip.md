@@ -23,9 +23,9 @@ Pip nunca gostou da calmaria dos vilarejos pacatos dos Metadílios. Fascinado po
 ---
 
 ## 🪄 4. Habilidades Recomendadas (Build de 3 Skills)
-1. **[Reflexos Rápidos](docs/idea/04_skills/ladino/reflexos_rapidos.md):** Aumenta a chance de esquivar de ataques físicos e mágicos.
-2. **[Facada nas Costas](docs/idea/04_skills/ladino/sombra/facada_nas_costas.md):** Desfere um golpe furtivo devastador por trás, causando 250% de dano crítico.
-3. **[Passo Furtivo](docs/idea/04_skills/ladino/sombra/passo_furtivo.md):** Fica invisível ao esquivar de um golpe, reposicionando-se nas costas do monstro.
+1. **[Reflexos Rápidos](../../../04_skills/ladino/reflexos_rapidos.md):** Aumenta a chance de esquivar de ataques físicos e mágicos.
+2. **[Facada nas Costas](../../../04_skills/ladino/sombra/facada_nas_costas.md):** Desfere um golpe furtivo devastador por trás, causando 250% de dano crítico.
+3. **[Passo Furtivo](../../../04_skills/ladino/sombra/passo_furtivo.md):** Fica invisível ao esquivar de um golpe, reposicionando-se nas costas do monstro.
 
 ---
 

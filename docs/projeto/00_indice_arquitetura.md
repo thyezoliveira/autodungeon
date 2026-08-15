@@ -108,5 +108,5 @@ graph TB
 
 ## 🔗 Referências Cruzadas
 * [Índice Geral do Game Design (GDD)](../00_indice.md)
-* [Escopo & Pitch do MVP](../../01_Pitch_MVP.md)
-* [Método de Organização Modular](../../Metodo_Organizacao_GDD.md)
+* [Escopo & Pitch do MVP](../01_Pitch_MVP.md)
+* [Método de Organização Modular](../Metodo_Organizacao_GDD.md)

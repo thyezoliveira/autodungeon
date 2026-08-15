@@ -21,9 +21,9 @@ Guardião das Árvores Anciãs de Yggdrasil, Faelar passou séculos em comunhão
 ---
 
 ## 🪄 4. Habilidades Recomendadas (Build de 3 Skills)
-1. **[Florescimento](docs/idea/04_skills/bruxo/druida/florescimento.md):** Aplica uma semente que cura continuamente 25 de HP por segundo durante 8 segundos em todos os heróis.
-2. **[Pele de Casca](docs/idea/04_skills/bruxo/druida/pele_de_casca.md):** Endurece a pele do Tanque, concedendo $+25\%$ de Armadura e regeneração passiva.
-3. **[Raízes Aprisionadoras](docs/idea/04_skills/bruxo/raizes_aprisionadoras.md):** Trava o avanço de grupos de monstros inimigos, impedindo flanqueamentos.
+1. **[Florescimento](../../../04_skills/bruxo/druida/florescimento.md):** Aplica uma semente que cura continuamente 25 de HP por segundo durante 8 segundos em todos os heróis.
+2. **[Pele de Casca](../../../04_skills/bruxo/druida/pele_de_casca.md):** Endurece a pele do Tanque, concedendo $+25\%$ de Armadura e regeneração passiva.
+3. **[Raízes Aprisionadoras](../../../04_skills/bruxo/raizes_aprisionadoras.md):** Trava o avanço de grupos de monstros inimigos, impedindo flanqueamentos.
 
 ---
 

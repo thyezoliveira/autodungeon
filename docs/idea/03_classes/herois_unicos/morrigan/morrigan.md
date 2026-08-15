@@ -21,9 +21,9 @@ Banida da Academia de Magia Imperial por seus estudos proibidos sobre a manipula
 ---
 
 ## 🪄 4. Habilidades Recomendadas (Build de 3 Skills)
-1. **[Erguer Esqueletos](docs/idea/04_skills/bruxo/necromante/erguer_esqueletos.md):** Invoca 2 guerreiros esqueletos que marcham à frente atraindo dano dos monstros.
-2. **[Explosão de Cadáver](docs/idea/04_skills/bruxo/necromante/explosao_de_cadaver.md):** Detona o corpo de um monstro derrotado, causando dano massivo em área de 2 tiles.
-3. **[Drenar Vida](docs/idea/04_skills/bruxo/drenar_vida.md):** Rouba a vida do inimigo mais forte, restaurando o próprio HP de Morrigan continuamente.
+1. **[Erguer Esqueletos](../../../04_skills/bruxo/necromante/erguer_esqueletos.md):** Invoca 2 guerreiros esqueletos que marcham à frente atraindo dano dos monstros.
+2. **[Explosão de Cadáver](../../../04_skills/bruxo/necromante/explosao_de_cadaver.md):** Detona o corpo de um monstro derrotado, causando dano massivo em área de 2 tiles.
+3. **[Drenar Vida](../../../04_skills/bruxo/drenar_vida.md):** Rouba a vida do inimigo mais forte, restaurando o próprio HP de Morrigan continuamente.
 
 ---
 

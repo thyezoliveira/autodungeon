@@ -23,9 +23,9 @@ Primeiro cavaleiro da Guarda Real de Valória, Sir Alistair dedicou sua juventud
 ---
 
 ## 🪄 4. Habilidades Recomendadas (Build de 3 Skills)
-1. **[Grito de Guerra](docs/idea/04_skills/guerreiro/grito_de_guerra.md):** Eleva a moral da equipe, concedendo $+15\%$ de Dano e Armadura para todos os aliados por 6 segundos.
-2. **[Pele de Aço](docs/idea/04_skills/guerreiro/pele_de_aco.md):** Endurece o corpo absorvendo os próximos 3 ataques com mitigação de 50%.
-3. **[Aura de Devoção](docs/idea/04_skills/guerreiro/paladino/aura_de_devocao.md):** Reduz o dano sofrido por toda a equipe enquanto Alistair estiver vivo.
+1. **[Grito de Guerra](../../../04_skills/guerreiro/grito_de_guerra.md):** Eleva a moral da equipe, concedendo $+15\%$ de Dano e Armadura para todos os aliados por 6 segundos.
+2. **[Pele de Aço](../../../04_skills/guerreiro/pele_de_aco.md):** Endurece o corpo absorvendo os próximos 3 ataques com mitigação de 50%.
+3. **[Aura de Devoção](../../../04_skills/guerreiro/paladino/aura_de_devocao.md):** Reduz o dano sofrido por toda a equipe enquanto Alistair estiver vivo.
 
 ---
 

@@ -23,9 +23,9 @@ Nascido nas entranhas das Grandes Forjas de Karak-Vorn, Bromm foi forjado entre 
 ---
 
 ## 🪄 4. Habilidades Recomendadas (Build de 3 Skills)
-1. **[Investida](docs/idea/04_skills/guerreiro/investida.md):** Avança rapidamente contra o primeiro monstro, iniciando o combate e gerando aggro inicial.
-2. **[Postura Defensiva](docs/idea/04_skills/guerreiro/postura_defensiva.md):** Eleva o escudo reduzindo todo o dano físico sofrido em 25% enquanto ativo.
-3. **[Muralha Intransponível](docs/idea/04_skills/guerreiro/baluarte/muralha_intransponivel.md):** Planta o escudo de falange no chão, criando uma zona onde aliados atrás recebem 50% de redução de dano.
+1. **[Investida](../../../04_skills/guerreiro/investida.md):** Avança rapidamente contra o primeiro monstro, iniciando o combate e gerando aggro inicial.
+2. **[Postura Defensiva](../../../04_skills/guerreiro/postura_defensiva.md):** Eleva o escudo reduzindo todo o dano físico sofrido em 25% enquanto ativo.
+3. **[Muralha Intransponível](../../../04_skills/guerreiro/baluarte/muralha_intransponivel.md):** Planta o escudo de falange no chão, criando uma zona onde aliados atrás recebem 50% de redução de dano.
 
 ---
 

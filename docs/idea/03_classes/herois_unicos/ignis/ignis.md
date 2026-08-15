@@ -23,9 +23,9 @@ Nascido nas cinzas de um santuário destruído por dragões ancestrais, Ignis ca
 ---
 
 ## 🪄 4. Habilidades Recomendadas (Build de 3 Skills)
-1. **[Golpe Sagrado](docs/idea/04_skills/guerreiro/paladino/golpe_sagrado.md):** Ataque corpo a corpo imbuído de luz sagrada que causa dano bônus a demônios e mortos-vivos.
-2. **[Aura de Devoção](docs/idea/04_skills/guerreiro/paladino/aura_de_devocao.md):** Aura passiva que concede $+10\%$ de Defesa Mágica e Física para todos os aliados próximos.
-3. **[Mão da Cura](docs/idea/04_skills/guerreiro/paladino/mao_da_cura.md):** Converte mana em cura emergencial direta para si mesmo ou para o aliado mais debilitado.
+1. **[Golpe Sagrado](../../../04_skills/guerreiro/paladino/golpe_sagrado.md):** Ataque corpo a corpo imbuído de luz sagrada que causa dano bônus a demônios e mortos-vivos.
+2. **[Aura de Devoção](../../../04_skills/guerreiro/paladino/aura_de_devocao.md):** Aura passiva que concede $+10\%$ de Defesa Mágica e Física para todos os aliados próximos.
+3. **[Mão da Cura](../../../04_skills/guerreiro/paladino/mao_da_cura.md):** Converte mana em cura emergencial direta para si mesmo ou para o aliado mais debilitado.
 
 ---
 

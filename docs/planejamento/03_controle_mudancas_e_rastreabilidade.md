@@ -21,7 +21,7 @@ graph TD
 ```
 
 ### 1.1. Regra Anti-Inchaço de Escopo (Scope Creep Guard)
-Conforme definido no [`01_Pitch_MVP.md`](../../01_Pitch_MVP.md), os seguintes itens estão **estritamente bloqueados** durante a construção do MVP:
+Conforme definido no [`01_Pitch_MVP.md`](../01_Pitch_MVP.md), os seguintes itens estão **estritamente bloqueados** durante a construção do MVP:
 * ❌ Não incluir mais de 3 heróis (*apenas Bromm, Elysia e Beatrice*).
 * ❌ Não criar sistemas complexos de forja/gacha ou biomas adicionais.
 * ❌ Não adicionar mais de 1 masmorra graybox.
@@ -69,7 +69,7 @@ A tabela abaixo estabelece o mapeamento direto entre os **Requisitos de Game Des
 | **REQ-10** | HUD de Batalha com Barras Verticais | [`08_ui_hud_e_eventbus.md`](../projeto/08_ui_hud_e_eventbus.md) | **M7** | `BattleHUD.tscn`, `HeroHUDPanel.tscn` |
 | **REQ-11** | Pooler de Dano Flutuante 3D | [`08_ui_hud_e_eventbus.md`](../projeto/08_ui_hud_e_eventbus.md) | **M7** | `FloatingCombatTextPool.gd` |
 | **REQ-12** | Tela de Resumo & Fórmula de MVP | [`08_ui_hud_e_eventbus.md`](../projeto/08_ui_hud_e_eventbus.md) | **M7** | `SummaryScreen.tscn`, `MatchSummaryCalculator.gd` |
-| **REQ-13** | Loop Completo do MVP e Release | [`01_Pitch_MVP.md`](../../01_Pitch_MVP.md) | **M8** | Build Executável, Tag `v0.1.0-mvp` |
+| **REQ-13** | Loop Completo do MVP e Release | [`01_Pitch_MVP.md`](../01_Pitch_MVP.md) | **M8** | Build Executável, Tag `v0.1.0-mvp` |
 
 ---
 

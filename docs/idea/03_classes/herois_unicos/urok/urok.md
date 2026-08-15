@@ -21,9 +21,9 @@ Urok é o xamã ancião dos clãs orcs de Ogrimar. Diferente dos guerreiros brut
 ---
 
 ## 🪄 4. Habilidades Recomendadas (Build de 3 Skills)
-1. **[Totem da Força](docs/idea/04_skills/bruxo/xama/totem_da_forca.md):** Crava um totem no chão que emana uma aura contínua concedendo $+20\%$ de Dano Físico e Mágico aos heróis próximos.
-2. **[Corrente de Raios](docs/idea/04_skills/bruxo/xama/corrente_de_raios.md):** Dispara uma descarga elétrica que ricocheteia entre múltiplos monstros, causando dano e atordoando levemente.
-3. **[Sede de Sangue](docs/idea/04_skills/bruxo/xama/sede_de_sangue.md):** Entra em transe com a equipe, concedendo $+30\%$ de velocidade de ataque e roubo de vida a cada abate.
+1. **[Totem da Força](../../../04_skills/bruxo/xama/totem_da_forca.md):** Crava um totem no chão que emana uma aura contínua concedendo $+20\%$ de Dano Físico e Mágico aos heróis próximos.
+2. **[Corrente de Raios](../../../04_skills/bruxo/xama/corrente_de_raios.md):** Dispara uma descarga elétrica que ricocheteia entre múltiplos monstros, causando dano e atordoando levemente.
+3. **[Sede de Sangue](../../../04_skills/bruxo/xama/sede_de_sangue.md):** Entra em transe com a equipe, concedendo $+30\%$ de velocidade de ataque e roubo de vida a cada abate.
 
 ---
 
