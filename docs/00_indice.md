@@ -1,6 +1,6 @@
 # 🗺️ Índice Geral do Game Design & Engenharia (Autodungeon)
 
-Bem-vindo ao índice central de documentação do jogo **Autodungeon**. Este arquivo atua como o mapa interativo de navegação para todas as ideias, sistemas, raças, classes, habilidades, itens, cenários, arquitetura técnica, planejamento e publicação do projeto.
+Bem-vindo ao índice central de documentação do jogo **Autodungeon**. Este arquivo atua como o mapa interativo de navegação para todas as ideias, sistemas, raças, classes, habilidades, itens, cenários, arquitetura técnica, planejamento, publicação e expansões contínuas (**LiveOps**) do projeto.
 
 ---
 
@@ -10,7 +10,7 @@ Bem-vindo ao índice central de documentação do jogo **Autodungeon**. Este arq
 * 📐 [Método de Organização do GDD](Metodo_Organizacao_GDD.md) *(Diretrizes modulares e convenções de documentação)*
 * 🏛️ [Arquitetura Técnica & Engenharia de Software (Godot 4.x)](projeto/00_indice_arquitetura.md) *(Projeto técnico orientado a objetos, nós, FSM, data-driven e sistemas)*
 * 📋 [Planejamento do MVP & Gestão de Versões (Godot 4.7+ 3D)](planejamento/00_indice_planejamento.md) *(Marcos M0 a M8, controle de mudanças, Git LFS, SemVer e cronograma)*
-* 📱 [Roadmap Comercial & Guia de Publicação Play Store](roadmap_comercial_playstore.md) *(Monetização Freemium, IAP/Ads, compliance Google Play, otimização mobile 3D e métricas)*
+* 📱 [Roadmap Comercial & Guia de Publicação Play Store](roadmap_comercial_playstore.md) *(Monetização Freemium, IAP/Ads, compliance Google Play, otimização mobile 3D, Fases 1 a 6 e LiveOps)*
 
 ---
 
@@ -25,28 +25,31 @@ Bem-vindo ao índice central de documentação do jogo **Autodungeon**. Este arq
 * [Cálculos Gerais & Fórmulas](idea/01_design_sistemas/calculos_gerais.md) *(Mitigação linear, críticos por arma, tabela de XP 1-30, status de monstros, drops e fórmula de MVP)*
 * [Mecânicas de Inimigos & IA](idea/01_design_sistemas/mecanicas_inimigos.md) *(Packs de 2 a 5 monstros, 9 arquétipos táticos de IA, mecânica de assassino furtivo e auras de elites)*
 * [Mecânicas de Chefes & Arenas](idea/01_design_sistemas/mecanicas_bosses.md) *(Arena fechada, loop de telegrafia vermelha, transição de Fase 2 e Golpe Supremo único aos 10% de HP)*
+* 🌌 **[Sistema de Expansões, Sinergias & Variedade de Gameplay](idea/01_design_sistemas/sistema_expansoes_e_sinergias.md)** *(Ressonâncias de equipe por raça/classe, afixos de masmorra rotativos, Torre do Infinito, Daily Rifts e Maestria Pós-Cap 30)*
 
 ---
 
 ## 🧬 02. Personagens & Raças
-* 📜 [Regras Gerais de Raças](idea/02_racas/_lista_e_regras.md) *(Estrutura com passiva e habilidade racial de longo cooldown)*
+* 📜 [Regras Gerais & Arquitetura Extensível de Raças](idea/02_racas/_lista_e_regras.md) *(Estrutura com passiva e habilidade racial de longo cooldown)*
 * 🛡️ [Anão](idea/02_racas/anao.md) *(Defesa, Força, Engenharia e Grito da Forja)*
 * 🏹 [Elfo](idea/02_racas/elfo.md) *(Inteligência, Velocidade, Regeneração Contínua de Mana e Vento Feérico)*
 * ⚖️ [Humano](idea/02_racas/humano.md) *(Equilíbrio, adaptabilidade, versatilidade e Vontade de Sobreviver)*
 * 🐉 [Meio-Dragão](idea/02_racas/meio_dragao.md) *(Híbrido Físico/Mágico, Resistência a Queimadura e Sopro Primordial)*
 * 👣 [Metadílio](idea/02_racas/metadilio.md) *(Máxima Agilidade/Esquiva, sem slot de botas e Pique de Adrenalina)*
 * 🪓 [Orc](idea/02_racas/orc.md) *(Maior HP do jogo, Força Bruta e Fúria Sanguinária com Lifesteal)*
+* 🧬 **[Guia de Criação & Catálogo de Novas Raças](idea/02_racas/guia_criacao_novas_racas.md)** *(Framework, template, Power Budget e fichas de expansão: Morto-Vivo, Homem-Fera, Golem, Ínfero e Tritão)*
 
 ---
 
 ## ⚔️ 03. Classes de Personagens
-* 📜 [Lista Geral e Regras de Classes](idea/03_classes/_lista_e_regras.md) *(Sistema de subclasses desbloqueadas no Nível 15)*
+* 📜 [Lista Geral, Regras & Arquitetura de Classes](idea/03_classes/_lista_e_regras.md) *(Sistema de subclasses desbloqueadas no Nível 15)*
 * 🏹 [Arqueiro](idea/03_classes/arqueiro.md) *(Subclasses: Besteiro, Caçador, Pistoleiro)*
 * 🔮 [Bruxo](idea/03_classes/bruxo.md) *(Subclasses: Druida, Xamã, Necromante)*
 * 🛡️ [Guerreiro](idea/03_classes/guerreiro.md) *(Subclasses: Paladino, Berserker, Baluarte)*
 * 🗡️ [Ladino](idea/03_classes/ladino.md) *(Subclasses: Sombra, Bardo, Assassino)*
 * ✨ [Mago](idea/03_classes/mago.md) *(Subclasses: Elementalista, Rúnico, Ilusionista)*
 * ✝️ [Sacerdote](idea/03_classes/sacerdote.md) *(Subclasses: Clérigo, Inquisidor, Oráculo)*
+* ⚔️ **[Guia de Criação & Catálogo de Novas Classes](idea/03_classes/guia_criacao_novas_classes.md)** *(Framework de 15 habilidades por classe e fichas de expansão: Monge, Cavaleiro da Morte, Alquimista e Invocador)*
 
 ### 👥 Heróis Únicos Iniciais (15 Fichas)
 * **Tanks (4 Heróis):**
@@ -68,9 +71,13 @@ Bem-vindo ao índice central de documentação do jogo **Autodungeon**. Este arq
   * [Milo, o Melodista das Vielas](idea/03_classes/herois_unicos/milo/milo.md) *(Metadílio / Ladino - Bardo)*
   * [Urok, o Conjurador de Sangue](idea/03_classes/herois_unicos/urok/urok.md) *(Orc / Bruxo - Xamã)*
 
+### 👑 Expansões de Heróis Pós-Lançamento (Heróis #16 ao #30+)
+* 👑 **[Pipeline de Criação de Novos Heróis Únicos](idea/03_classes/herois_unicos/guia_pipeline_novos_herois.md)** *(Convergência de Raça + Classe + Lore + 3D + Fichas de Valéria, Jin, Zarek, Nyx e Thalassa)*
+
 ---
 
 ## 🪄 04. Compêndio de Habilidades & Skills
+* 🪄 **[Guia de Criação de Novas Skills, Efeitos & Sinergias](idea/04_skills/guia_criacao_novas_skills_e_efeitos.md)** *(Efeitos polimórficos, CC Stun/Freeze/Silence/Taunt, combos elementais e balanceamento)*
 
 ### 🏹 Arqueiro
 * **Habilidades Base:**
@@ -80,8 +87,6 @@ Bem-vindo ao índice central de documentação do jogo **Autodungeon**. Este arq
   * **Caçador:** [Invocar Companheiro](idea/04_skills/arqueiro/cacador/invocar_companheiro.md) | [Mira Telescópica](idea/04_skills/arqueiro/cacador/mira_telescopica.md) | [Armadilha de Espinhos](idea/04_skills/arqueiro/cacador/armadilha_de_espinhos.md)
   * **Pistoleiro:** [Rajada Dupla](idea/04_skills/arqueiro/pistoleiro/rajada_dupla.md) | [Tiro à Queima-Roupa](idea/04_skills/arqueiro/pistoleiro/tiro_a_queima_roupa.md) | [Dança de Chumbo](idea/04_skills/arqueiro/pistoleiro/danca_de_chumbo.md)
 
----
-
 ### 🔮 Bruxo
 * **Habilidades Base:**
   * [Esfera de Energia](idea/04_skills/bruxo/esfera_de_energia.md) | [Raízes Aprisionadoras](idea/04_skills/bruxo/raizes_aprisionadoras.md) | [Pacto de Sangue](idea/04_skills/bruxo/pacto_de_sangue.md) | [Drenar Vida](idea/04_skills/bruxo/drenar_vida.md) | [Aura de Decadência](idea/04_skills/bruxo/aura_de_decadencia.md) | [Invocar Espírito](idea/04_skills/bruxo/invocar_espirito.md)
@@ -89,8 +94,6 @@ Bem-vindo ao índice central de documentação do jogo **Autodungeon**. Este arq
   * **Druida:** [Florescimento](idea/04_skills/bruxo/druida/florescimento.md) | [Pele de Casca](idea/04_skills/bruxo/druida/pele_de_casca.md) | [Enxame de Insetos](idea/04_skills/bruxo/druida/enxame_de_insetos.md)
   * **Xamã:** [Totem da Força](idea/04_skills/bruxo/xama/totem_da_forca.md) | [Corrente de Raios](idea/04_skills/bruxo/xama/corrente_de_raios.md) | [Sede de Sangue](idea/04_skills/bruxo/xama/sede_de_sangue.md)
   * **Necromante:** [Erguer Esqueletos](idea/04_skills/bruxo/necromante/erguer_esqueletos.md) | [Explosão de Cadáver](idea/04_skills/bruxo/necromante/explosao_de_cadaver.md) | [Maldição do Enfraquecimento](idea/04_skills/bruxo/necromante/maldicao_do_enfraquecimento.md)
-
----
 
 ### 🛡️ Guerreiro
 * **Habilidades Base:**
@@ -100,8 +103,6 @@ Bem-vindo ao índice central de documentação do jogo **Autodungeon**. Este arq
   * **Berserker:** [Fúria Cega](idea/04_skills/guerreiro/berserker/furia_cega.md) | [Corte Brutal](idea/04_skills/guerreiro/berserker/corte_brutal.md) | [Grito de Sangue](idea/04_skills/guerreiro/berserker/grito_de_sangue.md)
   * **Baluarte:** [Muralha Intransponível](idea/04_skills/guerreiro/baluarte/muralha_intransponivel.md) | [Levantar Escudo](idea/04_skills/guerreiro/baluarte/levantar_escudo.md) | [Soco com Escudo](idea/04_skills/guerreiro/baluarte/soco_com_escudo.md)
 
----
-
 ### 🗡️ Ladino
 * **Habilidades Base:**
   * [Ataque Furtivo](idea/04_skills/ladino/ataque_furtivo.md) | [Lançar Facas](idea/04_skills/ladino/lancar_facas.md) | [Reflexos Rápidos](idea/04_skills/ladino/reflexos_rapidos.md) | [Passo das Sombras](idea/04_skills/ladino/passo_das_sombras.md) | [Veneno Paralisante](idea/04_skills/ladino/veneno_paralisante.md) | [Cortina de Fumaça](idea/04_skills/ladino/cortina_de_fumaca.md)
@@ -110,8 +111,6 @@ Bem-vindo ao índice central de documentação do jogo **Autodungeon**. Este arq
   * **Bardo:** [Canção da Celeridade](idea/04_skills/ladino/bardo/cancao_da_celeridade.md) | [Dissonância](idea/04_skills/ladino/bardo/dissonancia.md) | [Acordes Curativos](idea/04_skills/ladino/bardo/acordes_curativos.md)
   * **Assassino:** [Veneno Letal](idea/04_skills/ladino/assassino/veneno_letal.md) | [Degolar](idea/04_skills/ladino/assassino/degolar.md) | [Lâminas Sangrentas](idea/04_skills/ladino/assassino/laminas_sangrentas.md)
 
----
-
 ### ✨ Mago
 * **Habilidades Base:**
   * [Míssil Mágico](idea/04_skills/mago/missil_magico.md) | [Bola de Fogo](idea/04_skills/mago/bola_de_fogo.md) | [Nova de Gelo](idea/04_skills/mago/nova_de_gelo.md) | [Intelecto Arcano](idea/04_skills/mago/intelecto_arcano.md) | [Escudo de Mana](idea/04_skills/mago/escudo_de_mana.md) | [Chuva de Meteoros](idea/04_skills/mago/chuva_de_meteoros.md)
@@ -119,8 +118,6 @@ Bem-vindo ao índice central de documentação do jogo **Autodungeon**. Este arq
   * **Elementalista:** [Pilar de Fogo](idea/04_skills/mago/elementalista/pilar_de_fogo.md) | [Raio Congelante](idea/04_skills/mago/elementalista/raio_congelante.md) | [Tempestade de Raios](idea/04_skills/mago/elementalista/tempestade_de_raios.md)
   * **Rúnico:** [Selo Explosivo](idea/04_skills/mago/runico/selo_explosivo.md) | [Barreira de Proteção](idea/04_skills/mago/runico/barreira_de_protecao.md) | [Sobrecarga Arcana](idea/04_skills/mago/runico/sobrecarga_arcana.md)
   * **Ilusionista:** [Clone Espelhado](idea/04_skills/mago/ilusionista/clone_espelhado.md) | [Confusão Mental](idea/04_skills/mago/ilusionista/confusao_mental.md) | [Distração Ilusória](idea/04_skills/mago/ilusionista/distracao_ilusoria.md)
-
----
 
 ### ✝️ Sacerdote
 * **Habilidades Base:**

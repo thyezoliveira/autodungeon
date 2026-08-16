@@ -65,8 +65,8 @@ Um Marco (Milestone) é considerado **oficialmente concluído** somente quando s
 ---
 
 ## 🎯 4. Próxima Etapa: Detalhamento em Tarefas
-
-Com os marcos, dependências, governança de GitHub e critérios de aceitação formalmente estabelecidos, o planejamento está pronto para o próximo passo: **a decomposição de cada Marco em Tarefas Técnicas Individuais de Execução**.
+Com os marcos, dependências, governança de GitHub e critérios de aceitação formalmente estabelecidos, a decomposição em tarefas detalhadas para desenvolvimento diário está disponível em:
+👉 **[WBS Master & Arquivos de Execução por Marco](../../cronograma/wbs.md)**
 
 ---
 

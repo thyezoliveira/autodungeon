@@ -174,6 +174,18 @@ graph LR
 
 ---
 
+## 🌌 3. Além do MVP: Fundação Preparada para LiveOps & Novos Heróis
+
+A conclusão dos marcos M0 a M8 entrega a base técnica e arquitetural estritamente desacoplada (Custom Resources, Dynamic Registry Pattern e Node-Based Components) que permite que, após o lançamento comercial na Google Play Store com os 15 heróis iniciais e monetização:
+1. Novas Raças (*Morto-Vivo, Homem-Fera, Golem, Ínfero, Tritão*) e Novas Classes (*Monge, Cavaleiro da Morte, Alquimista, Invocador*) sejam adicionadas como Resources `.tres`.
+2. Novos Heróis Únicos (#16 a #30+) sejam injetados via temporadas de 6 semanas sem quebrar saves antigos.
+3. Mecânicas de variedade como *Sinergias de Ressonância*, *Torre do Infinito* e *Afixos de Masmorra* sejam ativadas.
+
+*Veja o planejamento completo em:* **[05. Roadmap de Expansões & LiveOps Pós-Lançamento](05_roadmap_expansoes_pos_lancamento.md)**.
+
+---
+
 ## 🔗 Próximos Passos
 * Continue para: **[02. Gestão de Configuração & GitHub](02_gestao_configuracao_e_github.md)**
 * Voltar ao: **[Índice de Planejamento](00_indice_planejamento.md)**
+

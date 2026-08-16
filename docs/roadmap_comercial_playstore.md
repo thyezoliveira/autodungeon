@@ -139,12 +139,43 @@ Para publicar um aplicativo no Google Play Console em conformidade com as regras
 | **Fase 2** | **Integração dos Plugins Mobile & Monetização:**<br>Instalar o plugin do Google Play Billing, AdMob e configurar os gatilhos de anúncios premiados e compras. | Economia do jogo funcionando com IAP e Ads. |
 | **Fase 3** | **Produção de Arte 3D & Áudio Final:**<br>Substituição dos blocos cinzas por modelos low-poly texturizados, animações e trilha sonora original. | Versão visualmente finalizada (Beta). |
 | **Fase 4** | **Closed Beta dos 20 Testadores:**<br>Configurar a faixa de teste fechado no Google Play Console e rodar os 14 dias de validação com feedback de usuários reais. | Aprovação do Google Play para Produção. |
-| **Fase 5** | **Lançamento Oficial & LiveOps:**<br>Publicação global na Google Play Store, monitoramento de métricas via GameAnalytics e atualizações de balanceamento. | 🚀 **Jogo Comercial Publicado** |
+| **Fase 5** | **Lançamento Oficial & Monetização Ativa:**<br>Publicação global na Google Play Store, monitoramento de métricas via GameAnalytics e início da operação comercial. | 🚀 **Jogo Comercial Publicado** |
+| **Fase 6** | **Expansões, LiveOps & Novos Heróis (Pós-Lançamento):**<br>Ciclo de Temporadas de 6 semanas adicionando novas Raças, novas Classes, novas Skills e novos Heróis (#16 a #30+), além de Torre do Infinito, Afixos de Masmorra e Sinergias de Equipe. | 🌌 **Ecossistema Vivo em Expansão** |
 
 ---
 
-## 📊 4. Estatísticas do Projeto Acumuladas
+## 🌌 4. Arquitetura do Ciclo de Expansões & Novos Heróis (Pós-Lançamento)
 
-* **Documentação Total na Pasta `docs/`:** **175 arquivos**, **310.153 palavras**, **4.572.493 caracteres**.
-* **Tempo de Estruturação com IA:** **10 horas e 25 minutos** (equivalente a ~450-600 horas de uma equipe sênior multidisciplinar tradicional).
-* **Estado Atual:** 100% pronto para início da implementação do **Marco 0 (M0)** na Godot Engine 4.7+.
+A longevidade e a monetização sustentável do jogo após a chegada à Google Play Store são impulsionadas pelo framework modular de conteúdo:
+
+```mermaid
+graph TD
+    StoreRelease[🚀 Lançamento Oficial na Google Play] --> SeasonLive[Ciclo de Temporadas LiveOps de 6 Semanas]
+    
+    SeasonLive --> NewRaces[Novas Raças: Morto-Vivo, Fera, Golem, Ínfero, Tritão]
+    SeasonLive --> NewClasses[Novas Classes: Monge, Cavaleiro da Morte, Alquimista, Invocador]
+    SeasonLive --> NewSkills[Novas Skills & Combos Elementais / CC]
+    
+    NewRaces --> Culmination[👑 Culminação em Novos Heróis Únicos #16 ao #30+]
+    NewClasses --> Culmination
+    NewSkills --> Culmination
+    
+    Culmination --> Variety[Variedade de Gameplay: Sinergias, Afixos, Rifts & Torre Infinita]
+```
+
+* **Documentos de Referência de Expansão:**
+  * 🌌 [Sistema de Expansões, Sinergias & Variedade de Gameplay](idea/01_design_sistemas/sistema_expansoes_e_sinergias.md)
+  * 🧬 [Guia de Criação de Novas Raças](idea/02_racas/guia_criacao_novas_racas.md)
+  * ⚔️ [Guia de Criação de Novas Classes](idea/03_classes/guia_criacao_novas_classes.md)
+  * 🪄 [Guia de Criação de Novas Skills & Efeitos](idea/04_skills/guia_criacao_novas_skills_e_efeitos.md)
+  * 👑 [Pipeline de Criação de Novos Heróis Únicos](idea/03_classes/herois_unicos/guia_pipeline_novos_herois.md)
+  * 🏛️ [Arquitetura Técnica de LiveOps & Expansões Modulares (Godot 4.x)](projeto/10_arquitetura_liveops_expansoes_modulares.md)
+  * 📋 [Roadmap de Expansões & LiveOps Pós-Lançamento](planejamento/05_roadmap_expansoes_pos_lancamento.md)
+
+---
+
+## 📊 5. Estatísticas do Projeto Acumuladas
+
+* **Documentação Total na Pasta `docs/`:** **181 arquivos**, **335.000+ palavras**, **4.900.000+ caracteres**.
+* **Tempo de Estruturação com IA:** **10 horas e 45 minutos** (equivalente a ~500-700 horas de uma equipe sênior multidisciplinar tradicional).
+* **Estado Atual:** 100% pronto para início da implementação do **Marco 0 (M0)** na Godot Engine 4.7+ com arquitetura modular preparada para expansões infinitas pós-lançamento.

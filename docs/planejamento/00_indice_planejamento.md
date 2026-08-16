@@ -13,7 +13,8 @@ Este diretório contém o planejamento estratégico, metodológico e de engenhar
 ├── 📄 01_visao_mvp_e_marcos.md                <- Os 9 Marcos de Desenvolvimento (M0 a M8)
 ├── 📄 02_gestao_configuracao_e_github.md      <- Git Flow, Git LFS, Conventional Commits e Rollback
 ├── 📄 03_controle_mudancas_e_rastreabilidade.md <- Processo de Change Requests, Baseline e Changelog
-└── 📄 04_cronograma_e_cadencia.md             <- Cronograma por Marcos, Dependências e DoD
+├── 📄 04_cronograma_e_cadencia.md             <- Cronograma por Marcos, Dependências e DoD
+└── 📄 05_roadmap_expansoes_pos_lancamento.md  <- LiveOps, Temporadas de 6 Semanas e Novos Heróis #16-#30+
 ```
 
 ---
@@ -26,6 +27,7 @@ Este diretório contém o planejamento estratégico, metodológico e de engenhar
 | **[02. Gestão de Configuração & GitHub](02_gestao_configuracao_e_github.md)** | Controle de versão, integridade de assets e rollback. | *Trunk-Based / Feature Branches, Git LFS (.glb/.png/.ogg), Conventional Commits, Tags e Revert.* |
 | **[03. Controle de Mudanças & Rastreabilidade](03_controle_mudancas_e_rastreabilidade.md)** | Governança de escopo e histórico de evolução. | *Change Request Workflow, SemVer 2.0, CHANGELOG.md e Matriz GDD $\rightarrow$ Arquitetura $\rightarrow$ Marco.* |
 | **[04. Cronograma & Cadência](04_cronograma_e_cadencia.md)** | Cronograma iterativo e matriz de dependências. | *Sequenciamento lógico, checkpoints de validação e Definition of Done (DoD).* |
+| **[05. Roadmap de Expansões & LiveOps](05_roadmap_expansoes_pos_lancamento.md)** | LiveOps pós-lançamento Google Play. | *Ciclo de 6 semanas, Seasons 1 a 4, pipeline de QA para novos heróis e rollout escalonado.* |
 
 ---
 
@@ -56,6 +58,7 @@ graph TD
 ---
 
 ## 🔗 Referências Cruzadas
+* [WBS Master & Decomposição de Tarefas (cronograma/)](../../cronograma/wbs.md)
 * [Documento de Escopo & Pitch do MVP](../01_Pitch_MVP.md)
 * [Índice Geral da Arquitetura Técnica](../projeto/00_indice_arquitetura.md)
 * [Índice Geral do Game Design (GDD)](../00_indice.md)
