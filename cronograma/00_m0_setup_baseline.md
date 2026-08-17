@@ -109,9 +109,9 @@ exports/
    Verifique no explorador do sistema ou terminal (`ls -la src/`) se todos os 6 subdiretórios principais (`core`, `data`, `entities`, `systems`, `ui`, `world`) foram criados.
 
 #### 4. Critérios de Aceitação
-- [ ] Todas as pastas de `src/`, `assets/` e `tests/` existem no projeto.
-- [ ] Arquivo `.gitattributes` inclui filtros LFS para extensões 3D, áudio e imagem.
-- [ ] Arquivo `.gitignore` ignora a pasta `.godot/` e arquivos `.import`.
+- [x] Todas as pastas de `src/`, `assets/` e `tests/` existem no projeto.
+- [x] Arquivo `.gitattributes` inclui filtros LFS para extensões 3D, áudio e imagem.
+- [x] Arquivo `.gitignore` ignora a pasta `.godot/` e arquivos `.import`.
 
 #### 5. Lembrete de Commit
 ```bash
