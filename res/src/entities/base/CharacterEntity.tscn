@@ -9,6 +9,7 @@
 [ext_resource type="Script" path="res://src/entities/fsm/states/DeadState.gd" id="7_dead"]
 [ext_resource type="Script" path="res://src/entities/components/MovementComponent.gd" id="8_movement"]
 [ext_resource type="Script" path="res://src/entities/fsm/states/MarchState.gd" id="9_march"]
+[ext_resource type="Script" path="res://src/entities/components/SkillHolderComponent.gd" id="10_skillholder"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_1"]
 radius = 0.4
@@ -68,6 +69,10 @@ target_desired_distance = 0.5
 script = ExtResource("8_movement")
 navigation_agent = NodePath("../NavigationAgent3D")
 character_body = NodePath("../..")
+
+[node name="SkillHolderComponent" type="Node" parent="Components" node_paths=PackedStringArray("actor")]
+script = ExtResource("10_skillholder")
+actor = NodePath("../..")
 
 [node name="StateMachine" type="Node" parent="." node_paths=PackedStringArray("initial_state")]
 script = ExtResource("5_fsm")

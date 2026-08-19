@@ -188,8 +188,8 @@ func execute_skill(skill_data: SkillData, caster: CharacterEntity, target: Node3
    Após 5.0s, a skill deve retornar `can_cast_skill == true`.
 
 #### 4. Critérios de Aceitação
-- [ ] Cooldowns rastreados em tempo real com emissão de progresso normalizado (0.0 a 1.0).
-- [ ] Validação rigorosa de mana antes da ativação.
+- [x] Cooldowns rastreados em tempo real com emissão de progresso normalizado (0.0 a 1.0).
+- [x] Validação rigorosa de mana antes da ativação.
 
 #### 5. Lembrete de Commit
 ```bash
