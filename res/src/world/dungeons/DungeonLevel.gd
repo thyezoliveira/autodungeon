@@ -26,7 +26,7 @@ const Hitbox3DScript = preload("res://src/entities/components/Hitbox3D.gd")
 
 @export var auto_spawn_party: bool = true
 @export var auto_spawn_enemies: bool = true
-@export var auto_start_traversal: bool = false
+@export var auto_start_traversal: bool = true
 
 @export_group("Internal References")
 @export var navigation_region: NavigationRegion3D = null
@@ -426,6 +426,14 @@ func start_traversal() -> void:
 		if leader.state_machine != null:
 			leader.state_machine.change_state("MarchState")
 
+	var support: CharacterEntity = party_controller.get_support()
+	if support != null and is_instance_valid(support) and support.state_machine != null:
+		support.state_machine.change_state("MarchState")
+
+	var dps: CharacterEntity = party_controller.get_dps()
+	if dps != null and is_instance_valid(dps) and dps.state_machine != null:
+		dps.state_machine.change_state("MarchState")
+
 
 func _bind_leader_signals(leader: CharacterEntity) -> void:
 	if _leader_connected != null and is_instance_valid(_leader_connected):
@@ -559,6 +567,14 @@ func _on_room_cleared_handler(r_idx: int) -> void:
 		leader.movement_component.move_towards(_cached_waypoints[_current_wp_idx])
 		if leader.state_machine != null:
 			leader.state_machine.change_state("MarchState")
+
+		var support: CharacterEntity = party_controller.get_support()
+		if support != null and is_instance_valid(support) and support.state_machine != null:
+			support.state_machine.change_state("MarchState")
+
+		var dps: CharacterEntity = party_controller.get_dps()
+		if dps != null and is_instance_valid(dps) and dps.state_machine != null:
+			dps.state_machine.change_state("MarchState")
 
 
 func _advance_to_next_waypoint() -> void:

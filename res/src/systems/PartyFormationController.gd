@@ -46,17 +46,49 @@ func _update_follower_targets() -> void:
 	if leader_hero == null or not is_instance_valid(leader_hero) or not is_hero_alive(leader_hero):
 		return
 
+	var leader_is_marching: bool = false
+	if leader_hero.movement_component != null and leader_hero.movement_component.is_moving:
+		leader_is_marching = true
+	elif leader_hero.state_machine != null and leader_hero.state_machine.get_current_state_name() == "MarchState":
+		leader_is_marching = true
+
 	if support_hero != null and is_instance_valid(support_hero) and is_hero_alive(support_hero):
 		var target_pos: Vector3 = calculate_formation_position(support_offset)
 		var move_comp: MovementComponent = _get_hero_movement_component(support_hero)
 		if move_comp != null:
-			move_comp.move_towards(target_pos)
+			var dist_s: float = _calculate_planar_distance(support_hero.global_position, target_pos)
+			if leader_is_marching and dist_s > 0.35:
+				move_comp.move_towards(target_pos)
+				if support_hero.state_machine != null and support_hero.state_machine.get_current_state_name() == "IdleState":
+					support_hero.state_machine.change_state("MarchState")
+			elif not leader_is_marching and dist_s > 0.8:
+				move_comp.move_towards(target_pos)
+				if support_hero.state_machine != null and support_hero.state_machine.get_current_state_name() == "IdleState":
+					support_hero.state_machine.change_state("MarchState")
+			else:
+				if not move_comp.is_moving or dist_s <= 0.4:
+					move_comp.stop_movement()
+					if support_hero.state_machine != null and support_hero.state_machine.get_current_state_name() == "MarchState":
+						support_hero.state_machine.change_state("IdleState")
 
 	if dps_hero != null and is_instance_valid(dps_hero) and is_hero_alive(dps_hero):
 		var target_pos: Vector3 = calculate_formation_position(dps_offset)
 		var move_comp: MovementComponent = _get_hero_movement_component(dps_hero)
 		if move_comp != null:
-			move_comp.move_towards(target_pos)
+			var dist_d: float = _calculate_planar_distance(dps_hero.global_position, target_pos)
+			if leader_is_marching and dist_d > 0.35:
+				move_comp.move_towards(target_pos)
+				if dps_hero.state_machine != null and dps_hero.state_machine.get_current_state_name() == "IdleState":
+					dps_hero.state_machine.change_state("MarchState")
+			elif not leader_is_marching and dist_d > 0.8:
+				move_comp.move_towards(target_pos)
+				if dps_hero.state_machine != null and dps_hero.state_machine.get_current_state_name() == "IdleState":
+					dps_hero.state_machine.change_state("MarchState")
+			else:
+				if not move_comp.is_moving or dist_d <= 0.4:
+					move_comp.stop_movement()
+					if dps_hero.state_machine != null and dps_hero.state_machine.get_current_state_name() == "MarchState":
+						dps_hero.state_machine.change_state("IdleState")
 
 
 ## Calcula a coordenada global no espaço 3D para um dado offset relativo à orientação do líder.
