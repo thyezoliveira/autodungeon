@@ -1,0 +1,22 @@
+[gd_resource type="Resource" script_class="SkillData" format=3]
+
+[ext_resource type="Script" path="res://src/data/skills/SkillEffect.gd" id="1_skilleffect"]
+[ext_resource type="Script" path="res://src/data/skills/SkillData.gd" id="2_skilldata"]
+
+[sub_resource type="Resource" id="Resource_tribal_blessing_eff"]
+script = ExtResource("1_skilleffect")
+target_type = 3
+value_base = 25
+stat_scaling_factor = 0.0
+duration = 0.0
+
+[resource]
+script = ExtResource("2_skilldata")
+id = "goblin_tribal_blessing"
+display_name = "Bênção Tribal"
+description = "Invoca espíritos ancestrais para curar um aliado monstro ferido."
+mana_cost = 0.0
+cooldown = 4.0
+cast_time = 0.0
+range_meters = 6.0
+effects = Array[ExtResource("1_skilleffect")]([SubResource("Resource_tribal_blessing_eff")])
