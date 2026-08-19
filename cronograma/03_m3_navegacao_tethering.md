@@ -283,8 +283,8 @@ TestPartyNavigation3D (Node3D)
    A câmera isométrica deve acompanhar o centro de massa do grupo suavemente.
 
 #### 4. Critérios de Aceitação
-- [ ] Trio percorre os 4 waypoints sem colidir ou se prender nas paredes.
-- [ ] NavMesh 3D assado com folga de margem para o tamanho das cápsulas dos 3 heróis.
+- [x] Trio percorre os 4 waypoints sem colidir ou se prender nas paredes.
+- [x] NavMesh 3D assado com folga de margem para o tamanho das cápsulas dos 3 heróis.
 
 #### 5. Lembrete de Commit
 ```bash
