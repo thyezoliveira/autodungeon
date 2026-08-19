@@ -1,6 +1,6 @@
 # 🚩 Marco 4 (M4) — Combate 3D, Gatilho por Impacto & IA dos 3 Heróis
 
-> **Status:** Em Progresso  
+> **Status:** Concluído  
 > **Branch de Trabalho:** `feat/m4-combat-ai`  
 > **Tag Final do Marco:** `v0.1.0-m4-combat-ai`  
 > **Documentos de Referência:** [`docs/planejamento/01_visao_mvp_e_marcos.md`](../docs/planejamento/01_visao_mvp_e_marcos.md), [`docs/projeto/04_maquina_estados_e_ia.md`](../docs/projeto/04_maquina_estados_e_ia.md), [`docs/projeto/05_sistema_combate_e_habilidades.md`](../docs/projeto/05_sistema_combate_e_habilidades.md), [`docs/idea/geral.md`](../docs/idea/geral.md).
@@ -342,8 +342,8 @@ Consolidação final do combate: o trio avança em marcha, colide com um pack de
    * Ao morrer o último monstro, o `CombatTriggerSystem` desativa o modo combate e a marcha é retomada.
 
 #### 3. Critérios de Aceitação
-- [ ] Loop de combate completo validado do 1º impacto ao encerramento da batalha.
-- [ ] 0 erros de referência de nós no console.
+- [x] Loop de combate completo validado do 1º impacto ao encerramento da batalha.
+- [x] 0 erros de referência de nós no console.
 
 #### 4. Passo a Passo de Merge & Tagging
 ```bash

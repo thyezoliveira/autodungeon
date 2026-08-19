@@ -1,0 +1,475 @@
+[gd_scene format=3]
+
+[ext_resource type="Script" path="res://src/world/PartyCombatWorld.gd" id="1_world"]
+[ext_resource type="Script" path="res://src/systems/PartyFormationController.gd" id="2_formation"]
+[ext_resource type="PackedScene" path="res://src/entities/base/CharacterEntity.tscn" id="3_entity_scene"]
+[ext_resource type="Script" path="res://src/entities/base/CharacterEntity.gd" id="4_entity_script"]
+[ext_resource type="Resource" path="res://src/data/heroes/resources/hero_bromm.tres" id="5_bromm_data"]
+[ext_resource type="Resource" path="res://src/data/heroes/resources/hero_beatrice.tres" id="6_beatrice_data"]
+[ext_resource type="Resource" path="res://src/data/heroes/resources/hero_elysia.tres" id="7_elysia_data"]
+[ext_resource type="Script" path="res://src/entities/ai/TankAIController.gd" id="8_tank_ai"]
+[ext_resource type="Script" path="res://src/entities/ai/SupportAIController.gd" id="9_support_ai"]
+[ext_resource type="Script" path="res://src/entities/ai/RangedDPSAIController.gd" id="10_dps_ai"]
+[ext_resource type="Script" path="res://src/systems/CombatTriggerSystem.gd" id="11_trigger_sys"]
+[ext_resource type="Script" path="res://src/world/IsometricCameraRig.gd" id="12_camera_rig"]
+[ext_resource type="Script" path="res://src/entities/components/Hitbox3D.gd" id="13_hitbox"]
+[ext_resource type="Script" path="res://src/entities/components/Hurtbox3D.gd" id="14_hurtbox"]
+[ext_resource type="Script" path="res://src/entities/components/ThreatTable.gd" id="15_threat"]
+[ext_resource type="Resource" path="res://src/data/enemies/enemy_goblin_warrior.tres" id="16_goblin_data"]
+[ext_resource type="Script" path="res://src/entities/components/StatsComponent.gd" id="17_stats"]
+[ext_resource type="Script" path="res://src/entities/components/HealthComponent.gd" id="18_health"]
+[ext_resource type="Script" path="res://src/entities/components/MovementComponent.gd" id="19_movement"]
+
+[sub_resource type="Environment" id="Environment_comb"]
+background_mode = 1
+background_color = Color(0.1, 0.12, 0.15, 1)
+ambient_light_source = 2
+ambient_light_color = Color(0.6, 0.6, 0.6, 1)
+
+[sub_resource type="NavigationMesh" id="NavigationMesh_comb"]
+vertices = PackedVector3Array(3.4, 2.8, -2.85, 3.4, 2.8, 8.65, 8.65, 2.8, 8.65, 8.65, 2.8, -2.85, 2.4, 0.3, 7.9, 2.4, 0.3, -2.35, -2.35, 0.3, -2.35, -2.35, 0.3, 8.15, 9.65, 0.3, 7.9, 14.4, 0.3, 8.15, 14.4, 0.3, -2.35, 9.65, 0.3, -2.35, 2.65, 0.3, 9.65, -2.35, 0.3, 14.4, 8.15, 0.3, 14.4, 7.9, 0.3, 9.65, 9.4, 0.3, 9.65, 14.4, 0.3, 14.4)
+polygons = [PackedInt32Array(3, 2, 0), PackedInt32Array(0, 2, 1), PackedInt32Array(5, 4, 6), PackedInt32Array(6, 4, 7), PackedInt32Array(11, 10, 8), PackedInt32Array(8, 10, 9), PackedInt32Array(4, 12, 7), PackedInt32Array(7, 12, 13), PackedInt32Array(15, 14, 12), PackedInt32Array(12, 14, 13), PackedInt32Array(14, 15, 16), PackedInt32Array(16, 8, 9), PackedInt32Array(14, 16, 17), PackedInt32Array(17, 16, 9)]
+geometry_parsed_geometry_type = 1
+agent_height = 1.8
+agent_radius = 0.4
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_f1"]
+size = Vector3(6, 0.2, 18)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_flr"]
+albedo_color = Color(0.25, 0.28, 0.32, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_f1"]
+material = SubResource("StandardMaterial3D_flr")
+size = Vector3(6, 0.2, 18)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_f2"]
+size = Vector3(18, 0.2, 6)
+
+[sub_resource type="BoxMesh" id="BoxMesh_f2"]
+material = SubResource("StandardMaterial3D_flr")
+size = Vector3(18, 0.2, 6)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_f3"]
+size = Vector3(6, 0.2, 18)
+
+[sub_resource type="BoxMesh" id="BoxMesh_f3"]
+material = SubResource("StandardMaterial3D_flr")
+size = Vector3(6, 0.2, 18)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_w1"]
+size = Vector3(0.6, 2.5, 18.6)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_wal"]
+albedo_color = Color(0.45, 0.48, 0.52, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_w1"]
+material = SubResource("StandardMaterial3D_wal")
+size = Vector3(0.6, 2.5, 18.6)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_w2"]
+size = Vector3(18.6, 2.5, 0.6)
+
+[sub_resource type="BoxMesh" id="BoxMesh_w2"]
+material = SubResource("StandardMaterial3D_wal")
+size = Vector3(18.6, 2.5, 0.6)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_w3"]
+size = Vector3(0.6, 2.5, 18.6)
+
+[sub_resource type="BoxMesh" id="BoxMesh_w3"]
+material = SubResource("StandardMaterial3D_wal")
+size = Vector3(0.6, 2.5, 18.6)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_wi"]
+size = Vector3(6, 2.5, 12.3)
+
+[sub_resource type="BoxMesh" id="BoxMesh_wi"]
+material = SubResource("StandardMaterial3D_wal")
+size = Vector3(6, 2.5, 12.3)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_wb1"]
+size = Vector3(6, 2.5, 0.6)
+
+[sub_resource type="BoxMesh" id="BoxMesh_wb1"]
+material = SubResource("StandardMaterial3D_wal")
+size = Vector3(6, 2.5, 0.6)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_wb2"]
+size = Vector3(6, 2.5, 0.6)
+
+[sub_resource type="BoxMesh" id="BoxMesh_wb2"]
+material = SubResource("StandardMaterial3D_wal")
+size = Vector3(6, 2.5, 0.6)
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_hero_hit"]
+radius = 0.8
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_goblin"]
+radius = 0.35
+height = 1.4
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_goblin"]
+albedo_color = Color(0.2, 0.7, 0.25, 1)
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_goblin"]
+material = SubResource("StandardMaterial3D_goblin")
+radius = 0.35
+height = 1.4
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_goblin_hurt"]
+radius = 0.45
+height = 1.5
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_goblin_hit"]
+radius = 0.6
+
+[node name="TestPartyCombat3D" type="Node3D"]
+script = ExtResource("1_world")
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_comb")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(0.70710677, -0.49999997, 0.49999997, 0, 0.70710677, 0.70710677, -0.70710677, -0.49999997, 0.49999997, 0, 0, 0)
+
+[node name="NavigationRegion3D" type="NavigationRegion3D" parent="."]
+navigation_mesh = SubResource("NavigationMesh_comb")
+
+[node name="CorridorGeometry" type="StaticBody3D" parent="NavigationRegion3D"]
+collision_mask = 0
+
+[node name="Floor_1_Col" type="CollisionShape3D" parent="NavigationRegion3D/CorridorGeometry"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.1, 6)
+shape = SubResource("BoxShape3D_f1")
+
+[node name="Floor_1_Mesh" type="MeshInstance3D" parent="NavigationRegion3D/CorridorGeometry"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.1, 6)
+mesh = SubResource("BoxMesh_f1")
+
+[node name="Floor_2_Col" type="CollisionShape3D" parent="NavigationRegion3D/CorridorGeometry"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, -0.1, 12)
+shape = SubResource("BoxShape3D_f2")
+
+[node name="Floor_2_Mesh" type="MeshInstance3D" parent="NavigationRegion3D/CorridorGeometry"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, -0.1, 12)
+mesh = SubResource("BoxMesh_f2")
+
+[node name="Floor_3_Col" type="CollisionShape3D" parent="NavigationRegion3D/CorridorGeometry"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12, -0.1, 6)
+shape = SubResource("BoxShape3D_f3")
+
+[node name="Floor_3_Mesh" type="MeshInstance3D" parent="NavigationRegion3D/CorridorGeometry"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12, -0.1, 6)
+mesh = SubResource("BoxMesh_f3")
+
+[node name="Wall_OuterLeft_Col" type="CollisionShape3D" parent="NavigationRegion3D/CorridorGeometry"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.3, 1.25, 6)
+shape = SubResource("BoxShape3D_w1")
+
+[node name="Wall_OuterLeft_Mesh" type="MeshInstance3D" parent="NavigationRegion3D/CorridorGeometry"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.3, 1.25, 6)
+mesh = SubResource("BoxMesh_w1")
+
+[node name="Wall_OuterBottom_Col" type="CollisionShape3D" parent="NavigationRegion3D/CorridorGeometry"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 1.25, 15.3)
+shape = SubResource("BoxShape3D_w2")
+
+[node name="Wall_OuterBottom_Mesh" type="MeshInstance3D" parent="NavigationRegion3D/CorridorGeometry"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 1.25, 15.3)
+mesh = SubResource("BoxMesh_w2")
+
+[node name="Wall_OuterRight_Col" type="CollisionShape3D" parent="NavigationRegion3D/CorridorGeometry"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15.3, 1.25, 6)
+shape = SubResource("BoxShape3D_w3")
+
+[node name="Wall_OuterRight_Mesh" type="MeshInstance3D" parent="NavigationRegion3D/CorridorGeometry"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15.3, 1.25, 6)
+mesh = SubResource("BoxMesh_w3")
+
+[node name="Wall_InnerIsland_Col" type="CollisionShape3D" parent="NavigationRegion3D/CorridorGeometry"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 1.25, 2.85)
+shape = SubResource("BoxShape3D_wi")
+
+[node name="Wall_InnerIsland_Mesh" type="MeshInstance3D" parent="NavigationRegion3D/CorridorGeometry"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 1.25, 2.85)
+mesh = SubResource("BoxMesh_wi")
+
+[node name="Wall_StartBack_Col" type="CollisionShape3D" parent="NavigationRegion3D/CorridorGeometry"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.25, -3.3)
+shape = SubResource("BoxShape3D_wb1")
+
+[node name="Wall_StartBack_Mesh" type="MeshInstance3D" parent="NavigationRegion3D/CorridorGeometry"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.25, -3.3)
+mesh = SubResource("BoxMesh_wb1")
+
+[node name="Wall_EndBack_Col" type="CollisionShape3D" parent="NavigationRegion3D/CorridorGeometry"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12, 1.25, -3.3)
+shape = SubResource("BoxShape3D_wb2")
+
+[node name="Wall_EndBack_Mesh" type="MeshInstance3D" parent="NavigationRegion3D/CorridorGeometry"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12, 1.25, -3.3)
+mesh = SubResource("BoxMesh_wb2")
+
+[node name="WaypointsHolder" type="Node3D" parent="."]
+
+[node name="Waypoint_0" type="Marker3D" parent="WaypointsHolder"]
+
+[node name="Waypoint_1" type="Marker3D" parent="WaypointsHolder"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 12)
+
+[node name="Waypoint_2" type="Marker3D" parent="WaypointsHolder"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12, 0, 12)
+
+[node name="Waypoint_3" type="Marker3D" parent="WaypointsHolder"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12, 0, 0)
+
+[node name="PartyFormationController" type="Node3D" parent="." node_paths=PackedStringArray("leader_hero", "support_hero", "dps_hero")]
+script = ExtResource("2_formation")
+leader_hero = NodePath("Hero_Bromm")
+support_hero = NodePath("Hero_Beatrice")
+dps_hero = NodePath("Hero_Elysia")
+
+[node name="Hero_Bromm" type="CharacterBody3D" parent="PartyFormationController" instance=ExtResource("3_entity_scene")]
+collision_layer = 2
+script = ExtResource("4_entity_script")
+hero_data = ExtResource("5_bromm_data")
+
+[node name="TankAIController" type="Node" parent="PartyFormationController/Hero_Bromm" node_paths=PackedStringArray("actor")]
+script = ExtResource("8_tank_ai")
+actor = NodePath("..")
+
+[node name="Hitbox3D" type="Area3D" parent="PartyFormationController/Hero_Bromm" node_paths=PackedStringArray("source_entity")]
+collision_layer = 8
+collision_mask = 64
+script = ExtResource("13_hitbox")
+damage = 20
+is_physical = true
+source_entity = NodePath("..")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="PartyFormationController/Hero_Bromm/Hitbox3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.9, 0.5)
+shape = SubResource("SphereShape3D_hero_hit")
+
+[node name="Hero_Beatrice" type="CharacterBody3D" parent="PartyFormationController" instance=ExtResource("3_entity_scene")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.2, 0, 1.2)
+collision_layer = 2
+script = ExtResource("4_entity_script")
+hero_data = ExtResource("6_beatrice_data")
+
+[node name="SupportAIController" type="Node" parent="PartyFormationController/Hero_Beatrice" node_paths=PackedStringArray("actor")]
+script = ExtResource("9_support_ai")
+actor = NodePath("..")
+
+[node name="Hero_Elysia" type="CharacterBody3D" parent="PartyFormationController" instance=ExtResource("3_entity_scene")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.2, 0, 1.8)
+collision_layer = 2
+script = ExtResource("4_entity_script")
+hero_data = ExtResource("7_elysia_data")
+
+[node name="RangedDPSAIController" type="Node" parent="PartyFormationController/Hero_Elysia" node_paths=PackedStringArray("actor")]
+script = ExtResource("10_dps_ai")
+actor = NodePath("..")
+
+[node name="EnemiesHolder" type="Node3D" parent="."]
+
+[node name="Goblin_1" type="CharacterBody3D" parent="EnemiesHolder"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 6)
+collision_layer = 4
+collision_mask = 1
+script = ExtResource("4_entity_script")
+enemy_data = ExtResource("16_goblin_data")
+
+[node name="BodyCollider" type="CollisionShape3D" parent="EnemiesHolder/Goblin_1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.7, 0)
+shape = SubResource("CapsuleShape3D_goblin")
+
+[node name="Visuals" type="Node3D" parent="EnemiesHolder/Goblin_1"]
+
+[node name="ModelMesh" type="MeshInstance3D" parent="EnemiesHolder/Goblin_1/Visuals"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.7, 0)
+mesh = SubResource("CapsuleMesh_goblin")
+
+[node name="Components" type="Node3D" parent="EnemiesHolder/Goblin_1"]
+
+[node name="StatsComponent" type="Node" parent="EnemiesHolder/Goblin_1/Components"]
+script = ExtResource("17_stats")
+
+[node name="HealthComponent" type="Node" parent="EnemiesHolder/Goblin_1/Components"]
+script = ExtResource("18_health")
+current_hp = 50
+max_hp = 50
+
+[node name="Hurtbox3D" type="Area3D" parent="EnemiesHolder/Goblin_1/Components" node_paths=PackedStringArray("health_component", "stats_component", "source_entity")]
+collision_layer = 64
+collision_mask = 8
+script = ExtResource("14_hurtbox")
+health_component = NodePath("../HealthComponent")
+stats_component = NodePath("../StatsComponent")
+source_entity = NodePath("../..")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="EnemiesHolder/Goblin_1/Components/Hurtbox3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.7, 0)
+shape = SubResource("CapsuleShape3D_goblin_hurt")
+
+[node name="Hitbox3D" type="Area3D" parent="EnemiesHolder/Goblin_1/Components" node_paths=PackedStringArray("source_entity")]
+collision_layer = 32
+collision_mask = 16
+script = ExtResource("13_hitbox")
+damage = 10
+is_physical = true
+source_entity = NodePath("../..")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="EnemiesHolder/Goblin_1/Components/Hitbox3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.7, 0)
+shape = SubResource("SphereShape3D_goblin_hit")
+
+[node name="ThreatTable" type="Node" parent="EnemiesHolder/Goblin_1/Components"]
+script = ExtResource("15_threat")
+
+[node name="NavigationAgent3D" type="NavigationAgent3D" parent="EnemiesHolder/Goblin_1/Components"]
+target_desired_distance = 0.5
+
+[node name="MovementComponent" type="Node" parent="EnemiesHolder/Goblin_1/Components" node_paths=PackedStringArray("navigation_agent", "character_body")]
+script = ExtResource("19_movement")
+navigation_agent = NodePath("../NavigationAgent3D")
+character_body = NodePath("../..")
+
+[node name="Goblin_2" type="CharacterBody3D" parent="EnemiesHolder"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.2, 0, 7)
+collision_layer = 4
+collision_mask = 1
+script = ExtResource("4_entity_script")
+enemy_data = ExtResource("16_goblin_data")
+
+[node name="BodyCollider" type="CollisionShape3D" parent="EnemiesHolder/Goblin_2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.7, 0)
+shape = SubResource("CapsuleShape3D_goblin")
+
+[node name="Visuals" type="Node3D" parent="EnemiesHolder/Goblin_2"]
+
+[node name="ModelMesh" type="MeshInstance3D" parent="EnemiesHolder/Goblin_2/Visuals"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.7, 0)
+mesh = SubResource("CapsuleMesh_goblin")
+
+[node name="Components" type="Node3D" parent="EnemiesHolder/Goblin_2"]
+
+[node name="StatsComponent" type="Node" parent="EnemiesHolder/Goblin_2/Components"]
+script = ExtResource("17_stats")
+
+[node name="HealthComponent" type="Node" parent="EnemiesHolder/Goblin_2/Components"]
+script = ExtResource("18_health")
+current_hp = 50
+max_hp = 50
+
+[node name="Hurtbox3D" type="Area3D" parent="EnemiesHolder/Goblin_2/Components" node_paths=PackedStringArray("health_component", "stats_component", "source_entity")]
+collision_layer = 64
+collision_mask = 8
+script = ExtResource("14_hurtbox")
+health_component = NodePath("../HealthComponent")
+stats_component = NodePath("../StatsComponent")
+source_entity = NodePath("../..")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="EnemiesHolder/Goblin_2/Components/Hurtbox3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.7, 0)
+shape = SubResource("CapsuleShape3D_goblin_hurt")
+
+[node name="Hitbox3D" type="Area3D" parent="EnemiesHolder/Goblin_2/Components" node_paths=PackedStringArray("source_entity")]
+collision_layer = 32
+collision_mask = 16
+script = ExtResource("13_hitbox")
+damage = 10
+is_physical = true
+source_entity = NodePath("../..")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="EnemiesHolder/Goblin_2/Components/Hitbox3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.7, 0)
+shape = SubResource("SphereShape3D_goblin_hit")
+
+[node name="ThreatTable" type="Node" parent="EnemiesHolder/Goblin_2/Components"]
+script = ExtResource("15_threat")
+
+[node name="NavigationAgent3D" type="NavigationAgent3D" parent="EnemiesHolder/Goblin_2/Components"]
+target_desired_distance = 0.5
+
+[node name="MovementComponent" type="Node" parent="EnemiesHolder/Goblin_2/Components" node_paths=PackedStringArray("navigation_agent", "character_body")]
+script = ExtResource("19_movement")
+navigation_agent = NodePath("../NavigationAgent3D")
+character_body = NodePath("../..")
+
+[node name="Goblin_3" type="CharacterBody3D" parent="EnemiesHolder"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.2, 0, 7)
+collision_layer = 4
+collision_mask = 1
+script = ExtResource("4_entity_script")
+enemy_data = ExtResource("16_goblin_data")
+
+[node name="BodyCollider" type="CollisionShape3D" parent="EnemiesHolder/Goblin_3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.7, 0)
+shape = SubResource("CapsuleShape3D_goblin")
+
+[node name="Visuals" type="Node3D" parent="EnemiesHolder/Goblin_3"]
+
+[node name="ModelMesh" type="MeshInstance3D" parent="EnemiesHolder/Goblin_3/Visuals"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.7, 0)
+mesh = SubResource("CapsuleMesh_goblin")
+
+[node name="Components" type="Node3D" parent="EnemiesHolder/Goblin_3"]
+
+[node name="StatsComponent" type="Node" parent="EnemiesHolder/Goblin_3/Components"]
+script = ExtResource("17_stats")
+
+[node name="HealthComponent" type="Node" parent="EnemiesHolder/Goblin_3/Components"]
+script = ExtResource("18_health")
+current_hp = 50
+max_hp = 50
+
+[node name="Hurtbox3D" type="Area3D" parent="EnemiesHolder/Goblin_3/Components" node_paths=PackedStringArray("health_component", "stats_component", "source_entity")]
+collision_layer = 64
+collision_mask = 8
+script = ExtResource("14_hurtbox")
+health_component = NodePath("../HealthComponent")
+stats_component = NodePath("../StatsComponent")
+source_entity = NodePath("../..")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="EnemiesHolder/Goblin_3/Components/Hurtbox3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.7, 0)
+shape = SubResource("CapsuleShape3D_goblin_hurt")
+
+[node name="Hitbox3D" type="Area3D" parent="EnemiesHolder/Goblin_3/Components" node_paths=PackedStringArray("source_entity")]
+collision_layer = 32
+collision_mask = 16
+script = ExtResource("13_hitbox")
+damage = 10
+is_physical = true
+source_entity = NodePath("../..")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="EnemiesHolder/Goblin_3/Components/Hitbox3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.7, 0)
+shape = SubResource("SphereShape3D_goblin_hit")
+
+[node name="ThreatTable" type="Node" parent="EnemiesHolder/Goblin_3/Components"]
+script = ExtResource("15_threat")
+
+[node name="NavigationAgent3D" type="NavigationAgent3D" parent="EnemiesHolder/Goblin_3/Components"]
+target_desired_distance = 0.5
+
+[node name="MovementComponent" type="Node" parent="EnemiesHolder/Goblin_3/Components" node_paths=PackedStringArray("navigation_agent", "character_body")]
+script = ExtResource("19_movement")
+navigation_agent = NodePath("../NavigationAgent3D")
+character_body = NodePath("../..")
+
+[node name="CombatTriggerSystem" type="Node" parent="." node_paths=PackedStringArray("party_controller")]
+script = ExtResource("11_trigger_sys")
+party_controller = NodePath("../PartyFormationController")
+
+[node name="IsometricCameraRig" type="Node3D" parent="." node_paths=PackedStringArray("target")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 15, 15)
+script = ExtResource("12_camera_rig")
+target = NodePath("../PartyFormationController/Hero_Bromm")
+
+[node name="Camera3D" type="Camera3D" parent="IsometricCameraRig"]
+transform = Transform3D(1, 0, 0, 0, 0.7071068, 0.7071068, 0, -0.7071068, 0.7071068, 0, 0, 0)
+keep_aspect = 0
+fov = 50.0
+current = true
