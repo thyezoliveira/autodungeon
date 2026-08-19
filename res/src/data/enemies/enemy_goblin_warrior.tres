@@ -1,9 +1,10 @@
-[gd_resource type="Resource" script_class="EnemyData" format=3]
+[gd_resource type="Resource" script_class="EnemyData" format=3 uid="uid://de2r5pguyslsg"]
 
-[ext_resource type="Script" path="res://src/data/enemies/EnemyData.gd" id="1_enemydata"]
-[ext_resource type="Script" path="res://src/data/items/LootTableResource.gd" id="2_loottable"]
-[ext_resource type="Script" path="res://src/data/items/ItemData.gd" id="3_itemdata"]
+[ext_resource type="Script" uid="uid://gwe1lhgfxfxh" path="res://src/data/enemies/EnemyData.gd" id="1_enemydata"]
+[ext_resource type="Script" uid="uid://oncgkoiojqai" path="res://src/data/items/LootTableResource.gd" id="2_loottable"]
+[ext_resource type="Script" uid="uid://brydjod4on14l" path="res://src/data/items/ItemData.gd" id="3_itemdata"]
 [ext_resource type="Resource" path="res://src/data/items/consumables/item_potion_minor_hp.tres" id="4_potion"]
+[ext_resource type="Script" uid="uid://ckg2rulxgopdd" path="res://src/data/skills/SkillData.gd" id="5_5ij7w"]
 
 [sub_resource type="Resource" id="Resource_loot_goblin"]
 script = ExtResource("2_loottable")
@@ -16,10 +17,5 @@ max_gold = 12
 script = ExtResource("1_enemydata")
 enemy_id = "goblin_warrior"
 enemy_name = "Goblin Guerreiro"
-tier = 0
 max_hp = 45
-armor = 2
-attack_power = 8
-attack_range = 1.8
-move_speed = 3.5
 loot_table = SubResource("Resource_loot_goblin")

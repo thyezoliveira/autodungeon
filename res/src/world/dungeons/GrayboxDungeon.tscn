@@ -1,14 +1,13 @@
-[gd_scene format=3]
+[gd_scene format=3 uid="uid://dj8vu6qjhrst3"]
 
-[ext_resource type="Script" path="res://src/world/dungeons/DungeonLevel.gd" id="1_5p80k"]
-[ext_resource type="Script" path="res://src/systems/PartyFormationController.gd" id="2_xnvin"]
+[ext_resource type="Script" uid="uid://c364ip3atyom5" path="res://src/world/dungeons/DungeonLevel.gd" id="1_5p80k"]
+[ext_resource type="Script" uid="uid://dx8jshtdp36ug" path="res://src/systems/PartyFormationController.gd" id="2_xnvin"]
 [ext_resource type="PackedScene" path="res://src/entities/base/CharacterEntity.tscn" id="3_6qfuu"]
-[ext_resource type="Script" path="res://src/entities/base/CharacterEntity.gd" id="4_wtajt"]
 [ext_resource type="Resource" path="res://src/data/heroes/resources/hero_bromm.tres" id="5_r8gn4"]
 [ext_resource type="Resource" path="res://src/data/heroes/resources/hero_beatrice.tres" id="6_113av"]
 [ext_resource type="Resource" path="res://src/data/heroes/resources/hero_elysia.tres" id="7_cdjxp"]
-[ext_resource type="Script" path="res://src/world/IsometricCameraRig.gd" id="8_pvk5g"]
-[ext_resource type="Script" path="res://src/systems/RoomEncounterController.gd" id="9_room_encounter"]
+[ext_resource type="Script" uid="uid://crsekinpicgc4" path="res://src/world/IsometricCameraRig.gd" id="8_pvk5g"]
+[ext_resource type="Script" uid="uid://da7unme8osknu" path="res://src/systems/RoomEncounterController.gd" id="9_room_encounter"]
 
 [sub_resource type="Environment" id="Environment_bh40i"]
 background_mode = 1
@@ -771,8 +770,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 26)
 collision_layer = 128
 collision_mask = 2
 script = ExtResource("9_room_encounter")
-room_index = 1
-room_name = "Sala 1"
 party_controller = NodePath("../../PartyFormationController")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="EncounterControllers/Room1_Controller" unique_id=2061922031]
@@ -833,21 +830,15 @@ leader_hero = NodePath("Hero_Bromm")
 support_hero = NodePath("Hero_Beatrice")
 dps_hero = NodePath("Hero_Elysia")
 
-[node name="Hero_Bromm" type="CharacterBody3D" parent="PartyFormationController" unique_id=619475808 instance=ExtResource("3_6qfuu")]
-collision_layer = 2
-script = ExtResource("4_wtajt")
+[node name="Hero_Bromm" parent="PartyFormationController" unique_id=619475808 instance=ExtResource("3_6qfuu")]
 hero_data = ExtResource("5_r8gn4")
 
-[node name="Hero_Beatrice" type="CharacterBody3D" parent="PartyFormationController" unique_id=170283349 instance=ExtResource("3_6qfuu")]
+[node name="Hero_Beatrice" parent="PartyFormationController" unique_id=170283349 instance=ExtResource("3_6qfuu")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.2, 0, 1.2)
-collision_layer = 2
-script = ExtResource("4_wtajt")
 hero_data = ExtResource("6_113av")
 
-[node name="Hero_Elysia" type="CharacterBody3D" parent="PartyFormationController" unique_id=199205863 instance=ExtResource("3_6qfuu")]
+[node name="Hero_Elysia" parent="PartyFormationController" unique_id=199205863 instance=ExtResource("3_6qfuu")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.2, 0, 1.8)
-collision_layer = 2
-script = ExtResource("4_wtajt")
 hero_data = ExtResource("7_cdjxp")
 
 [node name="IsometricCameraRig" type="Node3D" parent="." unique_id=1664205658 node_paths=PackedStringArray("target", "party_controller")]

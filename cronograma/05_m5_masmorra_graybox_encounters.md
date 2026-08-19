@@ -1,6 +1,6 @@
 # 🚩 Marco 5 (M5) — Masmorra Graybox 3D, Encontros & Mini-Chefe
 
-> **Status:** Não Iniciado  
+> **Status:** Concluído  
 > **Branch de Trabalho:** `feat/m5-graybox-encounters`  
 > **Tag Final do Marco:** `v0.1.0-m5-graybox-encounters`  
 > **Documentos de Referência:** [`docs/planejamento/01_visao_mvp_e_marcos.md`](../docs/planejamento/01_visao_mvp_e_marcos.md), [`docs/projeto/07_navegacao_dungeon_e_fases.md`](../docs/projeto/07_navegacao_dungeon_e_fases.md), [`docs/idea/07_Mundo_e_Narrativa/`](../docs/idea/07_Mundo_e_Narrativa/), [`docs/idea/09_inimigos/`](../docs/idea/09_inimigos/).
@@ -66,8 +66,8 @@ GrayboxDungeon (Node3D - Script: DungeonLevel.gd)
    Verifique no modo de visualização de navegação do editor (*Debug -> Visible Navigation*) se o chão azul cobre todas as salas e corredores sem buracos acidentais.
 
 #### 4. Critérios de Aceitação
-- [ ] Salas 0, 1, 2, Corredores e Arena 3 modeladas com colisores estáticos (Physics Layer 1).
-- [ ] NavMesh 3D contínuo gerado cobrindo todo o percurso.
+- [x] Salas 0, 1, 2, Corredores e Arena 3 modeladas com colisores estáticos (Physics Layer 1).
+- [x] NavMesh 3D contínuo gerado cobrindo todo o percurso.
 
 #### 5. Lembrete de Commit
 ```bash
@@ -110,8 +110,8 @@ func process_ai(delta: float, party_heroes: Array[CharacterEntity]) -> void:
    *Resultado Esperado:* O guerreiro corre até Bromm; o arqueiro para a 5 metros e dispara flechas contra o herói.
 
 #### 4. Critérios de Aceitação
-- [ ] Prefabs `GoblinWarrior.tscn` e `GoblinArcher.tscn` instanciáveis.
-- [ ] Arqueiro dispara projétil físico com velocidade constante e colisão de dano.
+- [x] Prefabs `GoblinWarrior.tscn` e `GoblinArcher.tscn` instanciáveis.
+- [x] Arqueiro dispara projétil físico com velocidade constante e colisão de dano.
 
 #### 5. Lembrete de Commit
 ```bash
@@ -150,8 +150,8 @@ func evaluate_healing(pack_allies: Array[CharacterEntity]) -> void:
    * O Goblin Curandeiro deve conjurar a cura e recuperar a vida do companheiro.
 
 #### 4. Critérios de Aceitação
-- [ ] Curandeiro prioriza aliados feridos da sua sala.
-- [ ] Emissão de sinal `EventBus.healing_applied` ao curar o alvo.
+- [x] Curandeiro prioriza aliados feridos da sua sala.
+- [x] Emissão de sinal `EventBus.healing_applied` ao curar o alvo.
 
 #### 5. Lembrete de Commit
 ```bash
@@ -198,8 +198,8 @@ func deactivate_aura() -> void:
    * Mate o Capitão: o dano do guerreiro deve retornar imediatamente para 8.
 
 #### 4. Critérios de Aceitação
-- [ ] Aura afeta apenas entidades da camada monstro (`Enemy_Bodies`).
-- [ ] Remoção imediata do buff em caso de morte do Capitão.
+- [x] Aura afeta apenas entidades da camada monstro (`Enemy_Bodies`).
+- [x] Remoção imediata do buff em caso de morte do Capitão.
 
 #### 5. Lembrete de Commit
 ```bash
@@ -251,8 +251,8 @@ func _on_entity_died(entity: Node3D, killer: Node3D) -> void:
    * Verifique no console a mensagem: `[DUNGEON] Sala 1 limpa! Retomando marcha.`
 
 #### 4. Critérios de Aceitação
-- [ ] Transição automática para marcha assim que o último monstro da sala morrer.
-- [ ] Sinal `EventBus.room_cleared` emitido com índice correto.
+- [x] Transição automática para marcha assim que o último monstro da sala morrer.
+- [x] Sinal `EventBus.room_cleared` emitido com índice correto.
 
 #### 5. Lembrete de Commit
 ```bash
@@ -274,8 +274,8 @@ Validação de ponta a ponta do Marco 5: a expedição inicia na Sala 0, caminha
    * Confirme que a mana gasta na Sala 1 regenerou parcialmente no corredor antes da Sala 2.
 
 #### 3. Critérios de Aceitação
-- [ ] Progressão autônoma Sala 0 $\rightarrow$ Sala 1 $\rightarrow$ Corredor $\rightarrow$ Sala 2 100% funcional.
-- [ ] 0 travamentos em cantos de malha 3D.
+- [x] Progressão autônoma Sala 0 $\rightarrow$ Sala 1 $\rightarrow$ Corredor $\rightarrow$ Sala 2 100% funcional.
+- [x] 0 travamentos em cantos de malha 3D.
 
 #### 4. Passo a Passo de Merge & Tagging
 ```bash
