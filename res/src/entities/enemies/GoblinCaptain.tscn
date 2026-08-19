@@ -1,0 +1,136 @@
+[gd_scene format=3]
+
+[ext_resource type="Script" path="res://src/entities/base/CharacterEntity.gd" id="1_entity"]
+[ext_resource type="Resource" path="res://src/data/enemies/enemy_goblin_captain.tres" id="2_enemydata"]
+[ext_resource type="Script" path="res://src/entities/components/StatsComponent.gd" id="3_stats"]
+[ext_resource type="Script" path="res://src/entities/components/HealthComponent.gd" id="4_health"]
+[ext_resource type="Script" path="res://src/entities/components/Hurtbox3D.gd" id="5_hurtbox"]
+[ext_resource type="Script" path="res://src/entities/components/Hitbox3D.gd" id="6_hitbox"]
+[ext_resource type="Script" path="res://src/entities/components/ThreatTable.gd" id="7_threat"]
+[ext_resource type="Script" path="res://src/entities/components/MovementComponent.gd" id="8_movement"]
+[ext_resource type="Script" path="res://src/entities/enemies/GoblinAIController.gd" id="9_ai"]
+[ext_resource type="Script" path="res://src/entities/enemies/AuraDeFuriaTribal.gd" id="10_aura"]
+[ext_resource type="Script" path="res://src/entities/fsm/StateMachine.gd" id="11_fsm"]
+[ext_resource type="Script" path="res://src/entities/fsm/states/IdleState.gd" id="12_idle"]
+[ext_resource type="Script" path="res://src/entities/fsm/states/MarchState.gd" id="13_march"]
+[ext_resource type="Script" path="res://src/entities/fsm/states/DeadState.gd" id="14_dead"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_captain"]
+radius = 0.45
+height = 1.6
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_captain"]
+albedo_color = Color(0.6, 0.25, 0.1, 1)
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_captain"]
+material = SubResource("StandardMaterial3D_captain")
+radius = 0.45
+height = 1.6
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_hurtbox"]
+radius = 0.5
+height = 1.65
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_hitbox"]
+radius = 0.7
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_aura"]
+radius = 6.0
+
+[node name="GoblinCaptain" type="CharacterBody3D"]
+collision_layer = 4
+collision_mask = 1
+script = ExtResource("1_entity")
+enemy_data = ExtResource("2_enemydata")
+
+[node name="BodyCollider" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.8, 0)
+shape = SubResource("CapsuleShape3D_captain")
+
+[node name="Visuals" type="Node3D" parent="."]
+
+[node name="ModelMesh" type="MeshInstance3D" parent="Visuals"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.8, 0)
+mesh = SubResource("CapsuleMesh_captain")
+
+[node name="Components" type="Node3D" parent="."]
+
+[node name="StatsComponent" type="Node" parent="Components"]
+script = ExtResource("3_stats")
+max_hp = 140
+armor = 5
+attack_power = 16
+move_speed = 3.6
+
+[node name="HealthComponent" type="Node" parent="Components"]
+script = ExtResource("4_health")
+current_hp = 140
+max_hp = 140
+
+[node name="Hurtbox3D" type="Area3D" parent="Components" node_paths=PackedStringArray("health_component", "stats_component", "source_entity")]
+collision_layer = 64
+collision_mask = 0
+script = ExtResource("5_hurtbox")
+health_component = NodePath("../HealthComponent")
+stats_component = NodePath("../StatsComponent")
+source_entity = NodePath("../..")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Components/Hurtbox3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.8, 0)
+shape = SubResource("CapsuleShape3D_hurtbox")
+
+[node name="Hitbox3D" type="Area3D" parent="Components" node_paths=PackedStringArray("source_entity")]
+collision_layer = 32
+collision_mask = 16
+script = ExtResource("6_hitbox")
+damage = 16
+is_physical = true
+source_entity = NodePath("../..")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Components/Hitbox3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.8, -0.5)
+shape = SubResource("SphereShape3D_hitbox")
+
+[node name="ThreatTable" type="Node" parent="Components"]
+script = ExtResource("7_threat")
+
+[node name="NavigationAgent3D" type="NavigationAgent3D" parent="Components"]
+target_desired_distance = 0.5
+
+[node name="MovementComponent" type="Node" parent="Components" node_paths=PackedStringArray("navigation_agent", "character_body")]
+script = ExtResource("8_movement")
+navigation_agent = NodePath("../NavigationAgent3D")
+character_body = NodePath("../..")
+base_speed = 3.6
+
+[node name="GoblinAIController" type="Node" parent="Components" node_paths=PackedStringArray("actor")]
+script = ExtResource("9_ai")
+actor = NodePath("../..")
+is_ranged = false
+attack_range = 2.0
+attack_cooldown = 1.5
+
+[node name="AuraDeFuriaTribal" type="Area3D" parent="Components" node_paths=PackedStringArray("source_captain")]
+collision_layer = 0
+collision_mask = 4
+script = ExtResource("10_aura")
+damage_multiplier_bonus = 0.25
+aura_radius = 6.0
+source_captain = NodePath("../..")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Components/AuraDeFuriaTribal"]
+shape = SubResource("SphereShape3D_aura")
+
+[node name="StateMachine" type="Node" parent="." node_paths=PackedStringArray("initial_state")]
+script = ExtResource("11_fsm")
+initial_state = NodePath("IdleState")
+
+[node name="IdleState" type="Node" parent="StateMachine"]
+script = ExtResource("12_idle")
+
+[node name="MarchState" type="Node" parent="StateMachine" node_paths=PackedStringArray("movement_component")]
+script = ExtResource("13_march")
+movement_component = NodePath("../../Components/MovementComponent")
+
+[node name="DeadState" type="Node" parent="StateMachine"]
+script = ExtResource("14_dead")
