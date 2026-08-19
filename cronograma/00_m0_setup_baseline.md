@@ -181,9 +181,9 @@ gdscript/warnings/unused_parameter=1
    Verifique a aba *Debugger -> Errors/Warnings*. O projeto deve carregar sem erros.
 
 #### 4. Critérios de Aceitação
-- [ ] Physics Layers 3D 1 a 8 nomeadas.
-- [ ] Resolução de viewport configurada para 1920x1080 com modo de redimensionamento responsivo.
-- [ ] Avisos de tipagem estática ativados no editor.
+- [x] Physics Layers 3D 1 a 8 nomeadas.
+- [x] Resolução de viewport configurada para 1920x1080 com modo de redimensionamento responsivo.
+- [x] Avisos de tipagem estática ativados no editor.
 
 #### 5. Lembrete de Commit
 ```bash
