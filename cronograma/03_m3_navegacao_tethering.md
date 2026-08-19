@@ -199,8 +199,8 @@ func reassign_roles_on_hero_death(dead_hero: CharacterEntity) -> void:
    *Resultado Esperado:* Os 2 seguidores devem orbitar suavemente mantendo seus respectivos flancos em relação à orientação do líder.
 
 #### 4. Critérios de Aceitação
-- [ ] Posicionamento em cunha/triângulo tático preservado durante caminhadas retas e em curva.
-- [ ] Cálculo de coordenadas relativas baseado na orientação (`Transform3D`) do líder.
+- [x] Posicionamento em cunha/triângulo tático preservado durante caminhadas retas e em curva.
+- [x] Cálculo de coordenadas relativas baseado na orientação (`Transform3D`) do líder.
 
 #### 5. Lembrete de Commit
 ```bash
