@@ -1,6 +1,6 @@
 # 🚩 Marco 4 (M4) — Combate 3D, Gatilho por Impacto & IA dos 3 Heróis
 
-> **Status:** Não Iniciado  
+> **Status:** Em Progresso  
 > **Branch de Trabalho:** `feat/m4-combat-ai`  
 > **Tag Final do Marco:** `v0.1.0-m4-combat-ai`  
 > **Documentos de Referência:** [`docs/planejamento/01_visao_mvp_e_marcos.md`](../docs/planejamento/01_visao_mvp_e_marcos.md), [`docs/projeto/04_maquina_estados_e_ia.md`](../docs/projeto/04_maquina_estados_e_ia.md), [`docs/projeto/05_sistema_combate_e_habilidades.md`](../docs/projeto/05_sistema_combate_e_habilidades.md), [`docs/idea/geral.md`](../docs/idea/geral.md).
@@ -81,8 +81,8 @@ func _is_combat_participant(a: Node3D, b: Node3D) -> bool:
    * No milissegundo em que a espada de Bromm toca a Hurtbox do monstro, a FSM dos 3 heróis muda instantaneamente para o estado de batalha.
 
 #### 4. Critérios de Aceitação
-- [ ] Transição síncrona de Marcha $\rightarrow$ Batalha disparada pelo primeiro impacto físico.
-- [ ] Zero ataques disparados pela retaguarda antes do contato.
+- [x] Transição síncrona de Marcha $\rightarrow$ Batalha disparada pelo primeiro impacto físico.
+- [x] Zero ataques disparados pela retaguarda antes do contato.
 
 #### 5. Lembrete de Commit
 ```bash
