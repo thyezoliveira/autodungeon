@@ -319,8 +319,8 @@ func evaluate_combat_tactics(delta: float, party_heroes: Array[CharacterEntity],
    * Reduza a vida do DPS para 30%. Beatrice deve priorizar o *Escudo de Fé* de emergência no DPS.
 
 #### 4. Critérios de Aceitação
-- [ ] Respeito absoluto à hierarquia de prioridades de suporte.
-- [ ] Beatrice nunca gasta mana ofensiva quando um aliado precisa de cura vital.
+- [x] Respeito absoluto à hierarquia de prioridades de suporte.
+- [x] Beatrice nunca gasta mana ofensiva quando um aliado precisa de cura vital.
 
 #### 5. Lembrete de Commit
 ```bash
