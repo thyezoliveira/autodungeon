@@ -14,6 +14,7 @@ var gravity: float = ProjectSettings.get_setting("physics/3d/default_gravity", 9
 @onready var hurtbox: Hurtbox3D = get_node_or_null("Components/Hurtbox3D") as Hurtbox3D
 @onready var navigation_agent: NavigationAgent3D = get_node_or_null("Components/NavigationAgent3D") as NavigationAgent3D
 @onready var movement_component: MovementComponent = get_node_or_null("Components/MovementComponent") as MovementComponent
+@onready var threat_table: ThreatTable = get_node_or_null("Components/ThreatTable") as ThreatTable
 @onready var state_machine: StateMachine = get_node_or_null("StateMachine") as StateMachine
 
 
@@ -43,6 +44,8 @@ func setup_entity_data() -> void:
 		navigation_agent = get_node_or_null("Components/NavigationAgent3D") as NavigationAgent3D
 	if movement_component == null:
 		movement_component = get_node_or_null("Components/MovementComponent") as MovementComponent
+	if threat_table == null:
+		threat_table = get_node_or_null("Components/ThreatTable") as ThreatTable
 	if state_machine == null:
 		state_machine = get_node_or_null("StateMachine") as StateMachine
 

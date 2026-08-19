@@ -137,8 +137,8 @@ func _recalculate_primary_target() -> void:
    * O inimigo deve virar imediatamente para o Tanque e disparar `primary_target_changed`.
 
 #### 4. Critérios de Aceitação
-- [ ] Tabela de ameaça mantém pontuação dinâmica por atacante.
-- [ ] Limpeza imediata de entidades mortas da tabela.
+- [x] Tabela de ameaça mantém pontuação dinâmica por atacante.
+- [x] Limpeza imediata de entidades mortas da tabela.
 
 #### 5. Lembrete de Commit
 ```bash
