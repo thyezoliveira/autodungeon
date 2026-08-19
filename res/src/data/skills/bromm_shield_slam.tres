@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="SkillData" format=3]
+
+[ext_resource type="Script" path="res://src/data/skills/SkillEffect.gd" id="1_h2yg1"]
+[ext_resource type="Script" path="res://src/data/skills/DamageSkillEffect.gd" id="2_52qty"]
+[ext_resource type="Script" path="res://src/data/skills/SkillData.gd" id="3_q302s"]
+
+[sub_resource type="Resource" id="Resource_lqr1o"]
+script = ExtResource("2_52qty")
+value_base = 20
+
+[resource]
+script = ExtResource("3_q302s")
+id = "bromm_shield_slam"
+display_name = "Golpe de Escudo"
+mana_cost = 10.0
+cooldown = 5.0
+effects = Array[ExtResource("1_h2yg1")]([SubResource("Resource_lqr1o")])

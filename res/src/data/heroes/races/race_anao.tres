@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="RaceData" format=3]
+
+[ext_resource type="Script" path="res://src/data/heroes/RaceData.gd" id="1_racedata"]
+
+[resource]
+script = ExtResource("1_racedata")
+race_name = "Anão"
+bonus_max_hp = 20
+bonus_armor = 5
+bonus_magic_resist = 0
+bonus_physical_attack = 0
+bonus_magic_power = 0
+racial_trait_description = "Resistência Pétrea: +20 de Vida Máxima e +5 de Armadura base."

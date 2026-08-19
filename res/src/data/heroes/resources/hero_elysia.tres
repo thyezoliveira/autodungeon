@@ -1,0 +1,22 @@
+[gd_resource type="Resource" script_class="HeroData" format=3]
+
+[ext_resource type="Script" path="res://src/data/heroes/HeroData.gd" id="1_herodata"]
+[ext_resource type="Resource" path="res://src/data/heroes/races/race_elfo.tres" id="2_race"]
+[ext_resource type="Resource" path="res://src/data/heroes/classes/class_patrulheiro.tres" id="3_class"]
+[ext_resource type="Script" path="res://src/data/skills/SkillData.gd" id="4_skilldata"]
+[ext_resource type="Resource" path="res://src/data/skills/resources/elysia_aimed_shot.tres" id="5_aimed"]
+[ext_resource type="Resource" path="res://src/data/skills/resources/elysia_arrow_rain.tres" id="6_rain"]
+
+[resource]
+script = ExtResource("1_herodata")
+hero_id = "elysia"
+hero_name = "Elysia Ventoveloz"
+race = ExtResource("2_race")
+hero_class = ExtResource("3_class")
+base_max_hp = 85
+base_max_mana = 60.0
+base_armor = 6
+base_magic_resist = 6
+base_attack_power = 22
+base_magic_power = 8
+innate_skills = Array[ExtResource("4_skilldata")]([ExtResource("5_aimed"), ExtResource("6_rain")])

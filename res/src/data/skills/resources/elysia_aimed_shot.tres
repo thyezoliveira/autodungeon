@@ -1,0 +1,25 @@
+[gd_resource type="Resource" script_class="SkillData" format=3]
+
+[ext_resource type="Script" path="res://src/data/skills/SkillEffect.gd" id="1_skilleffect"]
+[ext_resource type="Script" path="res://src/data/skills/DamageSkillEffect.gd" id="2_damageskilleffect"]
+[ext_resource type="Script" path="res://src/data/skills/SkillData.gd" id="3_skilldata"]
+
+[sub_resource type="Resource" id="Resource_aimed_eff"]
+script = ExtResource("2_damageskilleffect")
+is_physical = true
+threat_multiplier = 1.0
+target_type = 0
+value_base = 30
+stat_scaling_factor = 0.8
+duration = 0.0
+
+[resource]
+script = ExtResource("3_skilldata")
+id = "elysia_aimed_shot"
+display_name = "Tiro Certeiro"
+description = "Dispara uma flecha de alta precisão contra um alvo à distância."
+mana_cost = 12.0
+cooldown = 4.0
+cast_time = 0.5
+range_meters = 8.0
+effects = Array[ExtResource("1_skilleffect")]([SubResource("Resource_aimed_eff")])

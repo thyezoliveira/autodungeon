@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="RaceData" format=3]
+
+[ext_resource type="Script" path="res://src/data/heroes/RaceData.gd" id="1_racedata"]
+
+[resource]
+script = ExtResource("1_racedata")
+race_name = "Humano"
+bonus_max_hp = 10
+bonus_armor = 0
+bonus_magic_resist = 5
+bonus_physical_attack = 0
+bonus_magic_power = 0
+racial_trait_description = "Versatilidade: +10 de Vida Máxima e +5 de Resistência Mágica."

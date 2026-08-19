@@ -1,0 +1,22 @@
+[gd_resource type="Resource" script_class="HeroData" format=3]
+
+[ext_resource type="Script" path="res://src/data/heroes/HeroData.gd" id="1_herodata"]
+[ext_resource type="Resource" path="res://src/data/heroes/races/race_humano.tres" id="2_race"]
+[ext_resource type="Resource" path="res://src/data/heroes/classes/class_clerigo.tres" id="3_class"]
+[ext_resource type="Script" path="res://src/data/skills/SkillData.gd" id="4_skilldata"]
+[ext_resource type="Resource" path="res://src/data/skills/resources/beatrice_quick_heal.tres" id="5_heal"]
+[ext_resource type="Resource" path="res://src/data/skills/resources/beatrice_faith_shield.tres" id="6_shield"]
+
+[resource]
+script = ExtResource("1_herodata")
+hero_id = "beatrice"
+hero_name = "Beatrice Alvorada"
+race = ExtResource("2_race")
+hero_class = ExtResource("3_class")
+base_max_hp = 85
+base_max_mana = 100.0
+base_armor = 8
+base_magic_resist = 10
+base_attack_power = 10
+base_magic_power = 25
+innate_skills = Array[ExtResource("4_skilldata")]([ExtResource("5_heal"), ExtResource("6_shield")])

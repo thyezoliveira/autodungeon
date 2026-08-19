@@ -1,6 +1,6 @@
 # 🚩 Marco 1 (M1) — Infraestrutura Core, Autoloads & Custom Resources
 
-> **Status:** Não Iniciado  
+> **Status:** Concluído (M1.1 a M1.6 Concluídos)  
 > **Branch de Trabalho:** `feat/m1-core`  
 > **Tag Final do Marco:** `v0.1.0-m1-core`  
 > **Documentos de Referência:** [`docs/planejamento/01_visao_mvp_e_marcos.md`](../docs/planejamento/01_visao_mvp_e_marcos.md), [`docs/projeto/01_visao_geral_e_padroes.md`](../docs/projeto/01_visao_geral_e_padroes.md), [`docs/projeto/05_sistema_combate_e_habilidades.md`](../docs/projeto/05_sistema_combate_e_habilidades.md), [`docs/projeto/06_sistema_itens_inventario_loot.md`](../docs/projeto/06_sistema_itens_inventario_loot.md), [`docs/projeto/08_ui_hud_e_eventbus.md`](../docs/projeto/08_ui_hud_e_eventbus.md).
@@ -77,9 +77,9 @@ signal match_ended(victory: bool, summary_data: Dictionary)
    Execute a cena de teste com `F6`. Verifique a mensagem no painel *Output*.
 
 #### 4. Critérios de Aceitação
-- [ ] `EventBus.gd` registrado como Autoload global na Godot.
-- [ ] Sinais tipados para combate, masmorra, itens e UI definidos.
-- [ ] Teste de emissão e recepção executado sem erros no console.
+- [x] `EventBus.gd` registrado como Autoload global na Godot.
+- [x] Sinais tipados para combate, masmorra, itens e UI definidos.
+- [x] Teste de emissão e recepção executado sem erros no console.
 
 #### 5. Lembrete de Commit
 ```bash
@@ -158,9 +158,9 @@ extends Resource
    Salve como `res://src/data/skills/bromm_shield_slam.tres` e verifique que o arquivo carrega sem erros.
 
 #### 4. Critérios de Aceitação
-- [ ] Classes `SkillEffect`, `DamageSkillEffect` e `SkillData` registradas com `class_name`.
-- [ ] Suporte a múltiplos efeitos por habilidade via `Array[SkillEffect]`.
-- [ ] Recurso `.tres` instanciável diretamente via Inspector.
+- [x] Classes `SkillEffect`, `DamageSkillEffect` e `SkillData` registradas com `class_name`.
+- [x] Suporte a múltiplos efeitos por habilidade via `Array[SkillEffect]`.
+- [x] Recurso `.tres` instanciável diretamente via Inspector.
 
 #### 5. Lembrete de Commit
 ```bash
@@ -243,9 +243,9 @@ func get_total_armor() -> int:
    No script de teste, carregue o `hero_bromm.tres` e valide com asserções se `hero_data.get_total_max_hp()` calcula a soma correta.
 
 #### 4. Critérios de Aceitação
-- [ ] Classes de dados `RaceData`, `ClassData` e `HeroData` criadas com tipagem estática.
-- [ ] Funções utilitárias de agregação de atributos calculando somatório de raça + base.
-- [ ] Inspeção limpa no painel Inspector da Godot.
+- [x] Classes de dados `RaceData`, `ClassData` e `HeroData` criadas com tipagem estática.
+- [x] Funções utilitárias de agregação de atributos calculando somatório de raça + base.
+- [x] Inspeção limpa no painel Inspector da Godot.
 
 #### 5. Lembrete de Commit
 ```bash
@@ -328,9 +328,9 @@ enum EnemyTier { MINION, ELITE, BOSS }
    No script de teste, invoque `loot_table.roll_loot()` 100 vezes e valide a distribuição de drops.
 
 #### 4. Critérios de Aceitação
-- [ ] Estruturas `ItemData`, `LootTableResource` e `EnemyData` registradas.
-- [ ] Suporte a limiar de autodisparo de poção em `ItemData`.
-- [ ] Tabela de loot com suporte a faixa de ouro e lista de itens ponderados.
+- [x] Estruturas `ItemData`, `LootTableResource` e `EnemyData` registradas.
+- [x] Suporte a limiar de autodisparo de poção em `ItemData`.
+- [x] Tabela de loot com suporte a faixa de ouro e lista de itens ponderados.
 
 #### 5. Lembrete de Commit
 ```bash
@@ -385,9 +385,9 @@ func release_node(node_instance: Node) -> void:
    Execute a cena e confirme 0 vazamentos de memória (memory leaks) na aba *Monitors* do Debugger.
 
 #### 4. Critérios de Aceitação
-- [ ] Classe `NodePool` implementada com controle de fila disponível/ativa.
-- [ ] Reutilização correta sem recriação contínua de memória.
-- [ ] Teste de estresse com 50 aquisições/devoluções sem warnings.
+- [x] Classe `NodePool` implementada com controle de fila disponível/ativa.
+- [x] Reutilização correta sem recriação contínua de memória.
+- [x] Teste de estresse com 50 aquisições/devoluções sem warnings.
 
 #### 5. Lembrete de Commit
 ```bash
@@ -421,9 +421,9 @@ Para que os próximos marcos (M2 a M4) construam as entidades e IAs com base em 
    * Beatrice: `HP ~ 95`, `Mana >= 100`, `Role == SUPPORT_HEALER`.
 
 #### 4. Critérios de Aceitação
-- [ ] Os 3 heróis do MVP instanciados com todas as propriedades de Raça, Classe e Habilidades.
-- [ ] 0 erros de carregamento de dependências `.tres` na Godot Engine.
-- [ ] Marco M1 completo e pronto para integração.
+- [x] Os 3 heróis do MVP instanciados com todas as propriedades de Raça, Classe e Habilidades.
+- [x] 0 erros de carregamento de dependências `.tres` na Godot Engine.
+- [x] Marco M1 completo e pronto para integração.
 
 #### 5. Passo a Passo de Merge & Tagging
 ```bash

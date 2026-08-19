@@ -1,0 +1,12 @@
+[gd_scene format=3]
+
+[ext_resource type="Script" path="res://src/core/NodePool.gd" id="1_nodepool"]
+[ext_resource type="PackedScene" path="res://tests/fixtures/dummy_pool_item.tscn" id="2_prefab"]
+
+[node name="TestNodePool" type="Node"]
+
+[node name="NodePool" type="Node" parent="."]
+script = ExtResource("1_nodepool")
+prefab_scene = ExtResource("2_prefab")
+initial_pool_size = 20
+max_pool_size = 50

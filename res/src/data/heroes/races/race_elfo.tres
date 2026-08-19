@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="RaceData" format=3]
+
+[ext_resource type="Script" path="res://src/data/heroes/RaceData.gd" id="1_racedata"]
+
+[resource]
+script = ExtResource("1_racedata")
+race_name = "Elfo"
+bonus_max_hp = 0
+bonus_armor = 0
+bonus_magic_resist = 0
+bonus_physical_attack = 10
+bonus_magic_power = 5
+racial_trait_description = "Precisão Élfica: +10 de Ataque Físico e +5 de Poder Mágico."
