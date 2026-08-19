@@ -293,9 +293,9 @@ func _on_area_entered(area: Area3D) -> void:
    *Resultado Esperado:* A Hurtbox deve registrar o impacto, o `HealthComponent` deve deduzir o HP e emitir `EventBus.damage_dealt`.
 
 #### 4. Critérios de Aceitação
-- [ ] Camadas de física configuradas sem colisão interna (uma entidade nunca atinge a si mesma).
-- [ ] Encaminhamento atômico de impacto da Hitbox para a Hurtbox.
-- [ ] Registro do evento no `EventBus` global.
+- [x] Camadas de física configuradas sem colisão interna (uma entidade nunca atinge a si mesma).
+- [x] Encaminhamento atômico de impacto da Hitbox para a Hurtbox.
+- [x] Registro do evento no `EventBus` global.
 
 #### 5. Lembrete de Commit
 ```bash
