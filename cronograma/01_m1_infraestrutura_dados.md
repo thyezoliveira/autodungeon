@@ -1,6 +1,6 @@
 # 🚩 Marco 1 (M1) — Infraestrutura Core, Autoloads & Custom Resources
 
-> **Status:** Em Progresso (M1.1 Concluído)  
+> **Status:** Em Progresso (M1.1 e M1.2 Concluídos)  
 > **Branch de Trabalho:** `feat/m1-core`  
 > **Tag Final do Marco:** `v0.1.0-m1-core`  
 > **Documentos de Referência:** [`docs/planejamento/01_visao_mvp_e_marcos.md`](../docs/planejamento/01_visao_mvp_e_marcos.md), [`docs/projeto/01_visao_geral_e_padroes.md`](../docs/projeto/01_visao_geral_e_padroes.md), [`docs/projeto/05_sistema_combate_e_habilidades.md`](../docs/projeto/05_sistema_combate_e_habilidades.md), [`docs/projeto/06_sistema_itens_inventario_loot.md`](../docs/projeto/06_sistema_itens_inventario_loot.md), [`docs/projeto/08_ui_hud_e_eventbus.md`](../docs/projeto/08_ui_hud_e_eventbus.md).
@@ -158,9 +158,9 @@ extends Resource
    Salve como `res://src/data/skills/bromm_shield_slam.tres` e verifique que o arquivo carrega sem erros.
 
 #### 4. Critérios de Aceitação
-- [ ] Classes `SkillEffect`, `DamageSkillEffect` e `SkillData` registradas com `class_name`.
-- [ ] Suporte a múltiplos efeitos por habilidade via `Array[SkillEffect]`.
-- [ ] Recurso `.tres` instanciável diretamente via Inspector.
+- [x] Classes `SkillEffect`, `DamageSkillEffect` e `SkillData` registradas com `class_name`.
+- [x] Suporte a múltiplos efeitos por habilidade via `Array[SkillEffect]`.
+- [x] Recurso `.tres` instanciável diretamente via Inspector.
 
 #### 5. Lembrete de Commit
 ```bash
