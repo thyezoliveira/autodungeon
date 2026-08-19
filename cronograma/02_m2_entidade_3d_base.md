@@ -368,9 +368,9 @@ func change_state(new_state_name: String) -> void:
    * Verifique se `exit()` de A foi chamado antes de `enter()` de B.
 
 #### 4. Critérios de Aceitação
-- [ ] Classes `State` e `StateMachine` registradas e tipadas.
-- [ ] Transições de estado atômicas com disparo do sinal `state_changed`.
-- [ ] Tolerância a nomes de estados inválidos com log defensivo de erro.
+- [x] Classes `State` e `StateMachine` registradas e tipadas.
+- [x] Transições de estado atômicas com disparo do sinal `state_changed`.
+- [x] Tolerância a nomes de estados inválidos com log defensivo de erro.
 
 #### 5. Lembrete de Commit
 ```bash
