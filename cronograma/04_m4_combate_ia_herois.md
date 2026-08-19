@@ -1,6 +1,6 @@
 # 🚩 Marco 4 (M4) — Combate 3D, Gatilho por Impacto & IA dos 3 Heróis
 
-> **Status:** Não Iniciado  
+> **Status:** Concluído  
 > **Branch de Trabalho:** `feat/m4-combat-ai`  
 > **Tag Final do Marco:** `v0.1.0-m4-combat-ai`  
 > **Documentos de Referência:** [`docs/planejamento/01_visao_mvp_e_marcos.md`](../docs/planejamento/01_visao_mvp_e_marcos.md), [`docs/projeto/04_maquina_estados_e_ia.md`](../docs/projeto/04_maquina_estados_e_ia.md), [`docs/projeto/05_sistema_combate_e_habilidades.md`](../docs/projeto/05_sistema_combate_e_habilidades.md), [`docs/idea/geral.md`](../docs/idea/geral.md).
@@ -81,8 +81,8 @@ func _is_combat_participant(a: Node3D, b: Node3D) -> bool:
    * No milissegundo em que a espada de Bromm toca a Hurtbox do monstro, a FSM dos 3 heróis muda instantaneamente para o estado de batalha.
 
 #### 4. Critérios de Aceitação
-- [ ] Transição síncrona de Marcha $\rightarrow$ Batalha disparada pelo primeiro impacto físico.
-- [ ] Zero ataques disparados pela retaguarda antes do contato.
+- [x] Transição síncrona de Marcha $\rightarrow$ Batalha disparada pelo primeiro impacto físico.
+- [x] Zero ataques disparados pela retaguarda antes do contato.
 
 #### 5. Lembrete de Commit
 ```bash
@@ -137,8 +137,8 @@ func _recalculate_primary_target() -> void:
    * O inimigo deve virar imediatamente para o Tanque e disparar `primary_target_changed`.
 
 #### 4. Critérios de Aceitação
-- [ ] Tabela de ameaça mantém pontuação dinâmica por atacante.
-- [ ] Limpeza imediata de entidades mortas da tabela.
+- [x] Tabela de ameaça mantém pontuação dinâmica por atacante.
+- [x] Limpeza imediata de entidades mortas da tabela.
 
 #### 5. Lembrete de Commit
 ```bash
@@ -188,8 +188,8 @@ func execute_skill(skill_data: SkillData, caster: CharacterEntity, target: Node3
    Após 5.0s, a skill deve retornar `can_cast_skill == true`.
 
 #### 4. Critérios de Aceitação
-- [ ] Cooldowns rastreados em tempo real com emissão de progresso normalizado (0.0 a 1.0).
-- [ ] Validação rigorosa de mana antes da ativação.
+- [x] Cooldowns rastreados em tempo real com emissão de progresso normalizado (0.0 a 1.0).
+- [x] Validação rigorosa de mana antes da ativação.
 
 #### 5. Lembrete de Commit
 ```bash
@@ -233,8 +233,8 @@ func evaluate_combat_tactics(delta: float, enemy_pack: Array[CharacterEntity]) -
    *Resultado Esperado:* Bromm avança agressivamente, desfere o golpe inicial e atrai o foco dos dois alvos.
 
 #### 4. Critérios de Aceitação
-- [ ] Avanço imediato no mob mais próximo ao engajar.
-- [ ] Ativação defensiva reativa quando HP $< 60\%$.
+- [x] Avanço imediato no mob mais próximo ao engajar.
+- [x] Ativação defensiva reativa quando HP $< 60\%$.
 
 #### 5. Lembrete de Commit
 ```bash
@@ -276,8 +276,8 @@ func evaluate_combat_tactics(delta: float, enemy_pack: Array[CharacterEntity]) -
    *Resultado Esperado:* Ela deve parar o ataque pesado, recuar em direção oposta mantendo a linha de visão e retomar os disparos ao atingir 6 metros.
 
 #### 4. Critérios de Aceitação
-- [ ] Recuo autônomo (Kiting) ativado ao detectar monstro $< 2.5\text{m}$.
-- [ ] Disparo contínuo de habilidades de flecha na distância ideal de 6.0m.
+- [x] Recuo autônomo (Kiting) ativado ao detectar monstro $< 2.5\text{m}$.
+- [x] Disparo contínuo de habilidades de flecha na distância ideal de 6.0m.
 
 #### 5. Lembrete de Commit
 ```bash
@@ -319,8 +319,8 @@ func evaluate_combat_tactics(delta: float, party_heroes: Array[CharacterEntity],
    * Reduza a vida do DPS para 30%. Beatrice deve priorizar o *Escudo de Fé* de emergência no DPS.
 
 #### 4. Critérios de Aceitação
-- [ ] Respeito absoluto à hierarquia de prioridades de suporte.
-- [ ] Beatrice nunca gasta mana ofensiva quando um aliado precisa de cura vital.
+- [x] Respeito absoluto à hierarquia de prioridades de suporte.
+- [x] Beatrice nunca gasta mana ofensiva quando um aliado precisa de cura vital.
 
 #### 5. Lembrete de Commit
 ```bash
@@ -342,8 +342,8 @@ Consolidação final do combate: o trio avança em marcha, colide com um pack de
    * Ao morrer o último monstro, o `CombatTriggerSystem` desativa o modo combate e a marcha é retomada.
 
 #### 3. Critérios de Aceitação
-- [ ] Loop de combate completo validado do 1º impacto ao encerramento da batalha.
-- [ ] 0 erros de referência de nós no console.
+- [x] Loop de combate completo validado do 1º impacto ao encerramento da batalha.
+- [x] 0 erros de referência de nós no console.
 
 #### 4. Passo a Passo de Merge & Tagging
 ```bash

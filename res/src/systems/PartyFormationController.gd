@@ -22,6 +22,7 @@ signal leader_changed(new_leader: CharacterEntity)
 @export var tether_max_distance: float = 3.0
 @export var follower_catchup_multiplier: float = 1.25
 @export var leader_slow_multiplier: float = 0.5
+@export var formation_active: bool = true
 
 
 func _ready() -> void:
@@ -34,6 +35,8 @@ func _exit_tree() -> void:
 
 
 func _physics_process(_delta: float) -> void:
+	if not formation_active:
+		return
 	_update_follower_targets()
 	_apply_tethering_adjustments()
 
