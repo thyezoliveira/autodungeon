@@ -242,4 +242,6 @@ target = NodePath("../PartyFormationController/Hero_Bromm")
 
 [node name="Camera3D" type="Camera3D" parent="IsometricCameraRig" unique_id=1630203923]
 transform = Transform3D(1, 0, 0, 0, 0.7071068, 0.7071068, 0, -0.7071068, 0.7071068, 0, 0, 0)
+keep_aspect = 0
+fov = 50.0
 current = true

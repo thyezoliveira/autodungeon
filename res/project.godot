@@ -45,3 +45,7 @@ window/stretch/aspect="expand"
 3d_physics/layer_6="Enemy_Hitboxes"
 3d_physics/layer_7="Enemy_Hurtboxes"
 3d_physics/layer_8="Triggers_Interactables"
+
+[rendering]
+
+textures/vram_compression/import_etc2_astc=true
