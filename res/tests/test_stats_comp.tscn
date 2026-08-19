@@ -1,0 +1,8 @@
+[gd_scene format=3]
+
+[ext_resource type="Script" path="res://src/entities/components/StatsComponent.gd" id="1_stats"]
+
+[node name="TestStatsComp" type="Node"]
+
+[node name="StatsComponent" type="Node" parent="."]
+script = ExtResource("1_stats")

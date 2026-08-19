@@ -1,6 +1,6 @@
 # 🚩 Marco 2 (M2) — Entidade 3D Base & Composição de Nós
 
-> **Status:** Não Iniciado  
+> **Status:** Concluído  
 > **Branch de Trabalho:** `feat/m2-entity3d`  
 > **Tag Final do Marco:** `v0.1.0-m2-entity3d`  
 > **Documentos de Referência:** [`docs/planejamento/01_visao_mvp_e_marcos.md`](../docs/planejamento/01_visao_mvp_e_marcos.md), [`docs/projeto/03_arquitetura_entidades_componentes.md`](../docs/projeto/03_arquitetura_entidades_componentes.md), [`docs/projeto/04_maquina_estados_e_ia.md`](../docs/projeto/04_maquina_estados_e_ia.md), [`docs/projeto/05_sistema_combate_e_habilidades.md`](../docs/projeto/05_sistema_combate_e_habilidades.md).
@@ -81,9 +81,9 @@ func setup_entity_data() -> void:
    *Resultado Esperado:* A entidade deve cair suavemente sob ação da gravidade e parar exatamente sobre o chão colisor sem atravessar a malha.
 
 #### 4. Critérios de Aceitação
-- [ ] Prefab `CharacterEntity.tscn` criado com nó raiz `CharacterBody3D`.
-- [ ] Colisor `CapsuleShape3D` configurado nas Physics Layers corretas (Layer 2 para Heróis ou Layer 3 para Monstros).
-- [ ] Queda física e colisão de chão verificadas no ambiente 3D.
+- [x] Prefab `CharacterEntity.tscn` criado com nó raiz `CharacterBody3D`.
+- [x] Colisor `CapsuleShape3D` configurado nas Physics Layers corretas (Layer 2 para Heróis ou Layer 3 para Monstros).
+- [x] Queda física e colisão de chão verificadas no ambiente 3D.
 
 #### 5. Lembrete de Commit
 ```bash
@@ -150,9 +150,9 @@ func remove_modifier(stat_name: String, id: String) -> void:
    * Remova o modificador e valide se a armadura retornou ao valor base original.
 
 #### 4. Critérios de Aceitação
-- [ ] Classe `StatsComponent` implementada com cálculo estático e dinâmico de modificadores.
-- [ ] Inicialização desacoplada tanto via `HeroData` quanto via `EnemyData`.
-- [ ] Emissão do sinal `stat_modified` ao alterar valores em tempo real.
+- [x] Classe `StatsComponent` implementada com cálculo estático e dinâmico de modificadores.
+- [x] Inicialização desacoplada tanto via `HeroData` quanto via `EnemyData`.
+- [x] Emissão do sinal `stat_modified` ao alterar valores em tempo real.
 
 #### 5. Lembrete de Commit
 ```bash
@@ -228,9 +228,9 @@ func _process_ooc_mana_regen(delta: float) -> void:
    * Configure `current_mana = 0.0`, `in_combat = false` e simule 2 segundos de processo físico. O mana deve subir para $5\%$ de `max_mana`.
 
 #### 4. Critérios de Aceitação
-- [ ] Fórmula de dano com mitigação linear e teto de proteção de 80 respeitada.
-- [ ] Disparo correto do sinal `died` apenas na transição de vivo para morto.
-- [ ] Regeneração contínua de mana OOC a cada 2s validada.
+- [x] Fórmula de dano com mitigação linear e teto de proteção de 80 respeitada.
+- [x] Disparo correto do sinal `died` apenas na transição de vivo para morto.
+- [x] Regeneração contínua de mana OOC a cada 2s validada.
 
 #### 5. Lembrete de Commit
 ```bash
@@ -293,9 +293,9 @@ func _on_area_entered(area: Area3D) -> void:
    *Resultado Esperado:* A Hurtbox deve registrar o impacto, o `HealthComponent` deve deduzir o HP e emitir `EventBus.damage_dealt`.
 
 #### 4. Critérios de Aceitação
-- [ ] Camadas de física configuradas sem colisão interna (uma entidade nunca atinge a si mesma).
-- [ ] Encaminhamento atômico de impacto da Hitbox para a Hurtbox.
-- [ ] Registro do evento no `EventBus` global.
+- [x] Camadas de física configuradas sem colisão interna (uma entidade nunca atinge a si mesma).
+- [x] Encaminhamento atômico de impacto da Hitbox para a Hurtbox.
+- [x] Registro do evento no `EventBus` global.
 
 #### 5. Lembrete de Commit
 ```bash
@@ -368,9 +368,9 @@ func change_state(new_state_name: String) -> void:
    * Verifique se `exit()` de A foi chamado antes de `enter()` de B.
 
 #### 4. Critérios de Aceitação
-- [ ] Classes `State` e `StateMachine` registradas e tipadas.
-- [ ] Transições de estado atômicas com disparo do sinal `state_changed`.
-- [ ] Tolerância a nomes de estados inválidos com log defensivo de erro.
+- [x] Classes `State` e `StateMachine` registradas e tipadas.
+- [x] Transições de estado atômicas com disparo do sinal `state_changed`.
+- [x] Tolerância a nomes de estados inválidos com log defensivo de erro.
 
 #### 5. Lembrete de Commit
 ```bash
@@ -405,9 +405,9 @@ Nesta tarefa final do Marco 2, montamos a composição completa de nós na cena 
    * Ao atingir HP 0, a `StateMachine` deve transitar imediatamente para `DeadState`, desativando a colisão física da entidade.
 
 #### 4. Critérios de Aceitação
-- [ ] Prefab `CharacterEntity.tscn` 100% funcional com todos os componentes integrados.
-- [ ] Transição automática para `DeadState` na morte.
-- [ ] 0 erros no painel Debugger da Godot.
+- [x] Prefab `CharacterEntity.tscn` 100% funcional com todos os componentes integrados.
+- [x] Transição automática para `DeadState` na morte.
+- [x] 0 erros no painel Debugger da Godot.
 
 #### 5. Passo a Passo de Merge & Tagging
 ```bash
