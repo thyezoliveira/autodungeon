@@ -8,6 +8,7 @@
 [ext_resource type="Resource" path="res://src/data/heroes/resources/hero_beatrice.tres" id="6_113av"]
 [ext_resource type="Resource" path="res://src/data/heroes/resources/hero_elysia.tres" id="7_cdjxp"]
 [ext_resource type="Script" path="res://src/world/IsometricCameraRig.gd" id="8_pvk5g"]
+[ext_resource type="Script" path="res://src/systems/RoomEncounterController.gd" id="9_room_encounter"]
 
 [sub_resource type="Environment" id="Environment_bh40i"]
 background_mode = 1
@@ -765,20 +766,38 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16, 0, 96)
 
 [node name="EncounterControllers" type="Node3D" parent="." unique_id=512498304]
 
-[node name="Room1_Controller" type="Area3D" parent="EncounterControllers" unique_id=647616666]
+[node name="Room1_Controller" type="Area3D" parent="EncounterControllers" unique_id=647616666 node_paths=PackedStringArray("party_controller")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 26)
+collision_layer = 128
+collision_mask = 2
+script = ExtResource("9_room_encounter")
+room_index = 1
+room_name = "Sala 1"
+party_controller = NodePath("../../PartyFormationController")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="EncounterControllers/Room1_Controller" unique_id=2061922031]
 shape = SubResource("BoxShape3D_pcmiy")
 
-[node name="Room2_Controller" type="Area3D" parent="EncounterControllers" unique_id=1543300443]
+[node name="Room2_Controller" type="Area3D" parent="EncounterControllers" unique_id=1543300443 node_paths=PackedStringArray("party_controller")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16, 1, 61)
+collision_layer = 128
+collision_mask = 2
+script = ExtResource("9_room_encounter")
+room_index = 2
+room_name = "Sala 2"
+party_controller = NodePath("../../PartyFormationController")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="EncounterControllers/Room2_Controller" unique_id=404996880]
 shape = SubResource("BoxShape3D_65ai3")
 
-[node name="Arena3_Controller" type="Area3D" parent="EncounterControllers" unique_id=1609019190]
+[node name="Arena3_Controller" type="Area3D" parent="EncounterControllers" unique_id=1609019190 node_paths=PackedStringArray("party_controller")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16, 1, 89)
+collision_layer = 128
+collision_mask = 2
+script = ExtResource("9_room_encounter")
+room_index = 3
+room_name = "Arena 3"
+party_controller = NodePath("../../PartyFormationController")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="EncounterControllers/Arena3_Controller" unique_id=1745972682]
 shape = SubResource("BoxShape3D_b4htu")
