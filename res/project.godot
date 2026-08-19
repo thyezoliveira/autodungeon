@@ -11,6 +11,10 @@ config/name="Autodungeon"
 config/features=PackedStringArray("4.3", "Forward Plus")
 config/icon="res://autodungeon_logo_temp.png"
 
+[autoload]
+
+EventBus="*res://src/core/EventBus.gd"
+
 [debug]
 
 gdscript/warnings/inferred_declaration=1

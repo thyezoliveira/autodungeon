@@ -1,6 +1,6 @@
 # 🚩 Marco 1 (M1) — Infraestrutura Core, Autoloads & Custom Resources
 
-> **Status:** Não Iniciado  
+> **Status:** Em Progresso (M1.1 Concluído)  
 > **Branch de Trabalho:** `feat/m1-core`  
 > **Tag Final do Marco:** `v0.1.0-m1-core`  
 > **Documentos de Referência:** [`docs/planejamento/01_visao_mvp_e_marcos.md`](../docs/planejamento/01_visao_mvp_e_marcos.md), [`docs/projeto/01_visao_geral_e_padroes.md`](../docs/projeto/01_visao_geral_e_padroes.md), [`docs/projeto/05_sistema_combate_e_habilidades.md`](../docs/projeto/05_sistema_combate_e_habilidades.md), [`docs/projeto/06_sistema_itens_inventario_loot.md`](../docs/projeto/06_sistema_itens_inventario_loot.md), [`docs/projeto/08_ui_hud_e_eventbus.md`](../docs/projeto/08_ui_hud_e_eventbus.md).
@@ -77,9 +77,9 @@ signal match_ended(victory: bool, summary_data: Dictionary)
    Execute a cena de teste com `F6`. Verifique a mensagem no painel *Output*.
 
 #### 4. Critérios de Aceitação
-- [ ] `EventBus.gd` registrado como Autoload global na Godot.
-- [ ] Sinais tipados para combate, masmorra, itens e UI definidos.
-- [ ] Teste de emissão e recepção executado sem erros no console.
+- [x] `EventBus.gd` registrado como Autoload global na Godot.
+- [x] Sinais tipados para combate, masmorra, itens e UI definidos.
+- [x] Teste de emissão e recepção executado sem erros no console.
 
 #### 5. Lembrete de Commit
 ```bash
