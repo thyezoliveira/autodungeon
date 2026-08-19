@@ -150,9 +150,9 @@ func remove_modifier(stat_name: String, id: String) -> void:
    * Remova o modificador e valide se a armadura retornou ao valor base original.
 
 #### 4. Critérios de Aceitação
-- [ ] Classe `StatsComponent` implementada com cálculo estático e dinâmico de modificadores.
-- [ ] Inicialização desacoplada tanto via `HeroData` quanto via `EnemyData`.
-- [ ] Emissão do sinal `stat_modified` ao alterar valores em tempo real.
+- [x] Classe `StatsComponent` implementada com cálculo estático e dinâmico de modificadores.
+- [x] Inicialização desacoplada tanto via `HeroData` quanto via `EnemyData`.
+- [x] Emissão do sinal `stat_modified` ao alterar valores em tempo real.
 
 #### 5. Lembrete de Commit
 ```bash
