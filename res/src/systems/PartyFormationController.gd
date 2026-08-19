@@ -125,7 +125,18 @@ func is_hero_alive(hero: CharacterEntity) -> bool:
 
 ## Reajusta papéis táticos caso o líder venha a falecer.
 func reassign_roles_on_hero_death(dead_hero: CharacterEntity) -> void:
-	if dead_hero == null or dead_hero != leader_hero:
+	if dead_hero == null:
+		return
+
+	if dead_hero == support_hero:
+		support_hero = null
+		return
+
+	if dead_hero == dps_hero:
+		dps_hero = null
+		return
+
+	if dead_hero != leader_hero:
 		return
 
 	var new_leader: CharacterEntity = null
@@ -138,6 +149,7 @@ func reassign_roles_on_hero_death(dead_hero: CharacterEntity) -> void:
 
 	leader_hero = new_leader
 	leader_changed.emit(leader_hero)
+
 
 
 func _get_hero_movement_component(hero: CharacterEntity) -> MovementComponent:

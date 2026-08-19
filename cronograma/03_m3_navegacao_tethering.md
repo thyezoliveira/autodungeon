@@ -1,6 +1,6 @@
 # 🚩 Marco 3 (M3) — Navegação 3D, Formação & Tethering do Trio
 
-> **Status:** Em Progresso  
+> **Status:** Concluído  
 > **Branch de Trabalho:** `feat/m3-navigation3d`  
 > **Tag Final do Marco:** `v0.1.0-m3-navigation3d`  
 > **Documentos de Referência:** [`docs/planejamento/01_visao_mvp_e_marcos.md`](../docs/planejamento/01_visao_mvp_e_marcos.md), [`docs/projeto/04_maquina_estados_e_ia.md`](../docs/projeto/04_maquina_estados_e_ia.md), [`docs/projeto/07_navegacao_dungeon_e_fases.md`](../docs/projeto/07_navegacao_dungeon_e_fases.md), [`docs/idea/geral.md`](../docs/idea/geral.md).
@@ -309,9 +309,9 @@ Se o líder do grupo (Bromm) morrer durante a exploração, o `PartyFormationCon
    * A câmera refocaliza no novo líder sem travar.
 
 #### 3. Critérios de Aceitação
-- [ ] Reajuste automático de papéis ao morrer o líder.
-- [ ] Travessia continua funcional com 2 ou 1 herói restante.
-- [ ] Marco M3 100% testado e concluído.
+- [x] Reajuste automático de papéis ao morrer o líder.
+- [x] Travessia continua funcional com 2 ou 1 herói restante.
+- [x] Marco M3 100% testado e concluído.
 
 #### 4. Passo a Passo de Merge & Tagging
 ```bash
