@@ -17,6 +17,12 @@ signal leader_changed(new_leader: CharacterEntity)
 @export var support_offset: Vector3 = Vector3(1.2, 0.0, 1.2)
 @export var dps_offset: Vector3 = Vector3(-1.2, 0.0, 1.8)
 
+# Limiares de tethering elástico (em metros) e multiplicadores de velocidade (M3.4)
+@export var tether_ideal_distance: float = 2.0
+@export var tether_max_distance: float = 3.0
+@export var follower_catchup_multiplier: float = 1.25
+@export var leader_slow_multiplier: float = 0.5
+
 
 func _ready() -> void:
 	_auto_detect_members_if_needed()
@@ -29,6 +35,7 @@ func _exit_tree() -> void:
 
 func _physics_process(_delta: float) -> void:
 	_update_follower_targets()
+	_apply_tethering_adjustments()
 
 
 ## Atualiza as posições de destino dos seguidores baseando-se no transform global do líder.
@@ -199,3 +206,115 @@ func _get_event_bus() -> EventBusSingleton:
 	if tree != null and tree.root != null and tree.root.has_node("EventBus"):
 		return tree.root.get_node("EventBus") as EventBusSingleton
 	return null
+
+
+## Aplica os multiplicadores de velocidade decorrentes do tethering elástico a todos os heróis.
+func _apply_tethering_adjustments() -> void:
+	if leader_hero == null or not is_instance_valid(leader_hero):
+		return
+
+	var status: Dictionary = get_tether_status()
+
+	# Aplica no líder
+	var leader_move: MovementComponent = _get_hero_movement_component(leader_hero)
+	if leader_move != null:
+		leader_move.set_speed_multiplier(status["leader_speed_multiplier"])
+
+	# Aplica no suporte
+	if support_hero != null and is_instance_valid(support_hero) and support_hero != leader_hero:
+		var supp_move: MovementComponent = _get_hero_movement_component(support_hero)
+		if supp_move != null:
+			if is_hero_alive(support_hero):
+				supp_move.set_speed_multiplier(status["support_multiplier"])
+			else:
+				supp_move.set_speed_multiplier(1.0)
+
+	# Aplica no DPS
+	if dps_hero != null and is_instance_valid(dps_hero) and dps_hero != leader_hero:
+		var dps_move: MovementComponent = _get_hero_movement_component(dps_hero)
+		if dps_move != null:
+			if is_hero_alive(dps_hero):
+				dps_move.set_speed_multiplier(status["dps_multiplier"])
+			else:
+				dps_move.set_speed_multiplier(1.0)
+
+
+## Retorna o estado atual do sistema de tethering (zonas, distâncias planares XZ e multiplicadores calculados).
+func get_tether_status() -> Dictionary:
+	var status: Dictionary = {
+		"zone": "ideal",
+		"max_distance": 0.0,
+		"leader_speed_multiplier": 1.0,
+		"support_distance": 0.0,
+		"support_multiplier": 1.0,
+		"dps_distance": 0.0,
+		"dps_multiplier": 1.0,
+		"alive_followers_count": 0,
+	}
+
+	if leader_hero == null or not is_instance_valid(leader_hero) or not is_hero_alive(leader_hero):
+		return status
+
+	var leader_pos: Vector3 = leader_hero.global_position
+	var max_dist: float = 0.0
+	var alive_count: int = 0
+	var is_in_rupture: bool = false
+	var is_in_tension: bool = false
+
+	# Checagem Suporte
+	if support_hero != null and is_instance_valid(support_hero) and support_hero != leader_hero and is_hero_alive(support_hero):
+		alive_count += 1
+		var dist: float = _calculate_planar_distance(support_hero.global_position, leader_pos)
+		status["support_distance"] = dist
+		if dist > max_dist:
+			max_dist = dist
+		if dist > tether_max_distance:
+			status["support_multiplier"] = follower_catchup_multiplier
+			is_in_rupture = true
+		elif dist >= tether_ideal_distance:
+			status["support_multiplier"] = follower_catchup_multiplier
+			is_in_tension = true
+		else:
+			status["support_multiplier"] = 1.0
+	else:
+		status["support_multiplier"] = 1.0
+
+	# Checagem DPS
+	if dps_hero != null and is_instance_valid(dps_hero) and dps_hero != leader_hero and is_hero_alive(dps_hero):
+		alive_count += 1
+		var dist: float = _calculate_planar_distance(dps_hero.global_position, leader_pos)
+		status["dps_distance"] = dist
+		if dist > max_dist:
+			max_dist = dist
+		if dist > tether_max_distance:
+			status["dps_multiplier"] = follower_catchup_multiplier
+			is_in_rupture = true
+		elif dist >= tether_ideal_distance:
+			status["dps_multiplier"] = follower_catchup_multiplier
+			is_in_tension = true
+		else:
+			status["dps_multiplier"] = 1.0
+	else:
+		status["dps_multiplier"] = 1.0
+
+	status["max_distance"] = max_dist
+	status["alive_followers_count"] = alive_count
+
+	if alive_count > 0 and is_in_rupture:
+		status["zone"] = "rupture"
+		status["leader_speed_multiplier"] = leader_slow_multiplier
+	elif alive_count > 0 and is_in_tension:
+		status["zone"] = "tension"
+		status["leader_speed_multiplier"] = 1.0
+	else:
+		status["zone"] = "ideal"
+		status["leader_speed_multiplier"] = 1.0
+
+	return status
+
+
+## Calcula a distância euclidiana apenas no plano horizontal XZ entre dois pontos no espaço 3D.
+func _calculate_planar_distance(pos_a: Vector3, pos_b: Vector3) -> float:
+	var diff: Vector3 = Vector3(pos_a.x - pos_b.x, 0.0, pos_a.z - pos_b.z)
+	return diff.length()
+

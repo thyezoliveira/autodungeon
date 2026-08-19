@@ -239,9 +239,9 @@ func _apply_tethering_adjustments() -> void:
    *Resultado Esperado:* Quando a distância passar de 3.0m, o líder deve desacelerar visivelmente até o obstáculo ser contornado e o DPS se reaproximar.
 
 #### 4. Critérios de Aceitação
-- [ ] Desaceleração suave do líder na ruptura de tethering ($>3.0\text{m}$).
-- [ ] Aceleração compensatória dos seguidores na zona de tensão ($2.0\text{m}$ a $3.0\text{m}$).
-- [ ] Ausência de travamentos de física ou tremores visuais (*jittering*).
+- [x] Desaceleração suave do líder na ruptura de tethering ($>3.0\text{m}$).
+- [x] Aceleração compensatória dos seguidores na zona de tensão ($2.0\text{m}$ a $3.0\text{m}$).
+- [x] Ausência de travamentos de física ou tremores visuais (*jittering*).
 
 #### 5. Lembrete de Commit
 ```bash
