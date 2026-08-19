@@ -1,6 +1,6 @@
 # 🚩 Marco 3 (M3) — Navegação 3D, Formação & Tethering do Trio
 
-> **Status:** Não Iniciado  
+> **Status:** Em Progresso  
 > **Branch de Trabalho:** `feat/m3-navigation3d`  
 > **Tag Final do Marco:** `v0.1.0-m3-navigation3d`  
 > **Documentos de Referência:** [`docs/planejamento/01_visao_mvp_e_marcos.md`](../docs/planejamento/01_visao_mvp_e_marcos.md), [`docs/projeto/04_maquina_estados_e_ia.md`](../docs/projeto/04_maquina_estados_e_ia.md), [`docs/projeto/07_navegacao_dungeon_e_fases.md`](../docs/projeto/07_navegacao_dungeon_e_fases.md), [`docs/idea/geral.md`](../docs/idea/geral.md).
@@ -80,9 +80,9 @@ func stop_movement() -> void:
    *Resultado Esperado:* O agente deve caminhar suavemente até o ponto e disparar o sinal `target_reached`.
 
 #### 4. Critérios de Aceitação
-- [ ] `MovementComponent` desacoplado do código específico de herói.
-- [ ] Rotação suave do personagem orientada ao vetor de movimento no plano $XZ$.
-- [ ] Emissão do sinal `target_reached` ao entrar no raio de tolerância.
+- [x] `MovementComponent` desacoplado do código específico de herói.
+- [x] Rotação suave do personagem orientada ao vetor de movimento no plano $XZ$.
+- [x] Emissão do sinal `target_reached` ao entrar no raio de tolerância.
 
 #### 5. Lembrete de Commit
 ```bash
