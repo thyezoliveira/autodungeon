@@ -276,8 +276,8 @@ func evaluate_combat_tactics(delta: float, enemy_pack: Array[CharacterEntity]) -
    *Resultado Esperado:* Ela deve parar o ataque pesado, recuar em direção oposta mantendo a linha de visão e retomar os disparos ao atingir 6 metros.
 
 #### 4. Critérios de Aceitação
-- [ ] Recuo autônomo (Kiting) ativado ao detectar monstro $< 2.5\text{m}$.
-- [ ] Disparo contínuo de habilidades de flecha na distância ideal de 6.0m.
+- [x] Recuo autônomo (Kiting) ativado ao detectar monstro $< 2.5\text{m}$.
+- [x] Disparo contínuo de habilidades de flecha na distância ideal de 6.0m.
 
 #### 5. Lembrete de Commit
 ```bash
