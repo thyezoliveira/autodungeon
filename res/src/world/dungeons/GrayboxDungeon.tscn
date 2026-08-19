@@ -1,14 +1,22 @@
 [gd_scene format=3]
 
 [ext_resource type="Script" path="res://src/world/dungeons/DungeonLevel.gd" id="1_5p80k"]
+[ext_resource type="PackedScene" path="res://src/entities/enemies/GoblinWarrior.tscn" id="2_rfyfe"]
 [ext_resource type="Script" path="res://src/systems/PartyFormationController.gd" id="2_xnvin"]
 [ext_resource type="PackedScene" path="res://src/entities/base/CharacterEntity.tscn" id="3_6qfuu"]
+[ext_resource type="Resource" path="res://src/data/enemies/enemy_goblin_warrior.tres" id="4_7oelp"]
+[ext_resource type="PackedScene" path="res://src/entities/enemies/GoblinArcher.tscn" id="5_oanst"]
 [ext_resource type="Resource" path="res://src/data/heroes/resources/hero_bromm.tres" id="5_r8gn4"]
 [ext_resource type="Script" path="res://src/entities/base/CharacterEntity.gd" id="5_xnvin"]
+[ext_resource type="Resource" path="res://src/data/enemies/enemy_goblin_archer.tres" id="6_50x2j"]
 [ext_resource type="Resource" path="res://src/data/heroes/resources/hero_beatrice.tres" id="6_113av"]
 [ext_resource type="Resource" path="res://src/data/heroes/resources/hero_elysia.tres" id="7_cdjxp"]
+[ext_resource type="PackedScene" path="res://src/entities/enemies/GoblinCaptain.tscn" id="7_wwxfo"]
+[ext_resource type="Resource" path="res://src/data/enemies/enemy_goblin_captain.tres" id="8_coebm"]
 [ext_resource type="Script" path="res://src/world/IsometricCameraRig.gd" id="8_pvk5g"]
+[ext_resource type="PackedScene" path="res://src/entities/enemies/GoblinHealer.tscn" id="9_hnlf7"]
 [ext_resource type="Script" path="res://src/systems/RoomEncounterController.gd" id="9_room_encounter"]
+[ext_resource type="Resource" path="res://src/data/enemies/enemy_goblin_healer.tres" id="10_xnwde"]
 
 [sub_resource type="Environment" id="Environment_bh40i"]
 background_mode = 1
@@ -739,36 +747,63 @@ mesh = SubResource("BoxMesh_d6fmn")
 [node name="PartySpawnPoint" type="Marker3D" parent="Spawners" unique_id=2023236604]
 
 [node name="Room1_EnemyPack" type="Node3D" parent="Spawners" unique_id=926981366]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 26)
 
-[node name="EnemySpawn_1" type="Marker3D" parent="Spawners/Room1_EnemyPack" unique_id=1771496872]
+[node name="EnemySpawn_1" type="Marker3D" parent="Spawners/Room1_EnemyPack" unique_id=1686583333]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 25)
 
-[node name="EnemySpawn_2" type="Marker3D" parent="Spawners/Room1_EnemyPack" unique_id=1610582693]
+[node name="EnemySpawn_2" type="Marker3D" parent="Spawners/Room1_EnemyPack" unique_id=1298173634]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.5, 0, 27.5)
 
-[node name="EnemySpawn_3" type="Marker3D" parent="Spawners/Room1_EnemyPack" unique_id=994948172]
+[node name="EnemySpawn_3" type="Marker3D" parent="Spawners/Room1_EnemyPack" unique_id=555145510]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.5, 0, 27.5)
 
-[node name="Room2_MiniBossPack" type="Node3D" parent="Spawners" unique_id=1261732662]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16, 0, 61)
+[node name="Room1_GoblinWarrior_1" type="CharacterBody3D" parent="Spawners/Room1_EnemyPack" unique_id=950008224 instance=ExtResource("2_rfyfe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 25)
+collision_layer = 4
+script = ExtResource("5_xnvin")
+enemy_data = ExtResource("4_7oelp")
 
-[node name="CaptainSpawn" type="Marker3D" parent="Spawners/Room2_MiniBossPack" unique_id=631149433]
+[node name="Room1_GoblinWarrior_2" type="CharacterBody3D" parent="Spawners/Room1_EnemyPack" unique_id=836493230 instance=ExtResource("2_rfyfe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.5, 0, 27.5)
+collision_layer = 4
+script = ExtResource("5_xnvin")
+enemy_data = ExtResource("4_7oelp")
+
+[node name="Room1_GoblinArcher" type="CharacterBody3D" parent="Spawners/Room1_EnemyPack" unique_id=1896234775 instance=ExtResource("5_oanst")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.5, 0, 27.5)
+collision_layer = 4
+script = ExtResource("5_xnvin")
+enemy_data = ExtResource("6_50x2j")
+
+[node name="Room2_MiniBossPack" type="Node3D" parent="Spawners" unique_id=1261732662]
+
+[node name="CaptainSpawn" type="Marker3D" parent="Spawners/Room2_MiniBossPack" unique_id=450690686]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16, 0, 60)
 
-[node name="HealerSpawn" type="Marker3D" parent="Spawners/Room2_MiniBossPack" unique_id=1090635218]
+[node name="HealerSpawn" type="Marker3D" parent="Spawners/Room2_MiniBossPack" unique_id=1026047357]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16, 0, 63.5)
 
+[node name="Room2_GoblinCaptain" type="CharacterBody3D" parent="Spawners/Room2_MiniBossPack" unique_id=1007573579 instance=ExtResource("7_wwxfo")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16, 0, 60)
+collision_layer = 4
+script = ExtResource("5_xnvin")
+enemy_data = ExtResource("8_coebm")
+
+[node name="Room2_GoblinHealer" type="CharacterBody3D" parent="Spawners/Room2_MiniBossPack" unique_id=1775668774 instance=ExtResource("9_hnlf7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16, 0, 63.5)
+collision_layer = 4
+script = ExtResource("5_xnvin")
+enemy_data = ExtResource("10_xnwde")
+
 [node name="Arena3_BossPack" type="Node3D" parent="Spawners" unique_id=1664985423]
+
+[node name="BossSpawn" type="Marker3D" parent="Spawners/Arena3_BossPack" unique_id=34102137]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16, 0, 89)
 
-[node name="BossSpawn" type="Marker3D" parent="Spawners/Arena3_BossPack" unique_id=1718567870]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16, 0, 89)
-
-[node name="GoldenChestSpawn" type="Marker3D" parent="Spawners/Arena3_BossPack" unique_id=2098414801]
+[node name="GoldenChestSpawn" type="Marker3D" parent="Spawners/Arena3_BossPack" unique_id=1354930660]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16, 0, 94)
 
-[node name="ExtractionPortalSpawn" type="Marker3D" parent="Spawners/Arena3_BossPack" unique_id=1701934211]
+[node name="ExtractionPortalSpawn" type="Marker3D" parent="Spawners/Arena3_BossPack" unique_id=294806771]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16, 0, 96)
 
 [node name="EncounterControllers" type="Node3D" parent="." unique_id=512498304]

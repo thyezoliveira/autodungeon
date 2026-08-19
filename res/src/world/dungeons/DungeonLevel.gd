@@ -314,47 +314,54 @@ func spawn_room_enemies(room_index: int) -> Array[CharacterEntity]:
 	match room_index:
 		1:
 			# Sala 1: 2 Goblin Guerreiros Melee + 1 Goblin Arqueiro Ranged
-			var w_scene: PackedScene = load(WARRIOR_SCENE_PATH) as PackedScene
-			var a_scene: PackedScene = load(ARCHER_SCENE_PATH) as PackedScene
-			var spawners: Array[Marker3D] = get_enemy_spawners_for_room(1)
-
 			var parent_node: Node3D = null
 			if spawners_holder != null:
 				parent_node = spawners_holder.get_node_or_null("Room1_EnemyPack") as Node3D
 			if parent_node == null:
 				parent_node = self
 
-			var default_positions: Array[Vector3] = [
-				Vector3(0.0, 0.0, 25.0),
-				Vector3(-2.5, 0.0, 27.5),
-				Vector3(2.5, 0.0, 27.5)
-			]
+			# Coleta instâncias pré-existentes na cena se houver
+			if parent_node != null:
+				for child in parent_node.get_children():
+					if child is CharacterEntity:
+						pack.append(child as CharacterEntity)
 
-			# Mob 1: Warrior
-			if w_scene != null:
-				var m1: CharacterEntity = w_scene.instantiate() as CharacterEntity
-				m1.name = "Room1_GoblinWarrior_1"
-				var pos1: Vector3 = spawners[0].global_position if spawners.size() > 0 else default_positions[0]
-				parent_node.add_child(m1)
-				m1.global_position = pos1
-				pack.append(m1)
+			if pack.is_empty():
+				var w_scene: PackedScene = load(WARRIOR_SCENE_PATH) as PackedScene
+				var a_scene: PackedScene = load(ARCHER_SCENE_PATH) as PackedScene
+				var spawners: Array[Marker3D] = get_enemy_spawners_for_room(1)
 
-				# Mob 2: Warrior
-				var m2: CharacterEntity = w_scene.instantiate() as CharacterEntity
-				m2.name = "Room1_GoblinWarrior_2"
-				var pos2: Vector3 = spawners[1].global_position if spawners.size() > 1 else default_positions[1]
-				parent_node.add_child(m2)
-				m2.global_position = pos2
-				pack.append(m2)
+				var default_positions: Array[Vector3] = [
+					Vector3(0.0, 0.0, 25.0),
+					Vector3(-2.5, 0.0, 27.5),
+					Vector3(2.5, 0.0, 27.5)
+				]
 
-			# Mob 3: Archer
-			if a_scene != null:
-				var m3: CharacterEntity = a_scene.instantiate() as CharacterEntity
-				m3.name = "Room1_GoblinArcher"
-				var pos3: Vector3 = spawners[2].global_position if spawners.size() > 2 else default_positions[2]
-				parent_node.add_child(m3)
-				m3.global_position = pos3
-				pack.append(m3)
+				# Mob 1: Warrior
+				if w_scene != null:
+					var m1: CharacterEntity = w_scene.instantiate() as CharacterEntity
+					m1.name = "Room1_GoblinWarrior_1"
+					var pos1: Vector3 = spawners[0].global_position if spawners.size() > 0 else default_positions[0]
+					parent_node.add_child(m1)
+					m1.global_position = pos1
+					pack.append(m1)
+
+					# Mob 2: Warrior
+					var m2: CharacterEntity = w_scene.instantiate() as CharacterEntity
+					m2.name = "Room1_GoblinWarrior_2"
+					var pos2: Vector3 = spawners[1].global_position if spawners.size() > 1 else default_positions[1]
+					parent_node.add_child(m2)
+					m2.global_position = pos2
+					pack.append(m2)
+
+				# Mob 3: Archer
+				if a_scene != null:
+					var m3: CharacterEntity = a_scene.instantiate() as CharacterEntity
+					m3.name = "Room1_GoblinArcher"
+					var pos3: Vector3 = spawners[2].global_position if spawners.size() > 2 else default_positions[2]
+					parent_node.add_child(m3)
+					m3.global_position = pos3
+					pack.append(m3)
 
 			var ctrl1: RoomEncounterController = get_encounter_controller(1) as RoomEncounterController
 			if ctrl1 != null:
@@ -362,38 +369,45 @@ func spawn_room_enemies(room_index: int) -> Array[CharacterEntity]:
 
 		2:
 			# Sala 2: 1 Capitão Goblin (Mini-Chefe com Aura de Fúria) + 1 Goblin Curandeiro (com Bênção)
-			var cap_scene: PackedScene = load(CAPTAIN_SCENE_PATH) as PackedScene
-			var heal_scene: PackedScene = load(HEALER_SCENE_PATH) as PackedScene
-			var spawners2: Array[Marker3D] = get_enemy_spawners_for_room(2)
-
 			var parent_node2: Node3D = null
 			if spawners_holder != null:
 				parent_node2 = spawners_holder.get_node_or_null("Room2_MiniBossPack") as Node3D
 			if parent_node2 == null:
 				parent_node2 = self
 
-			var default_positions2: Array[Vector3] = [
-				Vector3(16.0, 0.0, 60.0),
-				Vector3(16.0, 0.0, 63.5)
-			]
+			# Coleta instâncias pré-existentes na cena se houver
+			if parent_node2 != null:
+				for child in parent_node2.get_children():
+					if child is CharacterEntity:
+						pack.append(child as CharacterEntity)
 
-			# Mob 1: Captain Mini-Boss
-			if cap_scene != null:
-				var c1: CharacterEntity = cap_scene.instantiate() as CharacterEntity
-				c1.name = "Room2_GoblinCaptain"
-				var pos_c: Vector3 = spawners2[0].global_position if spawners2.size() > 0 else default_positions2[0]
-				parent_node2.add_child(c1)
-				c1.global_position = pos_c
-				pack.append(c1)
+			if pack.is_empty():
+				var cap_scene: PackedScene = load(CAPTAIN_SCENE_PATH) as PackedScene
+				var heal_scene: PackedScene = load(HEALER_SCENE_PATH) as PackedScene
+				var spawners2: Array[Marker3D] = get_enemy_spawners_for_room(2)
 
-			# Mob 2: Healer
-			if heal_scene != null:
-				var h1: CharacterEntity = heal_scene.instantiate() as CharacterEntity
-				h1.name = "Room2_GoblinHealer"
-				var pos_h: Vector3 = spawners2[1].global_position if spawners2.size() > 1 else default_positions2[1]
-				parent_node2.add_child(h1)
-				h1.global_position = pos_h
-				pack.append(h1)
+				var default_positions2: Array[Vector3] = [
+					Vector3(16.0, 0.0, 60.0),
+					Vector3(16.0, 0.0, 63.5)
+				]
+
+				# Mob 1: Captain Mini-Boss
+				if cap_scene != null:
+					var c1: CharacterEntity = cap_scene.instantiate() as CharacterEntity
+					c1.name = "Room2_GoblinCaptain"
+					var pos_c: Vector3 = spawners2[0].global_position if spawners2.size() > 0 else default_positions2[0]
+					parent_node2.add_child(c1)
+					c1.global_position = pos_c
+					pack.append(c1)
+
+				# Mob 2: Healer
+				if heal_scene != null:
+					var h1: CharacterEntity = heal_scene.instantiate() as CharacterEntity
+					h1.name = "Room2_GoblinHealer"
+					var pos_h: Vector3 = spawners2[1].global_position if spawners2.size() > 1 else default_positions2[1]
+					parent_node2.add_child(h1)
+					h1.global_position = pos_h
+					pack.append(h1)
 
 			var ctrl2: RoomEncounterController = get_encounter_controller(2) as RoomEncounterController
 			if ctrl2 != null:
