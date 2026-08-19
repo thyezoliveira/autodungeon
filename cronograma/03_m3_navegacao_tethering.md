@@ -139,8 +139,8 @@ func enter() -> void:
    A entidade só deve se mover enquanto estiver ativamente no `MarchState`.
 
 #### 4. Critérios de Aceitação
-- [ ] Estados `MarchState` e `IdleState` criados e integrados à `StateMachine`.
-- [ ] Parada física imediata ao sair de `MarchState`.
+- [x] Estados `MarchState` e `IdleState` criados e integrados à `StateMachine`.
+- [x] Parada física imediata ao sair de `MarchState`.
 
 #### 5. Lembrete de Commit
 ```bash

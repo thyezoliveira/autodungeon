@@ -8,6 +8,7 @@
 [ext_resource type="Script" path="res://src/entities/fsm/states/IdleState.gd" id="6_idle"]
 [ext_resource type="Script" path="res://src/entities/fsm/states/DeadState.gd" id="7_dead"]
 [ext_resource type="Script" path="res://src/entities/components/MovementComponent.gd" id="8_movement"]
+[ext_resource type="Script" path="res://src/entities/fsm/states/MarchState.gd" id="9_march"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_1"]
 radius = 0.4
@@ -74,6 +75,10 @@ initial_state = NodePath("IdleState")
 
 [node name="IdleState" type="Node" parent="StateMachine"]
 script = ExtResource("6_idle")
+
+[node name="MarchState" type="Node" parent="StateMachine" node_paths=PackedStringArray("movement_component")]
+script = ExtResource("9_march")
+movement_component = NodePath("../../Components/MovementComponent")
 
 [node name="DeadState" type="Node" parent="StateMachine"]
 script = ExtResource("7_dead")
