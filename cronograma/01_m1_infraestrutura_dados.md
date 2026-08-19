@@ -1,6 +1,6 @@
 # 🚩 Marco 1 (M1) — Infraestrutura Core, Autoloads & Custom Resources
 
-> **Status:** Em Progresso (M1.1, M1.2, M1.3 e M1.4 Concluídos)  
+> **Status:** Em Progresso (M1.1, M1.2, M1.3, M1.4 e M1.5 Concluídos)  
 > **Branch de Trabalho:** `feat/m1-core`  
 > **Tag Final do Marco:** `v0.1.0-m1-core`  
 > **Documentos de Referência:** [`docs/planejamento/01_visao_mvp_e_marcos.md`](../docs/planejamento/01_visao_mvp_e_marcos.md), [`docs/projeto/01_visao_geral_e_padroes.md`](../docs/projeto/01_visao_geral_e_padroes.md), [`docs/projeto/05_sistema_combate_e_habilidades.md`](../docs/projeto/05_sistema_combate_e_habilidades.md), [`docs/projeto/06_sistema_itens_inventario_loot.md`](../docs/projeto/06_sistema_itens_inventario_loot.md), [`docs/projeto/08_ui_hud_e_eventbus.md`](../docs/projeto/08_ui_hud_e_eventbus.md).
@@ -385,9 +385,9 @@ func release_node(node_instance: Node) -> void:
    Execute a cena e confirme 0 vazamentos de memória (memory leaks) na aba *Monitors* do Debugger.
 
 #### 4. Critérios de Aceitação
-- [ ] Classe `NodePool` implementada com controle de fila disponível/ativa.
-- [ ] Reutilização correta sem recriação contínua de memória.
-- [ ] Teste de estresse com 50 aquisições/devoluções sem warnings.
+- [x] Classe `NodePool` implementada com controle de fila disponível/ativa.
+- [x] Reutilização correta sem recriação contínua de memória.
+- [x] Teste de estresse com 50 aquisições/devoluções sem warnings.
 
 #### 5. Lembrete de Commit
 ```bash
