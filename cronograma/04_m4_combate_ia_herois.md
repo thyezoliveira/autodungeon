@@ -233,8 +233,8 @@ func evaluate_combat_tactics(delta: float, enemy_pack: Array[CharacterEntity]) -
    *Resultado Esperado:* Bromm avança agressivamente, desfere o golpe inicial e atrai o foco dos dois alvos.
 
 #### 4. Critérios de Aceitação
-- [ ] Avanço imediato no mob mais próximo ao engajar.
-- [ ] Ativação defensiva reativa quando HP $< 60\%$.
+- [x] Avanço imediato no mob mais próximo ao engajar.
+- [x] Ativação defensiva reativa quando HP $< 60\%$.
 
 #### 5. Lembrete de Commit
 ```bash
