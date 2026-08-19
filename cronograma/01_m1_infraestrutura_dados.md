@@ -1,6 +1,6 @@
 # 🚩 Marco 1 (M1) — Infraestrutura Core, Autoloads & Custom Resources
 
-> **Status:** Em Progresso (M1.1, M1.2, M1.3, M1.4 e M1.5 Concluídos)  
+> **Status:** Concluído (M1.1 a M1.6 Concluídos)  
 > **Branch de Trabalho:** `feat/m1-core`  
 > **Tag Final do Marco:** `v0.1.0-m1-core`  
 > **Documentos de Referência:** [`docs/planejamento/01_visao_mvp_e_marcos.md`](../docs/planejamento/01_visao_mvp_e_marcos.md), [`docs/projeto/01_visao_geral_e_padroes.md`](../docs/projeto/01_visao_geral_e_padroes.md), [`docs/projeto/05_sistema_combate_e_habilidades.md`](../docs/projeto/05_sistema_combate_e_habilidades.md), [`docs/projeto/06_sistema_itens_inventario_loot.md`](../docs/projeto/06_sistema_itens_inventario_loot.md), [`docs/projeto/08_ui_hud_e_eventbus.md`](../docs/projeto/08_ui_hud_e_eventbus.md).
@@ -421,9 +421,9 @@ Para que os próximos marcos (M2 a M4) construam as entidades e IAs com base em 
    * Beatrice: `HP ~ 95`, `Mana >= 100`, `Role == SUPPORT_HEALER`.
 
 #### 4. Critérios de Aceitação
-- [ ] Os 3 heróis do MVP instanciados com todas as propriedades de Raça, Classe e Habilidades.
-- [ ] 0 erros de carregamento de dependências `.tres` na Godot Engine.
-- [ ] Marco M1 completo e pronto para integração.
+- [x] Os 3 heróis do MVP instanciados com todas as propriedades de Raça, Classe e Habilidades.
+- [x] 0 erros de carregamento de dependências `.tres` na Godot Engine.
+- [x] Marco M1 completo e pronto para integração.
 
 #### 5. Passo a Passo de Merge & Tagging
 ```bash

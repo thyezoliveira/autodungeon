@@ -170,7 +170,7 @@ func _run_all_tests() -> void:
 	assert(guardiao_cls.class_name_str == "Guardião", "Class name must be 'Guardião'")
 	assert(guardiao_cls.role == ClassData.Role.TANK_MELEE, "Guardião role must be TANK_MELEE")
 	assert(is_equal_approx(guardiao_cls.default_attack_range, 2.0), "Attack range must be 2.0")
-	assert(is_equal_approx(guardiao_cls.base_move_speed, 4.0), "Move speed must be 4.0")
+	assert(is_equal_approx(guardiao_cls.base_move_speed, 3.8), "Move speed must be 3.8")
 	assert(guardiao_cls.class_skills.size() >= 1, "Guardião must have at least 1 class skill")
 	assert(guardiao_cls.class_skills[0].id == "bromm_shield_slam", "First class skill should be 'bromm_shield_slam'")
 	print("PASS: 6.1 class_guardiao.tres loaded and validated successfully")
@@ -196,17 +196,19 @@ func _run_all_tests() -> void:
 	assert(bromm.hero_class.role == ClassData.Role.TANK_MELEE, "Bromm class role must be TANK_MELEE")
 
 	# Attribute calculations verification for Bromm
-	assert(bromm.base_max_hp == 100, "Bromm base HP is 100")
-	assert(bromm.base_armor == 10, "Bromm base armor is 10")
-	assert(bromm.get_total_max_hp() == 120, "Bromm total HP (100 base + 20 anao = 120)")
-	assert(bromm.get_total_armor() == 15, "Bromm total armor (10 base + 5 anao = 15)")
-	assert(bromm.get_total_magic_resist() == 5, "Bromm total magic resist (5 base + 0 anao = 5)")
-	assert(bromm.get_total_attack_power() == 15, "Bromm total attack power (15 base + 0 anao = 15)")
-	assert(bromm.get_total_magic_power() == 10, "Bromm total magic power (10 base + 0 anao = 10)")
+	assert(bromm.base_max_hp == 140, "Bromm base HP is 140")
+	assert(bromm.base_armor == 20, "Bromm base armor is 20")
+	assert(bromm.get_total_max_hp() == 160, "Bromm total HP (140 base + 20 anao = 160 >= 150)")
+	assert(bromm.get_total_armor() == 25, "Bromm total armor (20 base + 5 anao = 25 >= 25)")
+	assert(bromm.get_total_magic_resist() == 8, "Bromm total magic resist (8 base + 0 anao = 8)")
+	assert(bromm.get_total_attack_power() == 16, "Bromm total attack power (16 base + 0 anao = 16)")
+	assert(bromm.get_total_magic_power() == 5, "Bromm total magic power (5 base + 0 anao = 5)")
 
 	# Innate skills verification
-	assert(bromm.innate_skills.size() == 1, "Bromm has 1 innate skill configured")
-	assert(bromm.innate_skills[0].id == "bromm_shield_slam", "Innate skill is 'bromm_shield_slam'")
+	assert(bromm.innate_skills.size() == 3, "Bromm has 3 innate skills configured")
+	assert(bromm.innate_skills[0].id == "bromm_shield_slam", "Innate skill 0 is 'bromm_shield_slam'")
+	assert(bromm.innate_skills[1].id == "bromm_defensive_stance", "Innate skill 1 is 'bromm_defensive_stance'")
+	assert(bromm.innate_skills[2].id == "bromm_charge", "Innate skill 2 is 'bromm_charge'")
 	print("PASS: 7.1 hero_bromm.tres loaded, composed and aggregated stats validated successfully")
 
 	print("\n========================================")

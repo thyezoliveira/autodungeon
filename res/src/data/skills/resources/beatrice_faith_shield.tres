@@ -1,0 +1,22 @@
+[gd_resource type="Resource" script_class="SkillData" format=3]
+
+[ext_resource type="Script" path="res://src/data/skills/SkillEffect.gd" id="1_skilleffect"]
+[ext_resource type="Script" path="res://src/data/skills/SkillData.gd" id="2_skilldata"]
+
+[sub_resource type="Resource" id="Resource_fshield_eff"]
+script = ExtResource("1_skilleffect")
+target_type = 2
+value_base = 40
+stat_scaling_factor = 0.7
+duration = 5.0
+
+[resource]
+script = ExtResource("2_skilldata")
+id = "beatrice_faith_shield"
+display_name = "Escudo de Fé"
+description = "Concede uma barreira sagrada temporária que absorve dano."
+mana_cost = 25.0
+cooldown = 12.0
+cast_time = 0.0
+range_meters = 6.0
+effects = Array[ExtResource("1_skilleffect")]([SubResource("Resource_fshield_eff")])

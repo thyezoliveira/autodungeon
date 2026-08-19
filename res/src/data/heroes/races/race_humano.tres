@@ -4,10 +4,10 @@
 
 [resource]
 script = ExtResource("1_racedata")
-race_name = "Anão"
-bonus_max_hp = 20
-bonus_armor = 5
-bonus_magic_resist = 0
+race_name = "Humano"
+bonus_max_hp = 10
+bonus_armor = 0
+bonus_magic_resist = 5
 bonus_physical_attack = 0
 bonus_magic_power = 0
-racial_trait_description = "Resistência Pétrea: +20 de Vida Máxima e +5 de Armadura base."
+racial_trait_description = "Versatilidade: +10 de Vida Máxima e +5 de Resistência Mágica."
