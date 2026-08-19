@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="ItemData" format=3]
+
+[ext_resource type="Script" path="res://src/data/items/ItemData.gd" id="1_itemdata"]
+
+[resource]
+script = ExtResource("1_itemdata")
+item_id = "potion_minor_hp"
+item_name = "Poção de Vida Menor"
+description = "Restaura 35 pontos de vida imediatamente ao atingir nível crítico de HP."
+item_type = 2
+gold_value = 15
+heal_amount = 35
+auto_trigger_hp_threshold = 0.3

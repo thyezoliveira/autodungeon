@@ -1,6 +1,6 @@
 # 🚩 Marco 1 (M1) — Infraestrutura Core, Autoloads & Custom Resources
 
-> **Status:** Em Progresso (M1.1, M1.2 e M1.3 Concluídos)  
+> **Status:** Em Progresso (M1.1, M1.2, M1.3 e M1.4 Concluídos)  
 > **Branch de Trabalho:** `feat/m1-core`  
 > **Tag Final do Marco:** `v0.1.0-m1-core`  
 > **Documentos de Referência:** [`docs/planejamento/01_visao_mvp_e_marcos.md`](../docs/planejamento/01_visao_mvp_e_marcos.md), [`docs/projeto/01_visao_geral_e_padroes.md`](../docs/projeto/01_visao_geral_e_padroes.md), [`docs/projeto/05_sistema_combate_e_habilidades.md`](../docs/projeto/05_sistema_combate_e_habilidades.md), [`docs/projeto/06_sistema_itens_inventario_loot.md`](../docs/projeto/06_sistema_itens_inventario_loot.md), [`docs/projeto/08_ui_hud_e_eventbus.md`](../docs/projeto/08_ui_hud_e_eventbus.md).
@@ -328,9 +328,9 @@ enum EnemyTier { MINION, ELITE, BOSS }
    No script de teste, invoque `loot_table.roll_loot()` 100 vezes e valide a distribuição de drops.
 
 #### 4. Critérios de Aceitação
-- [ ] Estruturas `ItemData`, `LootTableResource` e `EnemyData` registradas.
-- [ ] Suporte a limiar de autodisparo de poção em `ItemData`.
-- [ ] Tabela de loot com suporte a faixa de ouro e lista de itens ponderados.
+- [x] Estruturas `ItemData`, `LootTableResource` e `EnemyData` registradas.
+- [x] Suporte a limiar de autodisparo de poção em `ItemData`.
+- [x] Tabela de loot com suporte a faixa de ouro e lista de itens ponderados.
 
 #### 5. Lembrete de Commit
 ```bash
