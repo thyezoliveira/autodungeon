@@ -228,9 +228,9 @@ func _process_ooc_mana_regen(delta: float) -> void:
    * Configure `current_mana = 0.0`, `in_combat = false` e simule 2 segundos de processo físico. O mana deve subir para $5\%$ de `max_mana`.
 
 #### 4. Critérios de Aceitação
-- [ ] Fórmula de dano com mitigação linear e teto de proteção de 80 respeitada.
-- [ ] Disparo correto do sinal `died` apenas na transição de vivo para morto.
-- [ ] Regeneração contínua de mana OOC a cada 2s validada.
+- [x] Fórmula de dano com mitigação linear e teto de proteção de 80 respeitada.
+- [x] Disparo correto do sinal `died` apenas na transição de vivo para morto.
+- [x] Regeneração contínua de mana OOC a cada 2s validada.
 
 #### 5. Lembrete de Commit
 ```bash
