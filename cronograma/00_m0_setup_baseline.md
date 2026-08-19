@@ -1,6 +1,6 @@
 # 🚩 Marco 0 (M0) — Setup do Repositório & Baseline Godot 4.7+ 3D
 
-> **Status:** Não Iniciado  
+> **Status:** Concluído  
 > **Branch de Trabalho:** `feat/m0-setup`  
 > **Tag Final do Marco:** `v0.1.0-m0-setup`  
 > **Documentos de Referência:** [`docs/planejamento/01_visao_mvp_e_marcos.md`](../docs/planejamento/01_visao_mvp_e_marcos.md), [`docs/planejamento/02_gestao_configuracao_e_github.md`](../docs/planejamento/02_gestao_configuracao_e_github.md), [`docs/projeto/02_estrutura_diretorios_convencoes.md`](../docs/projeto/02_estrutura_diretorios_convencoes.md).
@@ -245,9 +245,9 @@ func set_target(new_target: Node3D) -> void:
    Abra a aba *Monitors* no Debugger: o framerate deve permanecer estável a 60 FPS com 0 erros de renderização.
 
 #### 4. Critérios de Aceitação
-- [ ] Cena `TestEnvironment3D.tscn` criada com chão colisor e iluminação funcional.
-- [ ] `IsometricCameraRig.gd` implementado com suporte a follow suave via `lerp`.
-- [ ] Execução da cena sem warnings ou shaders quebrados.
+- [x] Cena `TestEnvironment3D.tscn` criada com chão colisor e iluminação funcional.
+- [x] `IsometricCameraRig.gd` implementado com suporte a follow suave via `lerp`.
+- [x] Execução da cena sem warnings ou shaders quebrados.
 
 #### 5. Lembrete de Commit
 ```bash
@@ -264,9 +264,9 @@ git commit -m "feat(m0-setup): implementar cena de baseline 3d com camera isomet
 O encerramento do Marco 0 sela o baseline de infraestrutura do projeto. Nenhuma linha de código de regras de negócio ou heróis deve ser escrita antes da integração formal deste marco à branch principal (`main`).
 
 #### 2. Checklist de Validação Final
-- [ ] Execução completa do projeto via `F5` ou `F6` sem erros no Output.
-- [ ] Árvore de diretórios limpa, sem arquivos soltos na raiz além do `project.godot` e documentação.
-- [ ] Histórico Git com commits semânticos atômicos.
+- [x] Execução completa do projeto via `F5` ou `F6` sem erros no Output.
+- [x] Árvore de diretórios limpa, sem arquivos soltos na raiz além do `project.godot` e documentação.
+- [x] Histórico Git com commits semânticos atômicos.
 
 #### 3. Passo a Passo de Merge & Tagging
 Execute os comandos no terminal:
