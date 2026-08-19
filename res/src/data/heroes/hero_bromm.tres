@@ -1,0 +1,21 @@
+[gd_resource type="Resource" script_class="HeroData" format=3]
+
+[ext_resource type="Script" path="res://src/data/heroes/HeroData.gd" id="1_herodata"]
+[ext_resource type="Resource" path="res://src/data/heroes/races/race_anao.tres" id="2_race"]
+[ext_resource type="Resource" path="res://src/data/heroes/classes/class_guardiao.tres" id="3_class"]
+[ext_resource type="Script" path="res://src/data/skills/SkillData.gd" id="4_skilldata"]
+[ext_resource type="Resource" path="res://src/data/skills/bromm_shield_slam.tres" id="5_slam"]
+
+[resource]
+script = ExtResource("1_herodata")
+hero_id = "bromm"
+hero_name = "Bromm Barba-de-Ferro"
+race = ExtResource("2_race")
+hero_class = ExtResource("3_class")
+base_max_hp = 100
+base_max_mana = 50.0
+base_armor = 10
+base_magic_resist = 5
+base_attack_power = 15
+base_magic_power = 10
+innate_skills = Array[ExtResource("4_skilldata")]([ExtResource("5_slam")])

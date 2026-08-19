@@ -1,6 +1,6 @@
 # 🚩 Marco 1 (M1) — Infraestrutura Core, Autoloads & Custom Resources
 
-> **Status:** Em Progresso (M1.1 e M1.2 Concluídos)  
+> **Status:** Em Progresso (M1.1, M1.2 e M1.3 Concluídos)  
 > **Branch de Trabalho:** `feat/m1-core`  
 > **Tag Final do Marco:** `v0.1.0-m1-core`  
 > **Documentos de Referência:** [`docs/planejamento/01_visao_mvp_e_marcos.md`](../docs/planejamento/01_visao_mvp_e_marcos.md), [`docs/projeto/01_visao_geral_e_padroes.md`](../docs/projeto/01_visao_geral_e_padroes.md), [`docs/projeto/05_sistema_combate_e_habilidades.md`](../docs/projeto/05_sistema_combate_e_habilidades.md), [`docs/projeto/06_sistema_itens_inventario_loot.md`](../docs/projeto/06_sistema_itens_inventario_loot.md), [`docs/projeto/08_ui_hud_e_eventbus.md`](../docs/projeto/08_ui_hud_e_eventbus.md).
@@ -243,9 +243,9 @@ func get_total_armor() -> int:
    No script de teste, carregue o `hero_bromm.tres` e valide com asserções se `hero_data.get_total_max_hp()` calcula a soma correta.
 
 #### 4. Critérios de Aceitação
-- [ ] Classes de dados `RaceData`, `ClassData` e `HeroData` criadas com tipagem estática.
-- [ ] Funções utilitárias de agregação de atributos calculando somatório de raça + base.
-- [ ] Inspeção limpa no painel Inspector da Godot.
+- [x] Classes de dados `RaceData`, `ClassData` e `HeroData` criadas com tipagem estática.
+- [x] Funções utilitárias de agregação de atributos calculando somatório de raça + base.
+- [x] Inspeção limpa no painel Inspector da Godot.
 
 #### 5. Lembrete de Commit
 ```bash

@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="ClassData" format=3]
+
+[ext_resource type="Script" path="res://src/data/heroes/ClassData.gd" id="1_classdata"]
+[ext_resource type="Script" path="res://src/data/skills/SkillData.gd" id="2_skilldata"]
+[ext_resource type="Resource" path="res://src/data/skills/bromm_shield_slam.tres" id="3_slam"]
+
+[resource]
+script = ExtResource("1_classdata")
+class_name_str = "Guardião"
+role = 0
+default_attack_range = 2.0
+base_move_speed = 4.0
+class_skills = Array[ExtResource("2_skilldata")]([ExtResource("3_slam")])
