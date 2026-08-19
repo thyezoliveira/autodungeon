@@ -137,7 +137,7 @@ Para um jogo 3D Top-Down com foco mobile e tático:
   * Layer 7: `Enemy_Hurtboxes` (Áreas de dano sofrido por monstros).
   * Layer 8: `Triggers_Interactables` (Gatilhos de portas, baús e portais).
 * **Static Typing:** Ativação de avisos rigorosos de tipagem (`untyped_declaration = "error"` ou `"warn"`) para assegurar robustez e alta performance na GDScript VM.
-* **Aspect Ratio:** Resolução base `1920x1080` (Landscape) com modo de stretch `canvas_items` e aspect `keep_width` ou `expand`.
+* **Aspect Ratio & Orientação:** Resolução lógica base `1080x1920` (Modo Retrato / 9:16 vertical para mobile e desktop) com modo de stretch `canvas_items`, aspect `keep_width`, orientação `Portrait` (`handheld/orientation = 1`) e janela no desktop configurada em `540x960` para testes ergonômicos.
 
 #### 2. Estrutura de Configurações
 No arquivo `project.godot` (via Editor *Project Settings* ou texto):
@@ -145,15 +145,20 @@ No arquivo `project.godot` (via Editor *Project Settings* ou texto):
 ```ini
 [application]
 config/name="Autodungeon"
-config/features=PackedStringArray("4.3", "Forward Plus")
-config/icon="res://icon.svg"
+run/main_scene="res://tests/test_party_navigation_3d.tscn"
+config/features=PackedStringArray("4.7", "Forward Plus")
+config/icon="res://autodungeon_logo_temp.png"
 
 [display]
-window/size/viewport_width=1920
-window/size/viewport_height=1080
+window/size/viewport_width=1080
+window/size/viewport_height=1920
+window/size/window_width_override=540
+window/size/window_height_override=960
 window/size/mode=0
+window/size/resizable=true
 window/stretch/mode="canvas_items"
-window/stretch/aspect="expand"
+window/stretch/aspect="keep_width"
+window/handheld/orientation=1
 
 [layer_names]
 3d_physics/layer_1="World_Environment"

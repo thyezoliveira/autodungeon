@@ -78,7 +78,7 @@ func initialize_hud(party_heroes: Array[CharacterEntity]) -> void:
 
 #### 4. Critérios de Aceitação
 - [ ] HUD renderizado como overlay 2D sobre o mundo 3D sem interferência de luz/câmera.
-- [ ] Responsividade aprovada para resoluções widescreen.
+- [ ] Responsividade aprovada para resoluções em modo retrato (9:16 vertical - 1080x1920 base / 540x960 desktop).
 
 #### 5. Lembrete de Commit
 ```bash

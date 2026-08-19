@@ -42,6 +42,11 @@ signal consumable_used(hero_index: int, slot_index: int, remaining_charges: int)
 
 ## 🎮 2. Arquitetura do HUD de Batalha (`BattleHUD.tscn`)
 
+O jogo é projetado nativamente para **Dispositivos Móveis e Desktop em Modo Retrato (9:16 vertical)**:
+* **Resolução Lógica Base (Viewport):** `1080 x 1920` (orientação Portrait).
+* **Janela Desktop para Testes:** `540 x 960` (proporção 9:16 em pé).
+* **Stretch Mode & Aspect:** `canvas_items` com `keep_width` (evita distorções e cortes verticais).
+
 O HUD reside em um `CanvasLayer` e escuta o `EventBus` para atualizar seus elementos reativamente:
 
 ```text
