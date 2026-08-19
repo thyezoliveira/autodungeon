@@ -1,6 +1,6 @@
 # 🚩 Marco 2 (M2) — Entidade 3D Base & Composição de Nós
 
-> **Status:** Em Progresso  
+> **Status:** Concluído  
 > **Branch de Trabalho:** `feat/m2-entity3d`  
 > **Tag Final do Marco:** `v0.1.0-m2-entity3d`  
 > **Documentos de Referência:** [`docs/planejamento/01_visao_mvp_e_marcos.md`](../docs/planejamento/01_visao_mvp_e_marcos.md), [`docs/projeto/03_arquitetura_entidades_componentes.md`](../docs/projeto/03_arquitetura_entidades_componentes.md), [`docs/projeto/04_maquina_estados_e_ia.md`](../docs/projeto/04_maquina_estados_e_ia.md), [`docs/projeto/05_sistema_combate_e_habilidades.md`](../docs/projeto/05_sistema_combate_e_habilidades.md).
@@ -405,9 +405,9 @@ Nesta tarefa final do Marco 2, montamos a composição completa de nós na cena 
    * Ao atingir HP 0, a `StateMachine` deve transitar imediatamente para `DeadState`, desativando a colisão física da entidade.
 
 #### 4. Critérios de Aceitação
-- [ ] Prefab `CharacterEntity.tscn` 100% funcional com todos os componentes integrados.
-- [ ] Transição automática para `DeadState` na morte.
-- [ ] 0 erros no painel Debugger da Godot.
+- [x] Prefab `CharacterEntity.tscn` 100% funcional com todos os componentes integrados.
+- [x] Transição automática para `DeadState` na morte.
+- [x] 0 erros no painel Debugger da Godot.
 
 #### 5. Passo a Passo de Merge & Tagging
 ```bash

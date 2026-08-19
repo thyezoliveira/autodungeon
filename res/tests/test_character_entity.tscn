@@ -1,0 +1,24 @@
+[gd_scene format=3]
+
+[ext_resource type="PackedScene" path="res://src/entities/base/CharacterEntity.tscn" id="1_entity"]
+[ext_resource type="Script" path="res://src/entities/components/Hitbox3D.gd" id="2_hitbox"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_hitbox"]
+radius = 0.5
+
+[node name="TestCharacterEntity" type="Node3D"]
+
+[node name="CharacterEntity" parent="." instance=ExtResource("1_entity")]
+
+[node name="Attacker" type="Node3D" parent="."]
+
+[node name="Hitbox3D" type="Area3D" parent="Attacker" node_paths=PackedStringArray("source_entity")]
+collision_layer = 32
+collision_mask = 16
+script = ExtResource("2_hitbox")
+damage = 30
+is_physical = true
+source_entity = NodePath("..")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Attacker/Hitbox3D"]
+shape = SubResource("SphereShape3D_hitbox")
