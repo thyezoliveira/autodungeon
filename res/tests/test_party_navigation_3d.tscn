@@ -1,5 +1,6 @@
 [gd_scene format=3]
 
+[ext_resource type="Script" path="res://src/world/PartyNavigationWorld.gd" id="1_world"]
 [ext_resource type="Script" path="res://src/systems/PartyFormationController.gd" id="1_r6ud1"]
 [ext_resource type="PackedScene" path="res://src/entities/base/CharacterEntity.tscn" id="2_qbqif"]
 [ext_resource type="Script" path="res://src/entities/base/CharacterEntity.gd" id="3_sfa8b"]
@@ -112,6 +113,7 @@ material = SubResource("StandardMaterial3D_uq0h3")
 size = Vector3(6, 2.5, 0.6)
 
 [node name="TestPartyNavigation3D" type="Node3D" unique_id=1837059574]
+script = ExtResource("1_world")
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1388960842]
 environment = SubResource("Environment_g2bpn")
