@@ -12,6 +12,8 @@ var gravity: float = ProjectSettings.get_setting("physics/3d/default_gravity", 9
 @onready var stats_component: StatsComponent = get_node_or_null("Components/StatsComponent") as StatsComponent
 @onready var health_component: HealthComponent = get_node_or_null("Components/HealthComponent") as HealthComponent
 @onready var hurtbox: Hurtbox3D = get_node_or_null("Components/Hurtbox3D") as Hurtbox3D
+@onready var navigation_agent: NavigationAgent3D = get_node_or_null("Components/NavigationAgent3D") as NavigationAgent3D
+@onready var movement_component: MovementComponent = get_node_or_null("Components/MovementComponent") as MovementComponent
 @onready var state_machine: StateMachine = get_node_or_null("StateMachine") as StateMachine
 
 
@@ -21,9 +23,13 @@ func _ready() -> void:
 
 
 func _physics_process(delta: float) -> void:
+	if health_component != null and not health_component.is_alive:
+		velocity = Vector3.ZERO
+		return
 	if not is_on_floor():
 		velocity.y -= gravity * delta
 	move_and_slide()
+
 
 
 func setup_entity_data() -> void:
@@ -33,6 +39,10 @@ func setup_entity_data() -> void:
 		health_component = get_node_or_null("Components/HealthComponent") as HealthComponent
 	if hurtbox == null:
 		hurtbox = get_node_or_null("Components/Hurtbox3D") as Hurtbox3D
+	if navigation_agent == null:
+		navigation_agent = get_node_or_null("Components/NavigationAgent3D") as NavigationAgent3D
+	if movement_component == null:
+		movement_component = get_node_or_null("Components/MovementComponent") as MovementComponent
 	if state_machine == null:
 		state_machine = get_node_or_null("StateMachine") as StateMachine
 

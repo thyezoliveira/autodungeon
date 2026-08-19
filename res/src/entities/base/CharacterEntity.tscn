@@ -7,6 +7,8 @@
 [ext_resource type="Script" path="res://src/entities/fsm/StateMachine.gd" id="5_fsm"]
 [ext_resource type="Script" path="res://src/entities/fsm/states/IdleState.gd" id="6_idle"]
 [ext_resource type="Script" path="res://src/entities/fsm/states/DeadState.gd" id="7_dead"]
+[ext_resource type="Script" path="res://src/entities/components/MovementComponent.gd" id="8_movement"]
+[ext_resource type="Script" path="res://src/entities/fsm/states/MarchState.gd" id="9_march"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_1"]
 radius = 0.4
@@ -59,12 +61,24 @@ source_entity = NodePath("../..")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.9, 0)
 shape = SubResource("CapsuleShape3D_hurtbox")
 
+[node name="NavigationAgent3D" type="NavigationAgent3D" parent="Components"]
+target_desired_distance = 0.5
+
+[node name="MovementComponent" type="Node" parent="Components" node_paths=PackedStringArray("navigation_agent", "character_body")]
+script = ExtResource("8_movement")
+navigation_agent = NodePath("../NavigationAgent3D")
+character_body = NodePath("../..")
+
 [node name="StateMachine" type="Node" parent="." node_paths=PackedStringArray("initial_state")]
 script = ExtResource("5_fsm")
 initial_state = NodePath("IdleState")
 
 [node name="IdleState" type="Node" parent="StateMachine"]
 script = ExtResource("6_idle")
+
+[node name="MarchState" type="Node" parent="StateMachine" node_paths=PackedStringArray("movement_component")]
+script = ExtResource("9_march")
+movement_component = NodePath("../../Components/MovementComponent")
 
 [node name="DeadState" type="Node" parent="StateMachine"]
 script = ExtResource("7_dead")

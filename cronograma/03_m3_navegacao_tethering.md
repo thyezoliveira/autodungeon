@@ -1,6 +1,6 @@
 # 🚩 Marco 3 (M3) — Navegação 3D, Formação & Tethering do Trio
 
-> **Status:** Não Iniciado  
+> **Status:** Concluído  
 > **Branch de Trabalho:** `feat/m3-navigation3d`  
 > **Tag Final do Marco:** `v0.1.0-m3-navigation3d`  
 > **Documentos de Referência:** [`docs/planejamento/01_visao_mvp_e_marcos.md`](../docs/planejamento/01_visao_mvp_e_marcos.md), [`docs/projeto/04_maquina_estados_e_ia.md`](../docs/projeto/04_maquina_estados_e_ia.md), [`docs/projeto/07_navegacao_dungeon_e_fases.md`](../docs/projeto/07_navegacao_dungeon_e_fases.md), [`docs/idea/geral.md`](../docs/idea/geral.md).
@@ -80,9 +80,9 @@ func stop_movement() -> void:
    *Resultado Esperado:* O agente deve caminhar suavemente até o ponto e disparar o sinal `target_reached`.
 
 #### 4. Critérios de Aceitação
-- [ ] `MovementComponent` desacoplado do código específico de herói.
-- [ ] Rotação suave do personagem orientada ao vetor de movimento no plano $XZ$.
-- [ ] Emissão do sinal `target_reached` ao entrar no raio de tolerância.
+- [x] `MovementComponent` desacoplado do código específico de herói.
+- [x] Rotação suave do personagem orientada ao vetor de movimento no plano $XZ$.
+- [x] Emissão do sinal `target_reached` ao entrar no raio de tolerância.
 
 #### 5. Lembrete de Commit
 ```bash
@@ -139,8 +139,8 @@ func enter() -> void:
    A entidade só deve se mover enquanto estiver ativamente no `MarchState`.
 
 #### 4. Critérios de Aceitação
-- [ ] Estados `MarchState` e `IdleState` criados e integrados à `StateMachine`.
-- [ ] Parada física imediata ao sair de `MarchState`.
+- [x] Estados `MarchState` e `IdleState` criados e integrados à `StateMachine`.
+- [x] Parada física imediata ao sair de `MarchState`.
 
 #### 5. Lembrete de Commit
 ```bash
@@ -199,8 +199,8 @@ func reassign_roles_on_hero_death(dead_hero: CharacterEntity) -> void:
    *Resultado Esperado:* Os 2 seguidores devem orbitar suavemente mantendo seus respectivos flancos em relação à orientação do líder.
 
 #### 4. Critérios de Aceitação
-- [ ] Posicionamento em cunha/triângulo tático preservado durante caminhadas retas e em curva.
-- [ ] Cálculo de coordenadas relativas baseado na orientação (`Transform3D`) do líder.
+- [x] Posicionamento em cunha/triângulo tático preservado durante caminhadas retas e em curva.
+- [x] Cálculo de coordenadas relativas baseado na orientação (`Transform3D`) do líder.
 
 #### 5. Lembrete de Commit
 ```bash
@@ -239,9 +239,9 @@ func _apply_tethering_adjustments() -> void:
    *Resultado Esperado:* Quando a distância passar de 3.0m, o líder deve desacelerar visivelmente até o obstáculo ser contornado e o DPS se reaproximar.
 
 #### 4. Critérios de Aceitação
-- [ ] Desaceleração suave do líder na ruptura de tethering ($>3.0\text{m}$).
-- [ ] Aceleração compensatória dos seguidores na zona de tensão ($2.0\text{m}$ a $3.0\text{m}$).
-- [ ] Ausência de travamentos de física ou tremores visuais (*jittering*).
+- [x] Desaceleração suave do líder na ruptura de tethering ($>3.0\text{m}$).
+- [x] Aceleração compensatória dos seguidores na zona de tensão ($2.0\text{m}$ a $3.0\text{m}$).
+- [x] Ausência de travamentos de física ou tremores visuais (*jittering*).
 
 #### 5. Lembrete de Commit
 ```bash
@@ -283,8 +283,8 @@ TestPartyNavigation3D (Node3D)
    A câmera isométrica deve acompanhar o centro de massa do grupo suavemente.
 
 #### 4. Critérios de Aceitação
-- [ ] Trio percorre os 4 waypoints sem colidir ou se prender nas paredes.
-- [ ] NavMesh 3D assado com folga de margem para o tamanho das cápsulas dos 3 heróis.
+- [x] Trio percorre os 4 waypoints sem colidir ou se prender nas paredes.
+- [x] NavMesh 3D assado com folga de margem para o tamanho das cápsulas dos 3 heróis.
 
 #### 5. Lembrete de Commit
 ```bash
@@ -309,9 +309,9 @@ Se o líder do grupo (Bromm) morrer durante a exploração, o `PartyFormationCon
    * A câmera refocaliza no novo líder sem travar.
 
 #### 3. Critérios de Aceitação
-- [ ] Reajuste automático de papéis ao morrer o líder.
-- [ ] Travessia continua funcional com 2 ou 1 herói restante.
-- [ ] Marco M3 100% testado e concluído.
+- [x] Reajuste automático de papéis ao morrer o líder.
+- [x] Travessia continua funcional com 2 ou 1 herói restante.
+- [x] Marco M3 100% testado e concluído.
 
 #### 4. Passo a Passo de Merge & Tagging
 ```bash
