@@ -103,6 +103,10 @@ func add_percent_modifier(stat_name: String, id: String, value: float) -> void:
 	stat_modified.emit(stat_name, get_stat(stat_name))
 
 
+func add_percentage_modifier(stat_name: String, id: String, value: float) -> void:
+	add_percent_modifier(stat_name, id, value)
+
+
 func remove_modifier(stat_name: String, id: String) -> void:
 	var changed: bool = false
 	if _flat_modifiers.has(stat_name) and _flat_modifiers[stat_name].has(id):

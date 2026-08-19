@@ -1,0 +1,28 @@
+[gd_resource type="Resource" script_class="EnemyData" format=3]
+
+[ext_resource type="Script" path="res://src/data/enemies/EnemyData.gd" id="1_enemydata"]
+[ext_resource type="Script" path="res://src/data/items/LootTableResource.gd" id="2_loottable"]
+[ext_resource type="Script" path="res://src/data/items/ItemData.gd" id="3_itemdata"]
+[ext_resource type="Resource" path="res://src/data/items/consumables/item_potion_minor_hp.tres" id="4_potion"]
+[ext_resource type="Resource" path="res://src/data/skills/resources/goblin_tribal_blessing.tres" id="5_skill"]
+[ext_resource type="Script" path="res://src/data/skills/SkillData.gd" id="6_skilldata"]
+
+[sub_resource type="Resource" id="Resource_loot_healer"]
+script = ExtResource("2_loottable")
+possible_items = Array[ExtResource("3_itemdata")]([ExtResource("4_potion")])
+drop_chances = Array[float]([0.3])
+min_gold = 3
+max_gold = 10
+
+[resource]
+script = ExtResource("1_enemydata")
+enemy_id = "goblin_healer"
+enemy_name = "Goblin Curandeiro"
+tier = 0
+max_hp = 35
+armor = 1
+attack_power = 5
+attack_range = 6.0
+move_speed = 3.2
+loot_table = SubResource("Resource_loot_healer")
+skills = Array[ExtResource("6_skilldata")]([ExtResource("5_skill")])

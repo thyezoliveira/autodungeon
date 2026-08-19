@@ -1,0 +1,107 @@
+[gd_scene format=3]
+
+[ext_resource type="Script" path="res://src/entities/base/CharacterEntity.gd" id="1_entity"]
+[ext_resource type="Resource" path="res://src/data/enemies/enemy_goblin_archer.tres" id="2_enemydata"]
+[ext_resource type="Script" path="res://src/entities/components/StatsComponent.gd" id="3_stats"]
+[ext_resource type="Script" path="res://src/entities/components/HealthComponent.gd" id="4_health"]
+[ext_resource type="Script" path="res://src/entities/components/Hurtbox3D.gd" id="5_hurtbox"]
+[ext_resource type="Script" path="res://src/entities/components/ThreatTable.gd" id="6_threat"]
+[ext_resource type="Script" path="res://src/entities/components/MovementComponent.gd" id="7_movement"]
+[ext_resource type="Script" path="res://src/entities/enemies/GoblinAIController.gd" id="8_ai"]
+[ext_resource type="PackedScene" path="res://src/entities/projectiles/ArrowProjectile.tscn" id="9_arrow"]
+[ext_resource type="Script" path="res://src/entities/fsm/StateMachine.gd" id="10_fsm"]
+[ext_resource type="Script" path="res://src/entities/fsm/states/IdleState.gd" id="11_idle"]
+[ext_resource type="Script" path="res://src/entities/fsm/states/MarchState.gd" id="12_march"]
+[ext_resource type="Script" path="res://src/entities/fsm/states/DeadState.gd" id="13_dead"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_goblin"]
+radius = 0.35
+height = 1.4
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_archer"]
+albedo_color = Color(0.4, 0.55, 0.2, 1)
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_archer"]
+material = SubResource("StandardMaterial3D_archer")
+radius = 0.35
+height = 1.4
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_hurtbox"]
+radius = 0.4
+height = 1.45
+
+[node name="GoblinArcher" type="CharacterBody3D"]
+collision_layer = 4
+collision_mask = 1
+script = ExtResource("1_entity")
+enemy_data = ExtResource("2_enemydata")
+
+[node name="BodyCollider" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.7, 0)
+shape = SubResource("CapsuleShape3D_goblin")
+
+[node name="Visuals" type="Node3D" parent="."]
+
+[node name="ModelMesh" type="MeshInstance3D" parent="Visuals"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.7, 0)
+mesh = SubResource("CapsuleMesh_archer")
+
+[node name="Components" type="Node3D" parent="."]
+
+[node name="StatsComponent" type="Node" parent="Components"]
+script = ExtResource("3_stats")
+max_hp = 30
+armor = 1
+attack_power = 7
+move_speed = 3.8
+
+[node name="HealthComponent" type="Node" parent="Components"]
+script = ExtResource("4_health")
+current_hp = 30
+max_hp = 30
+
+[node name="Hurtbox3D" type="Area3D" parent="Components" node_paths=PackedStringArray("health_component", "stats_component", "source_entity")]
+collision_layer = 64
+collision_mask = 0
+script = ExtResource("5_hurtbox")
+health_component = NodePath("../HealthComponent")
+stats_component = NodePath("../StatsComponent")
+source_entity = NodePath("../..")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Components/Hurtbox3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.7, 0)
+shape = SubResource("CapsuleShape3D_hurtbox")
+
+[node name="ThreatTable" type="Node" parent="Components"]
+script = ExtResource("6_threat")
+
+[node name="NavigationAgent3D" type="NavigationAgent3D" parent="Components"]
+target_desired_distance = 0.5
+
+[node name="MovementComponent" type="Node" parent="Components" node_paths=PackedStringArray("navigation_agent", "character_body")]
+script = ExtResource("7_movement")
+navigation_agent = NodePath("../NavigationAgent3D")
+character_body = NodePath("../..")
+base_speed = 3.8
+
+[node name="GoblinAIController" type="Node" parent="Components" node_paths=PackedStringArray("actor")]
+script = ExtResource("8_ai")
+actor = NodePath("../..")
+is_ranged = true
+attack_range = 5.0
+attack_cooldown = 1.5
+arrow_scene = ExtResource("9_arrow")
+
+[node name="StateMachine" type="Node" parent="." node_paths=PackedStringArray("initial_state")]
+script = ExtResource("10_fsm")
+initial_state = NodePath("IdleState")
+
+[node name="IdleState" type="Node" parent="StateMachine"]
+script = ExtResource("11_idle")
+
+[node name="MarchState" type="Node" parent="StateMachine" node_paths=PackedStringArray("movement_component")]
+script = ExtResource("12_march")
+movement_component = NodePath("../../Components/MovementComponent")
+
+[node name="DeadState" type="Node" parent="StateMachine"]
+script = ExtResource("13_dead")

@@ -1,0 +1,25 @@
+[gd_resource type="Resource" script_class="EnemyData" format=3]
+
+[ext_resource type="Script" path="res://src/data/enemies/EnemyData.gd" id="1_enemydata"]
+[ext_resource type="Script" path="res://src/data/items/LootTableResource.gd" id="2_loottable"]
+[ext_resource type="Script" path="res://src/data/items/ItemData.gd" id="3_itemdata"]
+[ext_resource type="Resource" path="res://src/data/items/consumables/item_potion_minor_hp.tres" id="4_potion"]
+
+[sub_resource type="Resource" id="Resource_loot_captain"]
+script = ExtResource("2_loottable")
+possible_items = Array[ExtResource("3_itemdata")]([ExtResource("4_potion")])
+drop_chances = Array[float]([0.5])
+min_gold = 10
+max_gold = 30
+
+[resource]
+script = ExtResource("1_enemydata")
+enemy_id = "goblin_captain"
+enemy_name = "Capitão Goblin"
+tier = 1
+max_hp = 140
+armor = 5
+attack_power = 16
+attack_range = 2.0
+move_speed = 3.6
+loot_table = SubResource("Resource_loot_captain")

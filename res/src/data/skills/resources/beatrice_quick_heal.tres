@@ -1,14 +1,13 @@
-[gd_resource type="Resource" script_class="SkillData" format=3]
+[gd_resource type="Resource" script_class="SkillData" format=3 uid="uid://dyse46x6fjrij"]
 
-[ext_resource type="Script" path="res://src/data/skills/SkillEffect.gd" id="1_skilleffect"]
-[ext_resource type="Script" path="res://src/data/skills/SkillData.gd" id="2_skilldata"]
+[ext_resource type="Script" uid="uid://b2y0lkrtmd8jt" path="res://src/data/skills/SkillEffect.gd" id="1_skilleffect"]
+[ext_resource type="Script" uid="uid://ckg2rulxgopdd" path="res://src/data/skills/SkillData.gd" id="2_skilldata"]
 
 [sub_resource type="Resource" id="Resource_qheal_eff"]
 script = ExtResource("1_skilleffect")
 target_type = 3
 value_base = 35
 stat_scaling_factor = 0.8
-duration = 0.0
 
 [resource]
 script = ExtResource("2_skilldata")
