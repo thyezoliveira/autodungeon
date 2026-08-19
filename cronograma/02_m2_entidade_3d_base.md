@@ -1,6 +1,6 @@
 # 🚩 Marco 2 (M2) — Entidade 3D Base & Composição de Nós
 
-> **Status:** Não Iniciado  
+> **Status:** Em Progresso  
 > **Branch de Trabalho:** `feat/m2-entity3d`  
 > **Tag Final do Marco:** `v0.1.0-m2-entity3d`  
 > **Documentos de Referência:** [`docs/planejamento/01_visao_mvp_e_marcos.md`](../docs/planejamento/01_visao_mvp_e_marcos.md), [`docs/projeto/03_arquitetura_entidades_componentes.md`](../docs/projeto/03_arquitetura_entidades_componentes.md), [`docs/projeto/04_maquina_estados_e_ia.md`](../docs/projeto/04_maquina_estados_e_ia.md), [`docs/projeto/05_sistema_combate_e_habilidades.md`](../docs/projeto/05_sistema_combate_e_habilidades.md).
@@ -81,9 +81,9 @@ func setup_entity_data() -> void:
    *Resultado Esperado:* A entidade deve cair suavemente sob ação da gravidade e parar exatamente sobre o chão colisor sem atravessar a malha.
 
 #### 4. Critérios de Aceitação
-- [ ] Prefab `CharacterEntity.tscn` criado com nó raiz `CharacterBody3D`.
-- [ ] Colisor `CapsuleShape3D` configurado nas Physics Layers corretas (Layer 2 para Heróis ou Layer 3 para Monstros).
-- [ ] Queda física e colisão de chão verificadas no ambiente 3D.
+- [x] Prefab `CharacterEntity.tscn` criado com nó raiz `CharacterBody3D`.
+- [x] Colisor `CapsuleShape3D` configurado nas Physics Layers corretas (Layer 2 para Heróis ou Layer 3 para Monstros).
+- [x] Queda física e colisão de chão verificadas no ambiente 3D.
 
 #### 5. Lembrete de Commit
 ```bash
