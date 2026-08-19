@@ -1,6 +1,6 @@
 # 🚩 Marco 0 (M0) — Setup do Repositório & Baseline Godot 4.7+ 3D
 
-> **Status:** Não Iniciado  
+> **Status:** Concluído  
 > **Branch de Trabalho:** `feat/m0-setup`  
 > **Tag Final do Marco:** `v0.1.0-m0-setup`  
 > **Documentos de Referência:** [`docs/planejamento/01_visao_mvp_e_marcos.md`](../docs/planejamento/01_visao_mvp_e_marcos.md), [`docs/planejamento/02_gestao_configuracao_e_github.md`](../docs/planejamento/02_gestao_configuracao_e_github.md), [`docs/projeto/02_estrutura_diretorios_convencoes.md`](../docs/projeto/02_estrutura_diretorios_convencoes.md).
@@ -109,9 +109,9 @@ exports/
    Verifique no explorador do sistema ou terminal (`ls -la src/`) se todos os 6 subdiretórios principais (`core`, `data`, `entities`, `systems`, `ui`, `world`) foram criados.
 
 #### 4. Critérios de Aceitação
-- [ ] Todas as pastas de `src/`, `assets/` e `tests/` existem no projeto.
-- [ ] Arquivo `.gitattributes` inclui filtros LFS para extensões 3D, áudio e imagem.
-- [ ] Arquivo `.gitignore` ignora a pasta `.godot/` e arquivos `.import`.
+- [x] Todas as pastas de `src/`, `assets/` e `tests/` existem no projeto.
+- [x] Arquivo `.gitattributes` inclui filtros LFS para extensões 3D, áudio e imagem.
+- [x] Arquivo `.gitignore` ignora a pasta `.godot/` e arquivos `.import`.
 
 #### 5. Lembrete de Commit
 ```bash
@@ -181,9 +181,9 @@ gdscript/warnings/unused_parameter=1
    Verifique a aba *Debugger -> Errors/Warnings*. O projeto deve carregar sem erros.
 
 #### 4. Critérios de Aceitação
-- [ ] Physics Layers 3D 1 a 8 nomeadas.
-- [ ] Resolução de viewport configurada para 1920x1080 com modo de redimensionamento responsivo.
-- [ ] Avisos de tipagem estática ativados no editor.
+- [x] Physics Layers 3D 1 a 8 nomeadas.
+- [x] Resolução de viewport configurada para 1920x1080 com modo de redimensionamento responsivo.
+- [x] Avisos de tipagem estática ativados no editor.
 
 #### 5. Lembrete de Commit
 ```bash
@@ -245,9 +245,9 @@ func set_target(new_target: Node3D) -> void:
    Abra a aba *Monitors* no Debugger: o framerate deve permanecer estável a 60 FPS com 0 erros de renderização.
 
 #### 4. Critérios de Aceitação
-- [ ] Cena `TestEnvironment3D.tscn` criada com chão colisor e iluminação funcional.
-- [ ] `IsometricCameraRig.gd` implementado com suporte a follow suave via `lerp`.
-- [ ] Execução da cena sem warnings ou shaders quebrados.
+- [x] Cena `TestEnvironment3D.tscn` criada com chão colisor e iluminação funcional.
+- [x] `IsometricCameraRig.gd` implementado com suporte a follow suave via `lerp`.
+- [x] Execução da cena sem warnings ou shaders quebrados.
 
 #### 5. Lembrete de Commit
 ```bash
@@ -264,9 +264,9 @@ git commit -m "feat(m0-setup): implementar cena de baseline 3d com camera isomet
 O encerramento do Marco 0 sela o baseline de infraestrutura do projeto. Nenhuma linha de código de regras de negócio ou heróis deve ser escrita antes da integração formal deste marco à branch principal (`main`).
 
 #### 2. Checklist de Validação Final
-- [ ] Execução completa do projeto via `F5` ou `F6` sem erros no Output.
-- [ ] Árvore de diretórios limpa, sem arquivos soltos na raiz além do `project.godot` e documentação.
-- [ ] Histórico Git com commits semânticos atômicos.
+- [x] Execução completa do projeto via `F5` ou `F6` sem erros no Output.
+- [x] Árvore de diretórios limpa, sem arquivos soltos na raiz além do `project.godot` e documentação.
+- [x] Histórico Git com commits semânticos atômicos.
 
 #### 3. Passo a Passo de Merge & Tagging
 Execute os comandos no terminal:
